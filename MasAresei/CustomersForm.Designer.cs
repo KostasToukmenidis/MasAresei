@@ -45,25 +45,30 @@ namespace MasAresei
             this.addressAreaTbox = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.customersLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // saveOrEditBtn
             // 
-            this.saveOrEditBtn.Location = new System.Drawing.Point(15, 348);
+            this.saveOrEditBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.saveOrEditBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.saveOrEditBtn.Location = new System.Drawing.Point(15, 329);
             this.saveOrEditBtn.Name = "saveOrEditBtn";
-            this.saveOrEditBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveOrEditBtn.Size = new System.Drawing.Size(87, 42);
             this.saveOrEditBtn.TabIndex = 0;
             this.saveOrEditBtn.Text = "Save";
-            this.saveOrEditBtn.UseVisualStyleBackColor = true;
+            this.saveOrEditBtn.UseVisualStyleBackColor = false;
             this.saveOrEditBtn.Click += new System.EventHandler(this.saveOrEditBtn_Click);
             // 
             // firstNameLbl
             // 
             this.firstNameLbl.AutoSize = true;
-            this.firstNameLbl.Location = new System.Drawing.Point(34, 91);
+            this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.firstNameLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.firstNameLbl.Location = new System.Drawing.Point(9, 106);
             this.firstNameLbl.Name = "firstNameLbl";
-            this.firstNameLbl.Size = new System.Drawing.Size(57, 13);
+            this.firstNameLbl.Size = new System.Drawing.Size(76, 17);
             this.firstNameLbl.TabIndex = 1;
             this.firstNameLbl.Text = "First Name";
             // 
@@ -80,108 +85,132 @@ namespace MasAresei
             // 
             this.firstNameTbox.Location = new System.Drawing.Point(12, 122);
             this.firstNameTbox.Name = "firstNameTbox";
-            this.firstNameTbox.Size = new System.Drawing.Size(113, 20);
+            this.firstNameTbox.Size = new System.Drawing.Size(128, 20);
             this.firstNameTbox.TabIndex = 3;
             // 
             // lastNameLbl
             // 
             this.lastNameLbl.AutoSize = true;
-            this.lastNameLbl.Location = new System.Drawing.Point(184, 91);
+            this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.lastNameLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.lastNameLbl.Location = new System.Drawing.Point(175, 106);
             this.lastNameLbl.Name = "lastNameLbl";
-            this.lastNameLbl.Size = new System.Drawing.Size(58, 13);
+            this.lastNameLbl.Size = new System.Drawing.Size(76, 17);
             this.lastNameLbl.TabIndex = 4;
             this.lastNameLbl.Text = "Last Name";
             // 
             // phoneNumberLbl
             // 
             this.phoneNumberLbl.AutoSize = true;
-            this.phoneNumberLbl.Location = new System.Drawing.Point(34, 165);
+            this.phoneNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.phoneNumberLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.phoneNumberLbl.Location = new System.Drawing.Point(9, 179);
             this.phoneNumberLbl.Name = "phoneNumberLbl";
-            this.phoneNumberLbl.Size = new System.Drawing.Size(38, 13);
+            this.phoneNumberLbl.Size = new System.Drawing.Size(49, 17);
             this.phoneNumberLbl.TabIndex = 5;
             this.phoneNumberLbl.Text = "Phone";
             // 
             // addressLbl
             // 
             this.addressLbl.AutoSize = true;
-            this.addressLbl.Location = new System.Drawing.Point(184, 165);
+            this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.addressLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.addressLbl.Location = new System.Drawing.Point(175, 179);
             this.addressLbl.Name = "addressLbl";
-            this.addressLbl.Size = new System.Drawing.Size(45, 13);
+            this.addressLbl.Size = new System.Drawing.Size(60, 17);
             this.addressLbl.TabIndex = 6;
             this.addressLbl.Text = "Address";
             // 
             // addressNumberLbl
             // 
             this.addressNumberLbl.AutoSize = true;
-            this.addressNumberLbl.Location = new System.Drawing.Point(34, 250);
+            this.addressNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.addressNumberLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.addressNumberLbl.Location = new System.Drawing.Point(9, 251);
             this.addressNumberLbl.Name = "addressNumberLbl";
-            this.addressNumberLbl.Size = new System.Drawing.Size(55, 13);
+            this.addressNumberLbl.Size = new System.Drawing.Size(72, 17);
             this.addressNumberLbl.TabIndex = 7;
             this.addressNumberLbl.Text = "Address #";
             // 
             // addressAreaLbl
             // 
             this.addressAreaLbl.AutoSize = true;
-            this.addressAreaLbl.Location = new System.Drawing.Point(184, 250);
+            this.addressAreaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.addressAreaLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.addressAreaLbl.Location = new System.Drawing.Point(175, 251);
             this.addressAreaLbl.Name = "addressAreaLbl";
-            this.addressAreaLbl.Size = new System.Drawing.Size(29, 13);
+            this.addressAreaLbl.Size = new System.Drawing.Size(38, 17);
             this.addressAreaLbl.TabIndex = 8;
             this.addressAreaLbl.Text = "Area";
             // 
             // lastNameTbox
             // 
-            this.lastNameTbox.Location = new System.Drawing.Point(147, 122);
+            this.lastNameTbox.Location = new System.Drawing.Point(178, 126);
             this.lastNameTbox.Name = "lastNameTbox";
-            this.lastNameTbox.Size = new System.Drawing.Size(113, 20);
+            this.lastNameTbox.Size = new System.Drawing.Size(128, 20);
             this.lastNameTbox.TabIndex = 9;
             // 
             // phoneNumberTbox
             // 
             this.phoneNumberTbox.Location = new System.Drawing.Point(12, 195);
             this.phoneNumberTbox.Name = "phoneNumberTbox";
-            this.phoneNumberTbox.Size = new System.Drawing.Size(113, 20);
+            this.phoneNumberTbox.Size = new System.Drawing.Size(128, 20);
             this.phoneNumberTbox.TabIndex = 10;
             // 
             // addressTbox
             // 
-            this.addressTbox.Location = new System.Drawing.Point(147, 195);
+            this.addressTbox.Location = new System.Drawing.Point(178, 195);
             this.addressTbox.Name = "addressTbox";
-            this.addressTbox.Size = new System.Drawing.Size(113, 20);
+            this.addressTbox.Size = new System.Drawing.Size(128, 20);
             this.addressTbox.TabIndex = 11;
             // 
             // addressNumberTbox
             // 
-            this.addressNumberTbox.Location = new System.Drawing.Point(12, 281);
+            this.addressNumberTbox.Location = new System.Drawing.Point(12, 267);
             this.addressNumberTbox.Name = "addressNumberTbox";
-            this.addressNumberTbox.Size = new System.Drawing.Size(113, 20);
+            this.addressNumberTbox.Size = new System.Drawing.Size(128, 20);
             this.addressNumberTbox.TabIndex = 12;
             // 
             // addressAreaTbox
             // 
-            this.addressAreaTbox.Location = new System.Drawing.Point(147, 281);
+            this.addressAreaTbox.Location = new System.Drawing.Point(178, 267);
             this.addressAreaTbox.Name = "addressAreaTbox";
-            this.addressAreaTbox.Size = new System.Drawing.Size(113, 20);
+            this.addressAreaTbox.Size = new System.Drawing.Size(128, 20);
             this.addressAreaTbox.TabIndex = 13;
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(120, 348);
+            this.deleteBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.deleteBtn.Location = new System.Drawing.Point(108, 329);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(87, 42);
             this.deleteBtn.TabIndex = 14;
             this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(224, 348);
+            this.cancelBtn.BackColor = System.Drawing.Color.Coral;
+            this.cancelBtn.Location = new System.Drawing.Point(201, 329);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(87, 42);
             this.cancelBtn.TabIndex = 15;
             this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // customersLbl
+            // 
+            this.customersLbl.AutoSize = true;
+            this.customersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.customersLbl.ForeColor = System.Drawing.Color.Firebrick;
+            this.customersLbl.Location = new System.Drawing.Point(456, 20);
+            this.customersLbl.Name = "customersLbl";
+            this.customersLbl.Size = new System.Drawing.Size(109, 24);
+            this.customersLbl.TabIndex = 16;
+            this.customersLbl.Text = "Customers";
             // 
             // CustomersForm
             // 
@@ -189,6 +218,7 @@ namespace MasAresei
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1116, 503);
+            this.Controls.Add(this.customersLbl);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addressAreaTbox);
@@ -232,5 +262,6 @@ namespace MasAresei
         private System.Windows.Forms.TextBox addressAreaTbox;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label customersLbl;
     }
 }
