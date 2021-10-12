@@ -193,6 +193,7 @@ namespace MasAresei
             // cancelBtn
             // 
             this.cancelBtn.BackColor = System.Drawing.Color.Coral;
+            this.cancelBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cancelBtn.Location = new System.Drawing.Point(201, 329);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(87, 42);
