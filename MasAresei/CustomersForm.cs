@@ -85,10 +85,18 @@ namespace MasAresei
             }
         }
 
+        //Clearing my form
         private void clearBtn_Click(object sender, EventArgs e)
         {
             ClearData();
         }
+
+        ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
+        //private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    InitialForm initialForm = new InitialForm();
+        //    initialForm.Show();
+        //}
 
         //--------CUSTOM METHODS--------------
 

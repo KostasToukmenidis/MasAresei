@@ -238,6 +238,7 @@ namespace MasAresei
             this.Controls.Add(this.saveOrEditBtn);
             this.Name = "CustomersForm";
             this.Text = "CustomersForm";
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomersForm_FormClosed);
             this.Load += new System.EventHandler(this.CustomersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).EndInit();
             this.ResumeLayout(false);

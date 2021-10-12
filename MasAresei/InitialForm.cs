@@ -21,6 +21,7 @@ namespace MasAresei
 
         private void customersWnd_Click(object sender, EventArgs e)
         {
+            //this.Hide();//using this line if I want to hide InitialForm when user uses the CustomersForm
             customersForm.ShowDialog();
         }
     }
