@@ -21,7 +21,7 @@ namespace MasAresei
 
         private void customersWnd_Click(object sender, EventArgs e)
         {
-            customersForm.Show();
+            customersForm.ShowDialog();
         }
     }
 }

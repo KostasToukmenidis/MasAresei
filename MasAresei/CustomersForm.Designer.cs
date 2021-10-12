@@ -44,7 +44,7 @@ namespace MasAresei
             this.addressNumberTbox = new System.Windows.Forms.TextBox();
             this.addressAreaTbox = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.customersLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.SuspendLayout();
@@ -190,17 +190,17 @@ namespace MasAresei
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // cancelBtn
+            // clearBtn
             // 
-            this.cancelBtn.BackColor = System.Drawing.Color.Coral;
-            this.cancelBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cancelBtn.Location = new System.Drawing.Point(201, 329);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(87, 42);
-            this.cancelBtn.TabIndex = 15;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = false;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.clearBtn.BackColor = System.Drawing.Color.Coral;
+            this.clearBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.clearBtn.Location = new System.Drawing.Point(201, 329);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(87, 42);
+            this.clearBtn.TabIndex = 15;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // customersLbl
             // 
@@ -220,7 +220,7 @@ namespace MasAresei
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1116, 503);
             this.Controls.Add(this.customersLbl);
-            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addressAreaTbox);
             this.Controls.Add(this.addressNumberTbox);
@@ -262,7 +262,7 @@ namespace MasAresei
         private System.Windows.Forms.TextBox addressNumberTbox;
         private System.Windows.Forms.TextBox addressAreaTbox;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Label customersLbl;
     }
 }

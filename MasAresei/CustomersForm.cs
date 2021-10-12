@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasAresei.Models;
+using Color = System.Drawing.Color;
 
 namespace MasAresei
 {
@@ -69,6 +70,7 @@ namespace MasAresei
 
                 saveOrEditBtn.Text = "Edit";
                 deleteBtn.Enabled = true;
+                deleteBtn.BackColor = Color.Firebrick;
             }
         }
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace MasAresei
             }
         }
 
-        private void cancelBtn_Click(object sender, EventArgs e)
+        private void clearBtn_Click(object sender, EventArgs e)
         {
             ClearData();
         }
@@ -96,6 +98,7 @@ namespace MasAresei
             firstNameTbox.Text = lastNameTbox.Text = phoneNumberTbox.Text = addressTbox.Text = addressNumberTbox.Text =
                 addressAreaTbox.Text = string.Empty;
             deleteBtn.Enabled = false;
+            deleteBtn.BackColor = Color.IndianRed;
             saveOrEditBtn.Text = "Save";
             customerId = 0;
         }
