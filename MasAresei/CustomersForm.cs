@@ -22,7 +22,9 @@ namespace MasAresei
         private int customerId = 0;
         public Customer customer = new Customer();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
+        //private readonly InitialForm initialForm = new InitialForm(); //Initiallizing Form1 here causes stack overflow exception
 
+        //Clearing Form every time it loads and setting the data in the grid
         private void CustomersForm_Load(object sender, EventArgs e)
         {
             ClearData();
@@ -69,6 +71,7 @@ namespace MasAresei
 
                 saveOrEditBtn.Text = "Edit";
                 deleteBtn.Enabled = true;
+                deleteBtn.BackColor = Color.Firebrick;
             }
         }
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -83,6 +86,14 @@ namespace MasAresei
             }
         }
 
+        //// Using this method to show InitialForm if I decide to hide it when CustomersForm2 Pops
+        //private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    InitialForm initialForm = new InitialForm();
+        //    initialForm.Show();
+        //}
+
+        //Reseting CustomersForm
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             ClearData();
@@ -96,6 +107,7 @@ namespace MasAresei
             firstNameTbox.Text = lastNameTbox.Text = phoneNumberTbox.Text = addressTbox.Text = addressNumberTbox.Text =
                 addressAreaTbox.Text = string.Empty;
             deleteBtn.Enabled = false;
+            deleteBtn.BackColor = Color.IndianRed;
             saveOrEditBtn.Text = "Save";
             customerId = 0;
         }
@@ -106,5 +118,7 @@ namespace MasAresei
             //customersGrid.AutoGenerateColumns = false;
             customersGrid.DataSource = _context.Customers.ToList<Customer>();
         }
+
+        
     }
 }
