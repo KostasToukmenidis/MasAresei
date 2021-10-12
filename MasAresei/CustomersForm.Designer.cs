@@ -198,7 +198,7 @@ namespace MasAresei
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(87, 42);
             this.cancelBtn.TabIndex = 15;
-            this.cancelBtn.Text = "Clear";
+            this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
@@ -238,7 +238,6 @@ namespace MasAresei
             this.Controls.Add(this.saveOrEditBtn);
             this.Name = "CustomersForm";
             this.Text = "CustomersForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomersForm_FormClosed);
             this.Load += new System.EventHandler(this.CustomersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).EndInit();
             this.ResumeLayout(false);
