@@ -87,6 +87,7 @@ namespace MasAresei
             this.firstNameTbox.Name = "firstNameTbox";
             this.firstNameTbox.Size = new System.Drawing.Size(128, 20);
             this.firstNameTbox.TabIndex = 3;
+            this.firstNameTbox.Validating += new System.ComponentModel.CancelEventHandler(this.firstNameTbox_Validating);
             // 
             // lastNameLbl
             // 
@@ -238,7 +239,6 @@ namespace MasAresei
             this.Controls.Add(this.saveOrEditBtn);
             this.Name = "CustomersForm";
             this.Text = "CustomersForm";
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomersForm_FormClosed);
             this.Load += new System.EventHandler(this.CustomersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).EndInit();
             this.ResumeLayout(false);

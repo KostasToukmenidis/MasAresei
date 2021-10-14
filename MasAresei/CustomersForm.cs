@@ -23,9 +23,10 @@ namespace MasAresei
         private int customerId = 0;
         public Customer customer = new Customer();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
+        private readonly ErrorProvider error = new ErrorProvider();
 
         #region Communication with database and button events
-        
+
         private void CustomersForm_Load(object sender, EventArgs e)
         {
             ClearData();
@@ -34,23 +35,30 @@ namespace MasAresei
 
         private void saveOrEditBtn_Click(object sender, EventArgs e)
         {
-            customer.FirstName = firstNameTbox.Text.Trim();
-            customer.LastName = lastNameTbox.Text.Trim();
-            customer.PhoneNumber = phoneNumberTbox.Text.Trim();
-            customer.Address = addressTbox.Text.Trim();
-            customer.AddressNumber = Convert.ToInt32(addressNumberTbox.Text.Trim());
-            customer.AddressArea = addressAreaTbox.Text.Trim();
-
-            if (customerId > 0)
-                _context.Entry(customer).State = EntityState.Modified;
-            else
+            try
             {
-                _context.Customers.Add(customer);
+                customer.FirstName = firstNameTbox.Text.Trim();
+                customer.LastName = lastNameTbox.Text.Trim();
+                customer.PhoneNumber = phoneNumberTbox.Text.Trim();
+                customer.Address = addressTbox.Text.Trim();
+                customer.AddressNumber = Convert.ToInt32(addressNumberTbox.Text.Trim());
+                customer.AddressArea = addressAreaTbox.Text.Trim();
+
+                if (customerId > 0)
+                    _context.Entry(customer).State = EntityState.Modified;
+                else
+                {
+                    _context.Customers.Add(customer);
+                }
+                _context.SaveChanges();
+                ClearData();
+                SetDataInGridView();
+                MessageBox.Show("Record Save Successfully");
             }
-            _context.SaveChanges();
-            ClearData();
-            SetDataInGridView();
-            MessageBox.Show("Record Save Successfully");
+            catch (Exception)
+            {
+                MessageBox.Show("Try fill all the boxes wtith the correct information.");
+            }
         }
 
         private void customersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -128,20 +136,34 @@ namespace MasAresei
             customersGrid.DataSource = _context.Customers.ToList<Customer>();
         }
 
-        #endregion
 
+        #endregion
 
         #region Validation Events
 
-
+        private void firstNameTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateFirstName();
+        }
 
         #endregion
 
         #region Custom Methods for validation
 
-        
+        public void ValidateFirstName()
+        {
+            if (firstNameTbox.Text == "")
+                error.SetError(firstNameTbox, "First name is necessary to procced.");
+            else if (firstNameTbox.Text.Length > 50)
+                error.SetError(firstNameTbox, "First name too big, try something shorter.");
+            else if (!firstNameTbox.Text.All(c => Char.IsLetter(c))) 
+                error.SetError(firstNameTbox, "Name must only contain A-z letters.");
+            else
+                error.SetError(firstNameTbox, "");
+        }
 
         #endregion
+
 
     }
 }
