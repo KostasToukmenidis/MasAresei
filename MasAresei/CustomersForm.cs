@@ -91,12 +91,15 @@ namespace MasAresei
             ClearData();
         }
 
+        #region InitialFormShow
         ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
         //private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
         //{
         //    InitialForm initialForm = new InitialForm();
         //    initialForm.Show();
         //}
+        #endregion
+
 
         //--------CUSTOM METHODS--------------
 
