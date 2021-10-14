@@ -24,6 +24,8 @@ namespace MasAresei
         public Customer customer = new Customer();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
 
+        #region Communication_with_database_and_button_events
+
         private void CustomersForm_Load(object sender, EventArgs e)
         {
             ClearData();
@@ -91,17 +93,27 @@ namespace MasAresei
             ClearData();
         }
 
-        #region InitialFormShow
+        #endregion
+
+
+        #region InitialForm_show_if_hidden_when_CustomersForm_pops
+
         ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
         //private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
         //{
         //    InitialForm initialForm = new InitialForm();
         //    initialForm.Show();
         //}
+
         #endregion
 
+        #region MyRegion
 
-        //--------CUSTOM METHODS--------------
+        
+
+        #endregion
+
+        #region Custom_Methods
 
         //Reseting my customers form
         public void ClearData()
@@ -120,5 +132,8 @@ namespace MasAresei
             //customersGrid.AutoGenerateColumns = false;
             customersGrid.DataSource = _context.Customers.ToList<Customer>();
         }
+
+        #endregion
+
     }
 }
