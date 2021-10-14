@@ -150,6 +150,7 @@ namespace MasAresei
             this.lastNameTbox.Name = "lastNameTbox";
             this.lastNameTbox.Size = new System.Drawing.Size(128, 20);
             this.lastNameTbox.TabIndex = 9;
+            this.lastNameTbox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNumberTbox_TextChanged);
             // 
             // phoneNumberTbox
             // 
@@ -164,6 +165,7 @@ namespace MasAresei
             this.addressTbox.Name = "addressTbox";
             this.addressTbox.Size = new System.Drawing.Size(128, 20);
             this.addressTbox.TabIndex = 11;
+            this.addressTbox.Validating += new System.ComponentModel.CancelEventHandler(this.addressTbox_Validating);
             // 
             // addressNumberTbox
             // 
@@ -171,6 +173,7 @@ namespace MasAresei
             this.addressNumberTbox.Name = "addressNumberTbox";
             this.addressNumberTbox.Size = new System.Drawing.Size(128, 20);
             this.addressNumberTbox.TabIndex = 12;
+            this.addressNumberTbox.Validating += new System.ComponentModel.CancelEventHandler(this.addressNumberTbox_Validating);
             // 
             // addressAreaTbox
             // 
@@ -178,6 +181,7 @@ namespace MasAresei
             this.addressAreaTbox.Name = "addressAreaTbox";
             this.addressAreaTbox.Size = new System.Drawing.Size(128, 20);
             this.addressAreaTbox.TabIndex = 13;
+            this.addressAreaTbox.Validating += new System.ComponentModel.CancelEventHandler(this.addressAreaTbox_Validating);
             // 
             // deleteBtn
             // 

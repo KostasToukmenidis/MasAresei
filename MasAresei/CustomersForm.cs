@@ -20,8 +20,8 @@ namespace MasAresei
             InitializeComponent();
         }
 
-        private int customerId = 0;
-        public Customer customer = new Customer();
+        public int customerId = 0;
+        private Customer customer = new Customer();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
@@ -146,6 +146,31 @@ namespace MasAresei
             ValidateFirstName();
         }
 
+        private void lastNameTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateLastName();
+        }
+
+        private void phoneNumberTbox_TextChanged(object sender, EventArgs e)
+        {
+            ValidatePhoneNumber();
+        }
+
+        private void addressTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateAddress();
+        }
+
+        private void addressNumberTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateAddressNumber();
+        }
+
+        private void addressAreaTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateAddressArea();
+        }
+
         #endregion
 
         #region Custom Methods for validation
@@ -153,17 +178,75 @@ namespace MasAresei
         public void ValidateFirstName()
         {
             if (firstNameTbox.Text == "")
-                error.SetError(firstNameTbox, "First name is necessary to procced.");
+                error.SetError(firstNameTbox, "First Name is necessary to procced.");
             else if (firstNameTbox.Text.Length > 50)
-                error.SetError(firstNameTbox, "First name too big, try something shorter.");
+                error.SetError(firstNameTbox, "First Name too big, try something shorter.");
             else if (!firstNameTbox.Text.All(c => Char.IsLetter(c))) 
-                error.SetError(firstNameTbox, "Name must only contain A-z letters.");
+                error.SetError(firstNameTbox, "This field must only contain A-z letters.");
             else
                 error.SetError(firstNameTbox, "");
         }
 
+        public void ValidateLastName()
+        {
+            if (lastNameTbox.Text == "")
+                error.SetError(lastNameTbox, "Last Name is necessary to procced.");
+            else if (lastNameTbox.Text.Length > 50)
+                error.SetError(lastNameTbox, "Last Name too big, try something shorter.");
+            else if (!lastNameTbox.Text.All(c => Char.IsLetter(c)))
+                error.SetError(lastNameTbox, "This field must only contain A-z letters.");
+            else
+                error.SetError(firstNameTbox, "");
+        }
+
+        public void ValidatePhoneNumber()
+        {
+            if (phoneNumberTbox.Text == "")
+                error.SetError(phoneNumberTbox, "Phone number is necessary to procced.");
+            else if (phoneNumberTbox.Text.Length != 10)
+                error.SetError(phoneNumberTbox, "Not a valid phone nubmer.");
+            else if (!phoneNumberTbox.Text.All(c => Char.IsDigit(c)))
+                error.SetError(phoneNumberTbox, "This field must only contain numbers.");
+            else
+                error.SetError(phoneNumberTbox, "");
+        }
+
+        public void ValidateAddress()
+        {
+            if (addressTbox.Text == "")
+                error.SetError(addressTbox, "Address is necessary to procced.");
+            else if (addressTbox.Text.Length > 50)
+                error.SetError(addressTbox, "Address too big, try something shorter.");
+            else if (!addressTbox.Text.All(c => Char.IsLetter(c)))
+                error.SetError(addressTbox, "This field must only contain A-z letters.");
+            else
+                error.SetError(addressTbox, "");
+        }
+
+        public void ValidateAddressNumber()
+        {
+            if (addressNumberTbox.Text == "")
+                error.SetError(addressNumberTbox, "Address Number is necessary to procced.");
+            else if (addressNumberTbox.Text.Length > 3)
+                error.SetError(addressNumberTbox, "Address too big, try something shorter.");
+            else if (!addressNumberTbox.Text.All(c => Char.IsDigit(c)))
+                error.SetError(addressNumberTbox, "This field must only contain numbers.");
+            else
+                error.SetError(addressNumberTbox, "");
+        }
+
+        public void ValidateAddressArea()
+        {
+            if (addressAreaTbox.Text == "")
+                error.SetError(addressAreaTbox, "Area is necessary to procced.");
+            else if (addressAreaTbox.Text.Length > 50)
+                error.SetError(addressAreaTbox, "Area too big, try something shorter.");
+            else if (!addressAreaTbox.Text.All(c => Char.IsLetter(c)))
+                error.SetError(addressAreaTbox, "This field must only contain A-z letters.");
+            else
+                error.SetError(addressAreaTbox, "");
+        }
+
         #endregion
-
-
     }
 }
