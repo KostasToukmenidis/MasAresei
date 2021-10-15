@@ -98,6 +98,18 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Food Enums\AlcoholEnm.cs" />
+    <Compile Include="Models\Food Enums\BreadEnm.cs" />
+    <Compile Include="Models\Food Enums\MeatEnm.cs" />
+    <Compile Include="Models\Food Enums\SaladEnm.cs" />
+    <Compile Include="Models\Food Enums\SauceEnm.cs" />
+    <Compile Include="Models\Food Enums\SodaEnm.cs" />
+    <Compile Include="Models\Food Models\Bread.cs" />
+    <Compile Include="Models\Food Models\Salad.cs" />
+    <Compile Include="Models\Food Models\Sauce.cs" />
+    <Compile Include="Models\Food Models\Soda.cs" />
+    <Compile Include="Models\Food Models\Alcohol.cs" />
+    <Compile Include="Models\FoodParent.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

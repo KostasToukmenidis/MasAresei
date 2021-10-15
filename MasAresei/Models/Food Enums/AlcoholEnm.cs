@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MasAresei.Interfaces
+namespace MasAresei.Models.Food_Enums
 {
-    public interface IFoodPricing
+    public enum AlcoholEnm
     {
-        decimal GetPrice();
+        Mpyra,
+        Retsina,
+        RedWhine,
+        WhiteWhine
     }
 }

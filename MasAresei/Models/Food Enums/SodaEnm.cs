@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MasAresei.Interfaces
+namespace MasAresei.Models.Food_Enums
 {
-    public interface IFoodPricing
+    public enum SodaEnm
     {
-        decimal GetPrice();
+        Pepsi,
+        Portokalada,
+        Lemonada,
+        Sprite,
     }
 }
