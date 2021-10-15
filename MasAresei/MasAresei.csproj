@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202110121240041_SettingForeignKeyInOrderEntity.Designer.cs">
       <DependentUpon>202110121240041_SettingForeignKeyInOrderEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110150855166_AddingListOfOrderedFoodToOrder.cs" />
+    <Compile Include="Migrations\202110150855166_AddingListOfOrderedFoodToOrder.Designer.cs">
+      <DependentUpon>202110150855166_AddingListOfOrderedFoodToOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Order.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110121240041_SettingForeignKeyInOrderEntity.resx">
       <DependentUpon>202110121240041_SettingForeignKeyInOrderEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110150855166_AddingListOfOrderedFoodToOrder.resx">
+      <DependentUpon>202110150855166_AddingListOfOrderedFoodToOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

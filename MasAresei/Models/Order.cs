@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MasAresei.Interfaces;
 
 namespace MasAresei.Models
 {
@@ -15,5 +16,7 @@ namespace MasAresei.Models
         public DateTime DateTime { get; set; } = DateTime.Now;
 
         public int CustomerId { get; set; }
+
+        public List<IFoodPricing> OrderedFood { get; set; }
     }
 }

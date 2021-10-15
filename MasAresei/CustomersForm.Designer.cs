@@ -46,6 +46,7 @@ namespace MasAresei
             this.deleteBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.customersLbl = new System.Windows.Forms.Label();
+            this.ordersBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,12 +219,24 @@ namespace MasAresei
             this.customersLbl.TabIndex = 16;
             this.customersLbl.Text = "Customers";
             // 
+            // ordersBtn
+            // 
+            this.ordersBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.ordersBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ordersBtn.Location = new System.Drawing.Point(108, 394);
+            this.ordersBtn.Name = "ordersBtn";
+            this.ordersBtn.Size = new System.Drawing.Size(87, 42);
+            this.ordersBtn.TabIndex = 17;
+            this.ordersBtn.Text = "Orders";
+            this.ordersBtn.UseVisualStyleBackColor = false;
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1116, 503);
+            this.Controls.Add(this.ordersBtn);
             this.Controls.Add(this.customersLbl);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.deleteBtn);
@@ -269,5 +282,6 @@ namespace MasAresei
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Label customersLbl;
+        private System.Windows.Forms.Button ordersBtn;
     }
 }
