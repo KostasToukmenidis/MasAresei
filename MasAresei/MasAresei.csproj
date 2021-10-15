@@ -82,6 +82,7 @@
     <Compile Include="InitialForm.Designer.cs">
       <DependentUpon>InitialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFoodPricing.cs" />
     <Compile Include="MasAreseiDbContext.cs" />
     <Compile Include="Migrations\202110121237450_InitialCreate.cs" />
     <Compile Include="Migrations\202110121237450_InitialCreate.Designer.cs">
@@ -131,9 +132,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
