@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MasAresei.Interfaces;
 using MasAresei.Models;
 using Color = System.Drawing.Color;
 
@@ -22,7 +23,8 @@ namespace MasAresei
 
         public static int customerId = 0;
         public Customer customer = new Customer();
-        public static Order order = new Order();
+        public Order order;
+        public static List<IFoodPricing> newOrderList = new List<IFoodPricing>();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
@@ -69,7 +71,7 @@ namespace MasAresei
             {
                 if (customersGrid.CurrentRow != null)
                 {
-                    order.CustomerId = customerId = Convert.ToInt32(customersGrid.CurrentRow.Cells["Id"].Value);
+                    customerId = Convert.ToInt32(customersGrid.CurrentRow.Cells["Id"].Value);
                     customer = _context.Customers.FirstOrDefault(c => c.Id == customerId);
                     firstNameTbox.Text = customer.FirstName;
                     lastNameTbox.Text = customer.LastName;
@@ -250,6 +252,7 @@ namespace MasAresei
 
         private void newOrderBtn_Click(object sender, EventArgs e)
         {
+            newOrderList.RemoveAll(x => x.GetPrice() != 0);
             NewOrderForm newOrderForm = new NewOrderForm();
             newOrderForm.ShowDialog();
         }

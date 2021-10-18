@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MasAresei.Models;
 using MasAresei.OrderFoodForms;
 
 namespace MasAresei
@@ -17,6 +18,8 @@ namespace MasAresei
         {
             InitializeComponent();
         }
+
+        //public static List<> newOrder;
 
         private void saladBtn_Click(object sender, EventArgs e)
         {

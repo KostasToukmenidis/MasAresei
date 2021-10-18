@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MasAresei.Models.Food_Models;
 
 namespace MasAresei.OrderFoodForms
 {
@@ -17,10 +18,45 @@ namespace MasAresei.OrderFoodForms
             InitializeComponent();
         }
 
-        
-        private void agkourontomataRdBtn_CheckedChanged(object sender, EventArgs e)
-        {
+        public Salad salad = new Salad();
 
+        private void addToCartBtn_Click(object sender, EventArgs e)
+        {
+            GetSalad();
+            salad.GetPrice();
+            CustomersForm.newOrderList.Add(salad);
+            MessageBox.Show(salad.Price.ToString()); //TEST
+            this.Hide();
         }
+
+        private string GetSalad()
+        {
+            if (agkourontomataRdBtn.Checked)
+            {
+                salad.Name = agkourontomataRdBtn.Text;
+                return salad.Name;
+            }
+            else if (xoriatikiRdBtn.Checked)
+            {
+                salad.Name = xoriatikiRdBtn.Text;
+                return salad.Name;
+            }       
+            else if (cesarsRdBtn.Checked)
+            {
+                salad.Name = cesarsRdBtn.Text;
+                return salad.Name;
+            }
+            else if (maroulosalataRdBtn.Checked)
+            {
+                salad.Name = maroulosalataRdBtn.Text;
+                return salad.Name;
+            }
+            else
+            {
+                salad.Name = cefsRdBtn.Text;
+                return salad.Name;
+            }
+        }
+
     }
 }
