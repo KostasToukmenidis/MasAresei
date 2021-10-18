@@ -18,30 +18,21 @@ namespace MasAresei.Models.Food_Models
         {
             if (this.BreadName == BreadEnm.Araviki.ToString() || this.BreadName == BreadEnm.Tortilla.ToString())
             {
-                if (this.MeatName == MeatEnm.GyrosXoirinos.ToString() ||
-                    this.MeatName == MeatEnm.GyrosKotopoulo.ToString() ||
-                    this.MeatName == MeatEnm.KontosouvliXoirino.ToString() ||
-                    this.MeatName == MeatEnm.KontosouvliKotopoulo.ToString() ||
-                    this.MeatName == MeatEnm.MpiftekiGemisto.ToString())
+                if (this.MeatName == MeatEnm.GyrosXoirinos.ToString() || this.MeatName == MeatEnm.GyrosKotopoulo.ToString() || this.MeatName == MeatEnm.KontosouvliXoirino.ToString() || this.MeatName == MeatEnm.KontosouvliKotopoulo.ToString() || this.MeatName == MeatEnm.MpiftekiGemisto.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.9m;
                     else
                         return this.Price = 4.2m;
                 }
-                else if (this.MeatName == MeatEnm.SouvlakiKotopoulo.ToString()
-                         || this.MeatName == MeatEnm.MprizolakiXoirino.ToString()
-                         || this.MeatName == MeatEnm.FiletoKotopoulo.ToString()
-                         || this.MeatName == MeatEnm.Mpifteki.ToString()
-                         || this.MeatName == MeatEnm.Kotompoukies.ToString())
+                else if (this.MeatName == MeatEnm.SouvlakiKotopoulo.ToString() || this.MeatName == MeatEnm.MprizolakiXoirino.ToString() || this.MeatName == MeatEnm.FiletoKotopoulo.ToString() || this.MeatName == MeatEnm.Mpifteki.ToString() || this.MeatName == MeatEnm.Kotompoukies.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.8m;
                     else
                         return this.Price = 4.1m;
                 }
-                else if (this.MeatName == MeatEnm.SouvlakiXoirino.ToString() ||
-                         this.MeatName == MeatEnm.Pantseta.ToString())
+                else if (this.MeatName == MeatEnm.SouvlakiXoirino.ToString() || this.MeatName == MeatEnm.Pantseta.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.6m;
@@ -53,30 +44,21 @@ namespace MasAresei.Models.Food_Models
             }
             else if (this.BreadName == BreadEnm.Kypriaki.ToString())
             {
-                if (this.MeatName == MeatEnm.GyrosXoirinos.ToString()
-                    || this.MeatName == MeatEnm.GyrosKotopoulo.ToString()
-                    || this.MeatName == MeatEnm.KontosouvliXoirino.ToString()
-                    || this.MeatName == MeatEnm.KontosouvliKotopoulo.ToString()
-                    || this.MeatName == MeatEnm.MpiftekiGemisto.ToString())
+                if (this.MeatName == MeatEnm.GyrosXoirinos.ToString() || this.MeatName == MeatEnm.GyrosKotopoulo.ToString() || this.MeatName == MeatEnm.KontosouvliXoirino.ToString() || this.MeatName == MeatEnm.KontosouvliKotopoulo.ToString() || this.MeatName == MeatEnm.MpiftekiGemisto.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.7m;
                     else
                         return this.Price = 4m;
                 }
-                else if (this.MeatName == MeatEnm.SouvlakiKotopoulo.ToString()
-                         || this.MeatName == MeatEnm.MprizolakiXoirino.ToString()
-                         || this.MeatName == MeatEnm.FiletoKotopoulo.ToString()
-                         || this.MeatName == MeatEnm.Mpifteki.ToString()
-                         || this.MeatName == MeatEnm.Kotompoukies.ToString())
+                else if (this.MeatName == MeatEnm.SouvlakiKotopoulo.ToString() || this.MeatName == MeatEnm.MprizolakiXoirino.ToString() || this.MeatName == MeatEnm.FiletoKotopoulo.ToString() || this.MeatName == MeatEnm.Mpifteki.ToString() || this.MeatName == MeatEnm.Kotompoukies.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.6m;
                     else
                         return this.Price = 3.9m;
                 }
-                else if (this.MeatName == MeatEnm.SouvlakiXoirino.ToString() ||
-                         this.MeatName == MeatEnm.Pantseta.ToString())
+                else if (this.MeatName == MeatEnm.SouvlakiXoirino.ToString() || this.MeatName == MeatEnm.Pantseta.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.4m;
@@ -88,30 +70,21 @@ namespace MasAresei.Models.Food_Models
             }
             else
             {
-                if (this.MeatName == MeatEnm.GyrosXoirinos.ToString()
-                    || this.MeatName == MeatEnm.GyrosKotopoulo.ToString()
-                    || this.MeatName == MeatEnm.KontosouvliXoirino.ToString()
-                    || this.MeatName == MeatEnm.KontosouvliKotopoulo.ToString()
-                    || this.MeatName == MeatEnm.MpiftekiGemisto.ToString())
+                if (this.MeatName == MeatEnm.GyrosXoirinos.ToString() || this.MeatName == MeatEnm.GyrosKotopoulo.ToString() || this.MeatName == MeatEnm.KontosouvliXoirino.ToString() || this.MeatName == MeatEnm.KontosouvliKotopoulo.ToString() || this.MeatName == MeatEnm.MpiftekiGemisto.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.3m;
                     else
                         return this.Price = 3.6m;
                 }
-                else if (this.MeatName == MeatEnm.SouvlakiKotopoulo.ToString()
-                         || this.MeatName == MeatEnm.MprizolakiXoirino.ToString()
-                         || this.MeatName == MeatEnm.FiletoKotopoulo.ToString()
-                         || this.MeatName == MeatEnm.Mpifteki.ToString()
-                         || this.MeatName == MeatEnm.Kotompoukies.ToString())
+                else if (this.MeatName == MeatEnm.SouvlakiKotopoulo.ToString() || this.MeatName == MeatEnm.MprizolakiXoirino.ToString() || this.MeatName == MeatEnm.FiletoKotopoulo.ToString() || this.MeatName == MeatEnm.Mpifteki.ToString() || this.MeatName == MeatEnm.Kotompoukies.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.2m;
                     else
                         return this.Price = 3.5m;
                 }
-                else if (this.MeatName == MeatEnm.SouvlakiXoirino.ToString() ||
-                         this.MeatName == MeatEnm.Pantseta.ToString())
+                else if (this.MeatName == MeatEnm.SouvlakiXoirino.ToString() || this.MeatName == MeatEnm.Pantseta.ToString())
                 {
                     if (this.SauceName == String.Empty)
                         return this.Price = 3.1m;
