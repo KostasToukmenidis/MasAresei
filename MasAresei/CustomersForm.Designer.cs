@@ -47,6 +47,7 @@ namespace MasAresei
             this.clearBtn = new System.Windows.Forms.Button();
             this.customersLbl = new System.Windows.Forms.Label();
             this.ordersBtn = new System.Windows.Forms.Button();
+            this.newOrderBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,12 +224,25 @@ namespace MasAresei
             // 
             this.ordersBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ordersBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ordersBtn.Location = new System.Drawing.Point(108, 394);
+            this.ordersBtn.Location = new System.Drawing.Point(201, 394);
             this.ordersBtn.Name = "ordersBtn";
             this.ordersBtn.Size = new System.Drawing.Size(87, 42);
             this.ordersBtn.TabIndex = 17;
             this.ordersBtn.Text = "Orders";
             this.ordersBtn.UseVisualStyleBackColor = false;
+            // 
+            // newOrderBtn
+            // 
+            this.newOrderBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.newOrderBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.newOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.newOrderBtn.Location = new System.Drawing.Point(15, 394);
+            this.newOrderBtn.Name = "newOrderBtn";
+            this.newOrderBtn.Size = new System.Drawing.Size(87, 42);
+            this.newOrderBtn.TabIndex = 18;
+            this.newOrderBtn.Text = "New Order";
+            this.newOrderBtn.UseVisualStyleBackColor = false;
+            this.newOrderBtn.Click += new System.EventHandler(this.newOrderBtn_Click);
             // 
             // CustomersForm
             // 
@@ -236,6 +250,7 @@ namespace MasAresei
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1116, 503);
+            this.Controls.Add(this.newOrderBtn);
             this.Controls.Add(this.ordersBtn);
             this.Controls.Add(this.customersLbl);
             this.Controls.Add(this.clearBtn);
@@ -283,5 +298,6 @@ namespace MasAresei
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Label customersLbl;
         private System.Windows.Forms.Button ordersBtn;
+        private System.Windows.Forms.Button newOrderBtn;
     }
 }

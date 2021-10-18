@@ -21,7 +21,8 @@ namespace MasAresei
         }
 
         public int customerId = 0;
-        private Customer customer = new Customer();
+        public Customer customer = new Customer();
+        public Order order = new Order();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
@@ -68,7 +69,7 @@ namespace MasAresei
             {
                 if (customersGrid.CurrentRow != null)
                 {
-                    customerId = Convert.ToInt32(customersGrid.CurrentRow.Cells["Id"].Value);
+                    order.CustomerId = customerId = Convert.ToInt32(customersGrid.CurrentRow.Cells["Id"].Value);
                     customer = _context.Customers.FirstOrDefault(c => c.Id == customerId);
                     firstNameTbox.Text = customer.FirstName;
                     lastNameTbox.Text = customer.LastName;
@@ -103,7 +104,6 @@ namespace MasAresei
 
         #endregion
 
-
         #region InitialForm show if hidden when CustomersForm pops
 
         ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
@@ -114,7 +114,6 @@ namespace MasAresei
         //}
 
         #endregion
-        
 
         #region Custom Methods for database communication
 
@@ -248,5 +247,11 @@ namespace MasAresei
         }
 
         #endregion
+
+        private void newOrderBtn_Click(object sender, EventArgs e)
+        {
+            NewOrderForm newOrderForm = new NewOrderForm();
+            newOrderForm.ShowDialog();
+        }
     }
 }
