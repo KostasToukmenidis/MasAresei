@@ -8,6 +8,7 @@ namespace MasAresei.Models
 {
     public class FoodParent
     {
+        public int Quantity { get; set; }
         public string Name { get; set; }
 
         public Decimal Price { get; set; } = 0m;

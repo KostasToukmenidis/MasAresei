@@ -107,6 +107,7 @@
     <Compile Include="Models\Food Models\Bread.cs" />
     <Compile Include="Models\Food Models\Piece.cs" />
     <Compile Include="Models\Food Models\Salad.cs" />
+    <Compile Include="Models\Food Models\Sandwich.cs" />
     <Compile Include="Models\Food Models\Sauce.cs" />
     <Compile Include="Models\Food Models\Soda.cs" />
     <Compile Include="Models\Food Models\Alcohol.cs" />

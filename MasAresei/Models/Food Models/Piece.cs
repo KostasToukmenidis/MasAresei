@@ -14,8 +14,7 @@ namespace MasAresei.Models.Food_Models
         {
             if (this.Name == MeatEnm.SouvlakiXoirino.ToString() || this.Name == MeatEnm.Pantseta.ToString())
                 return this.Price = 1.6m;
-            else if (this.Name == MeatEnm.SouvlakiKotopoulo.ToString() ||
-                     this.Name == MeatEnm.MprizolakiXoirino.ToString())
+            else if (this.Name == MeatEnm.SouvlakiKotopoulo.ToString() || this.Name == MeatEnm.MprizolakiXoirino.ToString())
                 return this.Price = 1.8m;
             else if (this.Name == MeatEnm.FiletoKotopoulo.ToString() || this.Name == MeatEnm.Mpifteki.ToString())
                 return this.Price = 2m;
