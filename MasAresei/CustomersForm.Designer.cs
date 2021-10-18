@@ -48,6 +48,7 @@ namespace MasAresei
             this.customersLbl = new System.Windows.Forms.Label();
             this.ordersBtn = new System.Windows.Forms.Button();
             this.newOrderBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,12 +245,25 @@ namespace MasAresei
             this.newOrderBtn.UseVisualStyleBackColor = false;
             this.newOrderBtn.Click += new System.EventHandler(this.newOrderBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(478, 417);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 42);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "TESTS";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(1116, 503);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.newOrderBtn);
             this.Controls.Add(this.ordersBtn);
             this.Controls.Add(this.customersLbl);
@@ -299,5 +313,6 @@ namespace MasAresei
         private System.Windows.Forms.Label customersLbl;
         private System.Windows.Forms.Button ordersBtn;
         private System.Windows.Forms.Button newOrderBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

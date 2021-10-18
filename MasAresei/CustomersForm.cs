@@ -256,5 +256,11 @@ namespace MasAresei
             NewOrderForm newOrderForm = new NewOrderForm();
             newOrderForm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var a = newOrderList.Sum(x=>x.GetPrice());
+            MessageBox.Show(a.ToString());
+        }
     }
 }
