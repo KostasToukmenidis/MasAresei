@@ -105,6 +105,7 @@
     <Compile Include="Models\Food Enums\SauceEnm.cs" />
     <Compile Include="Models\Food Enums\SodaEnm.cs" />
     <Compile Include="Models\Food Models\Bread.cs" />
+    <Compile Include="Models\Food Models\Piece.cs" />
     <Compile Include="Models\Food Models\Salad.cs" />
     <Compile Include="Models\Food Models\Sauce.cs" />
     <Compile Include="Models\Food Models\Soda.cs" />

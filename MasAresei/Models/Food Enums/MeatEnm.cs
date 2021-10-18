@@ -15,6 +15,7 @@ namespace MasAresei.Models.Food_Enums
         SouvlakiXoirino,
         SouvlakiKotopoulo,
         MprizolakiXoirino,
+        Pantseta,
         FiletoKotopoulo,
         Mpifteki,
         MpiftekiGemisto,
