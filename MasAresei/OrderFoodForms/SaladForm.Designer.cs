@@ -48,6 +48,7 @@ namespace MasAresei.OrderFoodForms
             this.agkourontomataRdBtn.TabStop = true;
             this.agkourontomataRdBtn.Text = "Agkourontomata";
             this.agkourontomataRdBtn.UseVisualStyleBackColor = true;
+            this.agkourontomataRdBtn.CheckedChanged += new System.EventHandler(this.agkourontomataRdBtn_CheckedChanged);
             // 
             // Xoriatiki
             // 

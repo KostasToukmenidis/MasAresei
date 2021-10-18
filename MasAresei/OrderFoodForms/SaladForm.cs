@@ -16,5 +16,11 @@ namespace MasAresei.OrderFoodForms
         {
             InitializeComponent();
         }
+
+        
+        private void agkourontomataRdBtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

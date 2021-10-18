@@ -20,9 +20,9 @@ namespace MasAresei
             InitializeComponent();
         }
 
-        public int customerId = 0;
+        public static int customerId = 0;
         public Customer customer = new Customer();
-        public Order order = new Order();
+        public static Order order = new Order();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
