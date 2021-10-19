@@ -22,10 +22,8 @@ namespace MasAresei.OrderFoodForms
 
         private void SaladForm_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i < 51; i++)
-            { 
-                quantityCmbBox.Items.Add(i);
-            }
+            AddItemsToQuantityCmbBox();
+            quantityCmbBox.Text = "1";
         }
 
         private void addToCartBtn_Click(object sender, EventArgs e)
@@ -35,8 +33,14 @@ namespace MasAresei.OrderFoodForms
             salad.GetPrice();
             CustomersForm.newOrderList.Add(salad);
             MessageBox.Show(salad.Price.ToString()); //TEST
+            quantityCmbBox.Text = 1.ToString();
+        }
+        private void backBtn_Click(object sender, EventArgs e)
+        {
             this.Hide();
         }
+
+        #region CustomMethods
 
         private string GetSalad()
         {
@@ -49,7 +53,7 @@ namespace MasAresei.OrderFoodForms
             {
                 salad.Name = xoriatikiRdBtn.Text;
                 return salad.Name;
-            }       
+            }
             else if (cesarsRdBtn.Checked)
             {
                 salad.Name = cesarsRdBtn.Text;
@@ -74,5 +78,17 @@ namespace MasAresei.OrderFoodForms
             else
                 salad.Quantity = Convert.ToInt32(quantityCmbBox.Text);
         }
+
+        private void AddItemsToQuantityCmbBox()
+        {
+            for (int i = 1; i < 51; i++)
+            {
+                quantityCmbBox.Items.Add(i);
+            }
+        }
+
+
+        #endregion
+
     }
 }

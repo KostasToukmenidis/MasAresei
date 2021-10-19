@@ -36,6 +36,7 @@ namespace MasAresei.OrderFoodForms
             this.cefsRdBtn = new System.Windows.Forms.RadioButton();
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.quantityCmbBox = new System.Windows.Forms.ComboBox();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // agkourontomataRdBtn
@@ -106,9 +107,9 @@ namespace MasAresei.OrderFoodForms
             // 
             // addToCartBtn
             // 
-            this.addToCartBtn.Location = new System.Drawing.Point(272, 116);
+            this.addToCartBtn.Location = new System.Drawing.Point(233, 214);
             this.addToCartBtn.Name = "addToCartBtn";
-            this.addToCartBtn.Size = new System.Drawing.Size(116, 53);
+            this.addToCartBtn.Size = new System.Drawing.Size(81, 38);
             this.addToCartBtn.TabIndex = 5;
             this.addToCartBtn.Text = "Add to Cart";
             this.addToCartBtn.UseVisualStyleBackColor = true;
@@ -116,13 +117,24 @@ namespace MasAresei.OrderFoodForms
             // 
             // quantityCmbBox
             // 
-            this.quantityCmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.quantityCmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.quantityCmbBox.FormattingEnabled = true;
+            this.quantityCmbBox.ItemHeight = 16;
             this.quantityCmbBox.Location = new System.Drawing.Point(306, 41);
-            this.quantityCmbBox.MaxDropDownItems = 100;
+            this.quantityCmbBox.MaxDropDownItems = 10;
             this.quantityCmbBox.Name = "quantityCmbBox";
-            this.quantityCmbBox.Size = new System.Drawing.Size(43, 21);
+            this.quantityCmbBox.Size = new System.Drawing.Size(43, 24);
             this.quantityCmbBox.TabIndex = 6;
+            // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(334, 214);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(81, 38);
+            this.backBtn.TabIndex = 7;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // SaladForm
             // 
@@ -130,6 +142,7 @@ namespace MasAresei.OrderFoodForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(456, 332);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.quantityCmbBox);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.cefsRdBtn);
@@ -156,5 +169,6 @@ namespace MasAresei.OrderFoodForms
         private System.Windows.Forms.RadioButton cefsRdBtn;
         private System.Windows.Forms.Button addToCartBtn;
         private System.Windows.Forms.ComboBox quantityCmbBox;
+        private System.Windows.Forms.Button backBtn;
     }
 }
