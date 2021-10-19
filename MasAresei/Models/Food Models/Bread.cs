@@ -13,11 +13,11 @@ namespace MasAresei.Models.Food_Models
         public decimal GetPrice()
         {
             if (this.Name == BreadEnm.Psomaki.ToString() || this.Name == BreadEnm.Pita.ToString())
-                return this.Price = 0.4m;
+                return this.Price = 0.4m * Quantity;
             else if(this.Name == BreadEnm.Kypriaki.ToString())
-                return this.Price = 0.6m;
+                return this.Price = 0.6m * Quantity;
             else if (this.Name == BreadEnm.Araviki.ToString() || this.Name == BreadEnm.Tortilla.ToString())
-                return this.Price = 0.7m;
+                return this.Price = 0.7m * Quantity;
             else
                 return Price = 0m;
         }

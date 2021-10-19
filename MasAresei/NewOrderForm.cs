@@ -26,5 +26,11 @@ namespace MasAresei
             SaladForm saladForm = new SaladForm();
             saladForm.ShowDialog();
         }
+
+        private void breadBtn_Click(object sender, EventArgs e)
+        {
+            BreadForm breadForm = new BreadForm();
+            breadForm.ShowDialog();
+        }
     }
 }

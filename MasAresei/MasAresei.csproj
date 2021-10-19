@@ -126,6 +126,12 @@
     <Compile Include="NewOrderForm.Designer.cs">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderFoodForms\BreadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderFoodForms\BreadForm.Designer.cs">
+      <DependentUpon>BreadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderFoodForms\SaladForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderFoodForms\BreadForm.resx">
+      <DependentUpon>BreadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderFoodForms\SaladForm.resx">
       <DependentUpon>SaladForm.cs</DependentUpon>
