@@ -20,9 +20,18 @@ namespace MasAresei.OrderFoodForms
 
         public Salad salad = new Salad();
 
+        private void SaladForm_Load(object sender, EventArgs e)
+        {
+            for (int i = 1; i < 51; i++)
+            { 
+                quantityCmbBox.Items.Add(i);
+            }
+        }
+
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
             GetSalad();
+            GetSaladQuantity();
             salad.GetPrice();
             CustomersForm.newOrderList.Add(salad);
             MessageBox.Show(salad.Price.ToString()); //TEST
@@ -58,5 +67,12 @@ namespace MasAresei.OrderFoodForms
             }
         }
 
+        private void GetSaladQuantity()
+        {
+            if (quantityCmbBox.Text == String.Empty)
+                salad.Quantity = 1;
+            else
+                salad.Quantity = Convert.ToInt32(quantityCmbBox.Text);
+        }
     }
 }

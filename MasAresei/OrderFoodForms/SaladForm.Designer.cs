@@ -35,6 +35,7 @@ namespace MasAresei.OrderFoodForms
             this.maroulosalataRdBtn = new System.Windows.Forms.RadioButton();
             this.cefsRdBtn = new System.Windows.Forms.RadioButton();
             this.addToCartBtn = new System.Windows.Forms.Button();
+            this.quantityCmbBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // agkourontomataRdBtn
@@ -113,12 +114,23 @@ namespace MasAresei.OrderFoodForms
             this.addToCartBtn.UseVisualStyleBackColor = true;
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
+            // quantityCmbBox
+            // 
+            this.quantityCmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.quantityCmbBox.FormattingEnabled = true;
+            this.quantityCmbBox.Location = new System.Drawing.Point(306, 41);
+            this.quantityCmbBox.MaxDropDownItems = 100;
+            this.quantityCmbBox.Name = "quantityCmbBox";
+            this.quantityCmbBox.Size = new System.Drawing.Size(43, 21);
+            this.quantityCmbBox.TabIndex = 6;
+            // 
             // SaladForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(456, 332);
+            this.Controls.Add(this.quantityCmbBox);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.cefsRdBtn);
             this.Controls.Add(this.maroulosalataRdBtn);
@@ -127,6 +139,7 @@ namespace MasAresei.OrderFoodForms
             this.Controls.Add(this.agkourontomataRdBtn);
             this.Name = "SaladForm";
             this.Text = "SaladForm";
+            this.Load += new System.EventHandler(this.SaladForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,11 +147,14 @@ namespace MasAresei.OrderFoodForms
 
         #endregion
 
+        //Custom Shit
+
         private System.Windows.Forms.RadioButton agkourontomataRdBtn;
         private System.Windows.Forms.RadioButton xoriatikiRdBtn;
         private System.Windows.Forms.RadioButton cesarsRdBtn;
         private System.Windows.Forms.RadioButton maroulosalataRdBtn;
         private System.Windows.Forms.RadioButton cefsRdBtn;
         private System.Windows.Forms.Button addToCartBtn;
+        private System.Windows.Forms.ComboBox quantityCmbBox;
     }
 }
