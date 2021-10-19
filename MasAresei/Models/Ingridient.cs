@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MasAresei.Models
 {
-    public class FoodParent
+    public class Ingridient
     {
-        public int Quantity { get; set; } = 1;
+        public int Id { get; set; }
+        public int FoodId { get; set; }
         public string Name { get; set; }
-        public Decimal Price { get; set; } = 0m;
     }
 }

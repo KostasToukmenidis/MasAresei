@@ -49,7 +49,6 @@ namespace MasAresei
             this.saladBtn.TabIndex = 0;
             this.saladBtn.Text = "Salad";
             this.saladBtn.UseVisualStyleBackColor = false;
-            this.saladBtn.Click += new System.EventHandler(this.saladBtn_Click);
             // 
             // alcoholBtn
             // 
@@ -83,7 +82,6 @@ namespace MasAresei
             this.breadBtn.TabIndex = 3;
             this.breadBtn.Text = "Bread";
             this.breadBtn.UseVisualStyleBackColor = false;
-            this.breadBtn.Click += new System.EventHandler(this.breadBtn_Click);
             // 
             // sauceBtn
             // 

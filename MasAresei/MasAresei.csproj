@@ -110,33 +110,15 @@
     <Compile Include="Models\Food Enums\SaladEnm.cs" />
     <Compile Include="Models\Food Enums\SauceEnm.cs" />
     <Compile Include="Models\Food Enums\SodaEnm.cs" />
-    <Compile Include="Models\Food Models\Bread.cs" />
-    <Compile Include="Models\Food Models\Piece.cs" />
-    <Compile Include="Models\Food Models\Portion.cs" />
-    <Compile Include="Models\Food Models\Salad.cs" />
-    <Compile Include="Models\Food Models\Sandwich.cs" />
-    <Compile Include="Models\Food Models\Sauce.cs" />
-    <Compile Include="Models\Food Models\Soda.cs" />
-    <Compile Include="Models\Food Models\Alcohol.cs" />
-    <Compile Include="Models\FoodParent.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\FoodCategory.cs" />
+    <Compile Include="Models\Ingridient.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="NewOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewOrderForm.Designer.cs">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OrderFoodForms\BreadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderFoodForms\BreadForm.Designer.cs">
-      <DependentUpon>BreadForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OrderFoodForms\SaladForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderFoodForms\SaladForm.Designer.cs">
-      <DependentUpon>SaladForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,12 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrderFoodForms\BreadForm.resx">
-      <DependentUpon>BreadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrderFoodForms\SaladForm.resx">
-      <DependentUpon>SaladForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
