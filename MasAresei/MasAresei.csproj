@@ -82,6 +82,12 @@
     <Compile Include="CustomersOrdersForm.Designer.cs">
       <DependentUpon>CustomersOrdersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodCategoryForm.Designer.cs">
+      <DependentUpon>FoodCategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,18 @@
     <Compile Include="Migrations\202110150855166_AddingListOfOrderedFoodToOrder.cs" />
     <Compile Include="Migrations\202110150855166_AddingListOfOrderedFoodToOrder.Designer.cs">
       <DependentUpon>202110150855166_AddingListOfOrderedFoodToOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110192210332_deletingPendingTables-Force.cs" />
+    <Compile Include="Migrations\202110192210332_deletingPendingTables-Force.Designer.cs">
+      <DependentUpon>202110192210332_deletingPendingTables-Force.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110192216264_addingFoodCategoryTable.cs" />
+    <Compile Include="Migrations\202110192216264_addingFoodCategoryTable.Designer.cs">
+      <DependentUpon>202110192216264_addingFoodCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110192221058_addingFoodsAndIngridientsTables.cs" />
+    <Compile Include="Migrations\202110192221058_addingFoodsAndIngridientsTables.Designer.cs">
+      <DependentUpon>202110192221058_addingFoodsAndIngridientsTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -128,6 +146,9 @@
     <EmbeddedResource Include="CustomersOrdersForm.resx">
       <DependentUpon>CustomersOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FoodCategoryForm.resx">
+      <DependentUpon>FoodCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitialForm.resx">
       <DependentUpon>InitialForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110150855166_AddingListOfOrderedFoodToOrder.resx">
       <DependentUpon>202110150855166_AddingListOfOrderedFoodToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110192210332_deletingPendingTables-Force.resx">
+      <DependentUpon>202110192210332_deletingPendingTables-Force.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110192216264_addingFoodCategoryTable.resx">
+      <DependentUpon>202110192216264_addingFoodCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110192221058_addingFoodsAndIngridientsTables.resx">
+      <DependentUpon>202110192221058_addingFoodsAndIngridientsTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>

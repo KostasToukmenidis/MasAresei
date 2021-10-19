@@ -28,7 +28,7 @@ namespace MasAresei
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
-        #region Communication with database and button events
+        #region Communication with database and events
 
         private void CustomersForm_Load(object sender, EventArgs e)
         {

@@ -18,11 +18,17 @@ namespace MasAresei
         }
 
         private CustomersForm customersForm = new CustomersForm();
+        private FoodCategoryForm foodCategoryForm = new FoodCategoryForm();
 
         private void customersWnd_Click(object sender, EventArgs e)
         {
             //this.Hide();//using this line if I want to hide InitialForm when user uses the CustomersForm
             customersForm.ShowDialog();
+        }
+
+        private void foodCategoryWindowBtn_Click(object sender, EventArgs e)
+        {
+            foodCategoryForm.ShowDialog();
         }
     }
 }

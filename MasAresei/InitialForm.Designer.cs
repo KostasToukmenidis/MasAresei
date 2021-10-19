@@ -32,6 +32,7 @@ namespace MasAresei
             this.titleLbl = new System.Windows.Forms.Label();
             this.testsBtn = new System.Windows.Forms.Button();
             this.customersWnd = new System.Windows.Forms.Button();
+            this.foodCategoryWindowBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLbl
@@ -66,12 +67,24 @@ namespace MasAresei
             this.customersWnd.UseVisualStyleBackColor = false;
             this.customersWnd.Click += new System.EventHandler(this.customersWnd_Click);
             // 
+            // foodCategoryWindowBtn
+            // 
+            this.foodCategoryWindowBtn.BackColor = System.Drawing.Color.Teal;
+            this.foodCategoryWindowBtn.Location = new System.Drawing.Point(386, 124);
+            this.foodCategoryWindowBtn.Name = "foodCategoryWindowBtn";
+            this.foodCategoryWindowBtn.Size = new System.Drawing.Size(98, 39);
+            this.foodCategoryWindowBtn.TabIndex = 3;
+            this.foodCategoryWindowBtn.Text = "Add Food Category";
+            this.foodCategoryWindowBtn.UseVisualStyleBackColor = false;
+            this.foodCategoryWindowBtn.Click += new System.EventHandler(this.foodCategoryWindowBtn_Click);
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.foodCategoryWindowBtn);
             this.Controls.Add(this.customersWnd);
             this.Controls.Add(this.testsBtn);
             this.Controls.Add(this.titleLbl);
@@ -88,6 +101,7 @@ namespace MasAresei
         private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Button testsBtn;
         private System.Windows.Forms.Button customersWnd;
+        private System.Windows.Forms.Button foodCategoryWindowBtn;
     }
 }
 
