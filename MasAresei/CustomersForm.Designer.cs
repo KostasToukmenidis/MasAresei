@@ -49,18 +49,24 @@ namespace MasAresei
             this.ordersBtn = new System.Windows.Forms.Button();
             this.newOrderBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.sidebarMainPanel = new System.Windows.Forms.Panel();
+            this.sidebarHeaderPanel = new System.Windows.Forms.Panel();
+            this.sidebarBtnPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
+            this.sidebarMainPanel.SuspendLayout();
+            this.sidebarBtnPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // saveOrEditBtn
             // 
             this.saveOrEditBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.saveOrEditBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.saveOrEditBtn.FlatAppearance.BorderSize = 0;
             this.saveOrEditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveOrEditBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.saveOrEditBtn.Location = new System.Drawing.Point(15, 329);
+            this.saveOrEditBtn.Location = new System.Drawing.Point(0, 0);
             this.saveOrEditBtn.Name = "saveOrEditBtn";
-            this.saveOrEditBtn.Size = new System.Drawing.Size(87, 42);
+            this.saveOrEditBtn.Size = new System.Drawing.Size(120, 42);
             this.saveOrEditBtn.TabIndex = 0;
             this.saveOrEditBtn.Text = "Save";
             this.saveOrEditBtn.UseVisualStyleBackColor = false;
@@ -70,8 +76,8 @@ namespace MasAresei
             // 
             this.firstNameLbl.AutoSize = true;
             this.firstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.firstNameLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.firstNameLbl.Location = new System.Drawing.Point(9, 106);
+            this.firstNameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.firstNameLbl.Location = new System.Drawing.Point(163, 106);
             this.firstNameLbl.Name = "firstNameLbl";
             this.firstNameLbl.Size = new System.Drawing.Size(76, 17);
             this.firstNameLbl.TabIndex = 1;
@@ -91,7 +97,7 @@ namespace MasAresei
             // 
             // firstNameTbox
             // 
-            this.firstNameTbox.Location = new System.Drawing.Point(12, 122);
+            this.firstNameTbox.Location = new System.Drawing.Point(166, 122);
             this.firstNameTbox.Name = "firstNameTbox";
             this.firstNameTbox.Size = new System.Drawing.Size(128, 20);
             this.firstNameTbox.TabIndex = 3;
@@ -101,8 +107,8 @@ namespace MasAresei
             // 
             this.lastNameLbl.AutoSize = true;
             this.lastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.lastNameLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.lastNameLbl.Location = new System.Drawing.Point(175, 106);
+            this.lastNameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.lastNameLbl.Location = new System.Drawing.Point(163, 164);
             this.lastNameLbl.Name = "lastNameLbl";
             this.lastNameLbl.Size = new System.Drawing.Size(76, 17);
             this.lastNameLbl.TabIndex = 4;
@@ -112,8 +118,8 @@ namespace MasAresei
             // 
             this.phoneNumberLbl.AutoSize = true;
             this.phoneNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.phoneNumberLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.phoneNumberLbl.Location = new System.Drawing.Point(9, 179);
+            this.phoneNumberLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.phoneNumberLbl.Location = new System.Drawing.Point(163, 222);
             this.phoneNumberLbl.Name = "phoneNumberLbl";
             this.phoneNumberLbl.Size = new System.Drawing.Size(49, 17);
             this.phoneNumberLbl.TabIndex = 5;
@@ -123,8 +129,8 @@ namespace MasAresei
             // 
             this.addressLbl.AutoSize = true;
             this.addressLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.addressLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.addressLbl.Location = new System.Drawing.Point(175, 179);
+            this.addressLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.addressLbl.Location = new System.Drawing.Point(163, 274);
             this.addressLbl.Name = "addressLbl";
             this.addressLbl.Size = new System.Drawing.Size(60, 17);
             this.addressLbl.TabIndex = 6;
@@ -134,8 +140,8 @@ namespace MasAresei
             // 
             this.addressNumberLbl.AutoSize = true;
             this.addressNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.addressNumberLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.addressNumberLbl.Location = new System.Drawing.Point(9, 251);
+            this.addressNumberLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.addressNumberLbl.Location = new System.Drawing.Point(163, 331);
             this.addressNumberLbl.Name = "addressNumberLbl";
             this.addressNumberLbl.Size = new System.Drawing.Size(72, 17);
             this.addressNumberLbl.TabIndex = 7;
@@ -145,8 +151,8 @@ namespace MasAresei
             // 
             this.addressAreaLbl.AutoSize = true;
             this.addressAreaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.addressAreaLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.addressAreaLbl.Location = new System.Drawing.Point(175, 251);
+            this.addressAreaLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.addressAreaLbl.Location = new System.Drawing.Point(163, 381);
             this.addressAreaLbl.Name = "addressAreaLbl";
             this.addressAreaLbl.Size = new System.Drawing.Size(38, 17);
             this.addressAreaLbl.TabIndex = 8;
@@ -154,7 +160,7 @@ namespace MasAresei
             // 
             // lastNameTbox
             // 
-            this.lastNameTbox.Location = new System.Drawing.Point(178, 126);
+            this.lastNameTbox.Location = new System.Drawing.Point(166, 184);
             this.lastNameTbox.Name = "lastNameTbox";
             this.lastNameTbox.Size = new System.Drawing.Size(128, 20);
             this.lastNameTbox.TabIndex = 9;
@@ -162,14 +168,14 @@ namespace MasAresei
             // 
             // phoneNumberTbox
             // 
-            this.phoneNumberTbox.Location = new System.Drawing.Point(12, 195);
+            this.phoneNumberTbox.Location = new System.Drawing.Point(166, 238);
             this.phoneNumberTbox.Name = "phoneNumberTbox";
             this.phoneNumberTbox.Size = new System.Drawing.Size(128, 20);
             this.phoneNumberTbox.TabIndex = 10;
             // 
             // addressTbox
             // 
-            this.addressTbox.Location = new System.Drawing.Point(178, 195);
+            this.addressTbox.Location = new System.Drawing.Point(166, 290);
             this.addressTbox.Name = "addressTbox";
             this.addressTbox.Size = new System.Drawing.Size(128, 20);
             this.addressTbox.TabIndex = 11;
@@ -177,7 +183,7 @@ namespace MasAresei
             // 
             // addressNumberTbox
             // 
-            this.addressNumberTbox.Location = new System.Drawing.Point(12, 267);
+            this.addressNumberTbox.Location = new System.Drawing.Point(166, 347);
             this.addressNumberTbox.Name = "addressNumberTbox";
             this.addressNumberTbox.Size = new System.Drawing.Size(128, 20);
             this.addressNumberTbox.TabIndex = 12;
@@ -185,7 +191,7 @@ namespace MasAresei
             // 
             // addressAreaTbox
             // 
-            this.addressAreaTbox.Location = new System.Drawing.Point(178, 267);
+            this.addressAreaTbox.Location = new System.Drawing.Point(166, 397);
             this.addressAreaTbox.Name = "addressAreaTbox";
             this.addressAreaTbox.Size = new System.Drawing.Size(128, 20);
             this.addressAreaTbox.TabIndex = 13;
@@ -194,12 +200,13 @@ namespace MasAresei
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.deleteBtn.FlatAppearance.BorderSize = 0;
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteBtn.Location = new System.Drawing.Point(108, 329);
+            this.deleteBtn.Location = new System.Drawing.Point(0, 42);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(87, 42);
+            this.deleteBtn.Size = new System.Drawing.Size(120, 42);
             this.deleteBtn.TabIndex = 14;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
@@ -208,12 +215,13 @@ namespace MasAresei
             // clearBtn
             // 
             this.clearBtn.BackColor = System.Drawing.Color.Coral;
+            this.clearBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.clearBtn.FlatAppearance.BorderSize = 0;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.clearBtn.Location = new System.Drawing.Point(201, 329);
+            this.clearBtn.Location = new System.Drawing.Point(0, 84);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(87, 42);
+            this.clearBtn.Size = new System.Drawing.Size(120, 42);
             this.clearBtn.TabIndex = 15;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
@@ -223,7 +231,7 @@ namespace MasAresei
             // 
             this.customersLbl.AutoSize = true;
             this.customersLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.customersLbl.ForeColor = System.Drawing.Color.Firebrick;
+            this.customersLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
             this.customersLbl.Location = new System.Drawing.Point(456, 20);
             this.customersLbl.Name = "customersLbl";
             this.customersLbl.Size = new System.Drawing.Size(109, 24);
@@ -233,12 +241,13 @@ namespace MasAresei
             // ordersBtn
             // 
             this.ordersBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.ordersBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ordersBtn.FlatAppearance.BorderSize = 0;
             this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ordersBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ordersBtn.Location = new System.Drawing.Point(201, 394);
+            this.ordersBtn.Location = new System.Drawing.Point(0, 217);
             this.ordersBtn.Name = "ordersBtn";
-            this.ordersBtn.Size = new System.Drawing.Size(87, 42);
+            this.ordersBtn.Size = new System.Drawing.Size(120, 42);
             this.ordersBtn.TabIndex = 17;
             this.ordersBtn.Text = "Orders";
             this.ordersBtn.UseVisualStyleBackColor = false;
@@ -247,12 +256,13 @@ namespace MasAresei
             // 
             this.newOrderBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.newOrderBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.newOrderBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.newOrderBtn.FlatAppearance.BorderSize = 0;
             this.newOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.newOrderBtn.Location = new System.Drawing.Point(15, 394);
+            this.newOrderBtn.Location = new System.Drawing.Point(0, 259);
             this.newOrderBtn.Name = "newOrderBtn";
-            this.newOrderBtn.Size = new System.Drawing.Size(87, 42);
+            this.newOrderBtn.Size = new System.Drawing.Size(120, 42);
             this.newOrderBtn.TabIndex = 18;
             this.newOrderBtn.Text = "New Order";
             this.newOrderBtn.UseVisualStyleBackColor = false;
@@ -261,30 +271,60 @@ namespace MasAresei
             // closeBtn
             // 
             this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.closeBtn.BackColor = System.Drawing.Color.DarkOrchid;
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.closeBtn.Location = new System.Drawing.Point(785, 471);
+            this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.closeBtn.Location = new System.Drawing.Point(752, 468);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(87, 42);
+            this.closeBtn.Size = new System.Drawing.Size(120, 42);
             this.closeBtn.TabIndex = 19;
-            this.closeBtn.Text = "CLOSE";
+            this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // sidebarMainPanel
+            // 
+            this.sidebarMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.sidebarMainPanel.Controls.Add(this.sidebarBtnPanel);
+            this.sidebarMainPanel.Controls.Add(this.sidebarHeaderPanel);
+            this.sidebarMainPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebarMainPanel.Location = new System.Drawing.Point(0, 0);
+            this.sidebarMainPanel.Name = "sidebarMainPanel";
+            this.sidebarMainPanel.Size = new System.Drawing.Size(120, 561);
+            this.sidebarMainPanel.TabIndex = 20;
+            // 
+            // sidebarHeaderPanel
+            // 
+            this.sidebarHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidebarHeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.sidebarHeaderPanel.Name = "sidebarHeaderPanel";
+            this.sidebarHeaderPanel.Size = new System.Drawing.Size(120, 100);
+            this.sidebarHeaderPanel.TabIndex = 0;
+            // 
+            // sidebarBtnPanel
+            // 
+            this.sidebarBtnPanel.Controls.Add(this.clearBtn);
+            this.sidebarBtnPanel.Controls.Add(this.deleteBtn);
+            this.sidebarBtnPanel.Controls.Add(this.ordersBtn);
+            this.sidebarBtnPanel.Controls.Add(this.newOrderBtn);
+            this.sidebarBtnPanel.Controls.Add(this.saveOrEditBtn);
+            this.sidebarBtnPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidebarBtnPanel.Location = new System.Drawing.Point(0, 100);
+            this.sidebarBtnPanel.Name = "sidebarBtnPanel";
+            this.sidebarBtnPanel.Size = new System.Drawing.Size(120, 301);
+            this.sidebarBtnPanel.TabIndex = 21;
             // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.sidebarMainPanel);
             this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.newOrderBtn);
-            this.Controls.Add(this.ordersBtn);
             this.Controls.Add(this.customersLbl);
-            this.Controls.Add(this.clearBtn);
-            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addressAreaTbox);
             this.Controls.Add(this.addressNumberTbox);
             this.Controls.Add(this.addressTbox);
@@ -298,11 +338,12 @@ namespace MasAresei
             this.Controls.Add(this.firstNameTbox);
             this.Controls.Add(this.customersGrid);
             this.Controls.Add(this.firstNameLbl);
-            this.Controls.Add(this.saveOrEditBtn);
             this.Name = "CustomersForm";
             this.Text = "CustomersForm";
             this.Load += new System.EventHandler(this.CustomersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).EndInit();
+            this.sidebarMainPanel.ResumeLayout(false);
+            this.sidebarBtnPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +371,8 @@ namespace MasAresei
         private System.Windows.Forms.Button ordersBtn;
         private System.Windows.Forms.Button newOrderBtn;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Panel sidebarMainPanel;
+        private System.Windows.Forms.Panel sidebarBtnPanel;
+        private System.Windows.Forms.Panel sidebarHeaderPanel;
     }
 }
