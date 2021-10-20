@@ -48,7 +48,7 @@ namespace MasAresei
             this.customersLbl = new System.Windows.Forms.Label();
             this.ordersBtn = new System.Windows.Forms.Button();
             this.newOrderBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,10 +77,13 @@ namespace MasAresei
             // 
             // customersGrid
             // 
+            this.customersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customersGrid.Location = new System.Drawing.Point(334, 91);
             this.customersGrid.Name = "customersGrid";
-            this.customersGrid.Size = new System.Drawing.Size(770, 294);
+            this.customersGrid.Size = new System.Drawing.Size(538, 352);
             this.customersGrid.TabIndex = 2;
             this.customersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersGrid_CellClick);
             // 
@@ -245,25 +248,26 @@ namespace MasAresei
             this.newOrderBtn.UseVisualStyleBackColor = false;
             this.newOrderBtn.Click += new System.EventHandler(this.newOrderBtn_Click);
             // 
-            // button1
+            // closeBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(478, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 42);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "TESTS";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.closeBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.closeBtn.Location = new System.Drawing.Point(785, 471);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(87, 42);
+            this.closeBtn.TabIndex = 19;
+            this.closeBtn.Text = "CLOSE";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(1116, 503);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.newOrderBtn);
             this.Controls.Add(this.ordersBtn);
             this.Controls.Add(this.customersLbl);
@@ -313,6 +317,6 @@ namespace MasAresei
         private System.Windows.Forms.Label customersLbl;
         private System.Windows.Forms.Button ordersBtn;
         private System.Windows.Forms.Button newOrderBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closeBtn;
     }
 }

@@ -29,39 +29,47 @@ namespace MasAresei
         /// </summary>
         private void InitializeComponent()
         {
-            this.titleLbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialForm));
             this.testsBtn = new System.Windows.Forms.Button();
             this.customersWnd = new System.Windows.Forms.Button();
             this.foodCategoryWindowBtn = new System.Windows.Forms.Button();
+            this.sideBarMainPanel = new System.Windows.Forms.Panel();
+            this.sideBarBtnPanel = new System.Windows.Forms.Panel();
+            this.sideBarHeaderPanel = new System.Windows.Forms.Panel();
+            this.mainFormsPanel = new System.Windows.Forms.Panel();
+            this.mainFormPictureBox = new System.Windows.Forms.PictureBox();
+            this.sideBarMainPanel.SuspendLayout();
+            this.sideBarBtnPanel.SuspendLayout();
+            this.mainFormsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainFormPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // titleLbl
-            // 
-            this.titleLbl.AutoSize = true;
-            this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.titleLbl.ForeColor = System.Drawing.Color.Firebrick;
-            this.titleLbl.Location = new System.Drawing.Point(304, 30);
-            this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(180, 26);
-            this.titleLbl.TabIndex = 0;
-            this.titleLbl.Text = "Mas Aresei App";
             // 
             // testsBtn
             // 
+            this.testsBtn.BackColor = System.Drawing.Color.White;
+            this.testsBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.testsBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.testsBtn.Location = new System.Drawing.Point(95, 124);
+            this.testsBtn.Location = new System.Drawing.Point(0, 552);
+            this.testsBtn.Margin = new System.Windows.Forms.Padding(4);
             this.testsBtn.Name = "testsBtn";
-            this.testsBtn.Size = new System.Drawing.Size(113, 39);
+            this.testsBtn.Size = new System.Drawing.Size(250, 48);
             this.testsBtn.TabIndex = 1;
             this.testsBtn.Text = "Tests";
-            this.testsBtn.UseVisualStyleBackColor = true;
+            this.testsBtn.UseVisualStyleBackColor = false;
             // 
             // customersWnd
             // 
-            this.customersWnd.BackColor = System.Drawing.Color.SteelBlue;
-            this.customersWnd.Location = new System.Drawing.Point(244, 124);
+            this.customersWnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.customersWnd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.customersWnd.FlatAppearance.BorderSize = 0;
+            this.customersWnd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
+            this.customersWnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customersWnd.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.customersWnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
+            this.customersWnd.Location = new System.Drawing.Point(0, 0);
+            this.customersWnd.Margin = new System.Windows.Forms.Padding(4);
             this.customersWnd.Name = "customersWnd";
-            this.customersWnd.Size = new System.Drawing.Size(98, 39);
+            this.customersWnd.Size = new System.Drawing.Size(250, 86);
             this.customersWnd.TabIndex = 2;
             this.customersWnd.Text = "Customers Window";
             this.customersWnd.UseVisualStyleBackColor = false;
@@ -69,39 +77,106 @@ namespace MasAresei
             // 
             // foodCategoryWindowBtn
             // 
-            this.foodCategoryWindowBtn.BackColor = System.Drawing.Color.Teal;
-            this.foodCategoryWindowBtn.Location = new System.Drawing.Point(386, 124);
+            this.foodCategoryWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.foodCategoryWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.foodCategoryWindowBtn.FlatAppearance.BorderSize = 0;
+            this.foodCategoryWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
+            this.foodCategoryWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.foodCategoryWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.foodCategoryWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
+            this.foodCategoryWindowBtn.Location = new System.Drawing.Point(0, 86);
+            this.foodCategoryWindowBtn.Margin = new System.Windows.Forms.Padding(4);
             this.foodCategoryWindowBtn.Name = "foodCategoryWindowBtn";
-            this.foodCategoryWindowBtn.Size = new System.Drawing.Size(98, 39);
+            this.foodCategoryWindowBtn.Size = new System.Drawing.Size(250, 91);
             this.foodCategoryWindowBtn.TabIndex = 3;
             this.foodCategoryWindowBtn.Text = "Add Food Category";
             this.foodCategoryWindowBtn.UseVisualStyleBackColor = false;
             this.foodCategoryWindowBtn.Click += new System.EventHandler(this.foodCategoryWindowBtn_Click);
             // 
+            // sideBarMainPanel
+            // 
+            this.sideBarMainPanel.AutoScroll = true;
+            this.sideBarMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.sideBarMainPanel.Controls.Add(this.sideBarBtnPanel);
+            this.sideBarMainPanel.Controls.Add(this.sideBarHeaderPanel);
+            this.sideBarMainPanel.Controls.Add(this.testsBtn);
+            this.sideBarMainPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sideBarMainPanel.Location = new System.Drawing.Point(0, 0);
+            this.sideBarMainPanel.Name = "sideBarMainPanel";
+            this.sideBarMainPanel.Size = new System.Drawing.Size(250, 600);
+            this.sideBarMainPanel.TabIndex = 4;
+            // 
+            // sideBarBtnPanel
+            // 
+            this.sideBarBtnPanel.Controls.Add(this.foodCategoryWindowBtn);
+            this.sideBarBtnPanel.Controls.Add(this.customersWnd);
+            this.sideBarBtnPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sideBarBtnPanel.Location = new System.Drawing.Point(0, 93);
+            this.sideBarBtnPanel.Name = "sideBarBtnPanel";
+            this.sideBarBtnPanel.Size = new System.Drawing.Size(250, 280);
+            this.sideBarBtnPanel.TabIndex = 4;
+            // 
+            // sideBarHeaderPanel
+            // 
+            this.sideBarHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sideBarHeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.sideBarHeaderPanel.Name = "sideBarHeaderPanel";
+            this.sideBarHeaderPanel.Size = new System.Drawing.Size(250, 93);
+            this.sideBarHeaderPanel.TabIndex = 0;
+            // 
+            // mainFormsPanel
+            // 
+            this.mainFormsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.mainFormsPanel.Controls.Add(this.mainFormPictureBox);
+            this.mainFormsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainFormsPanel.Location = new System.Drawing.Point(250, 0);
+            this.mainFormsPanel.Name = "mainFormsPanel";
+            this.mainFormsPanel.Size = new System.Drawing.Size(1194, 600);
+            this.mainFormsPanel.TabIndex = 5;
+            // 
+            // mainFormPictureBox
+            // 
+            this.mainFormPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mainFormPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("mainFormPictureBox.Image")));
+            this.mainFormPictureBox.Location = new System.Drawing.Point(75, 112);
+            this.mainFormPictureBox.Name = "mainFormPictureBox";
+            this.mainFormPictureBox.Size = new System.Drawing.Size(1056, 331);
+            this.mainFormPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.mainFormPictureBox.TabIndex = 1;
+            this.mainFormPictureBox.TabStop = false;
+            // 
             // InitialForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.foodCategoryWindowBtn);
-            this.Controls.Add(this.customersWnd);
-            this.Controls.Add(this.testsBtn);
-            this.Controls.Add(this.titleLbl);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ClientSize = new System.Drawing.Size(1444, 600);
+            this.Controls.Add(this.mainFormsPanel);
+            this.Controls.Add(this.sideBarMainPanel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1150, 600);
             this.Name = "InitialForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InitialForm";
+            this.sideBarMainPanel.ResumeLayout(false);
+            this.sideBarBtnPanel.ResumeLayout(false);
+            this.mainFormsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainFormPictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Button testsBtn;
         private System.Windows.Forms.Button customersWnd;
         private System.Windows.Forms.Button foodCategoryWindowBtn;
+        private System.Windows.Forms.Panel sideBarMainPanel;
+        private System.Windows.Forms.Panel sideBarBtnPanel;
+        private System.Windows.Forms.Panel sideBarHeaderPanel;
+        private System.Windows.Forms.Panel mainFormsPanel;
+        private System.Windows.Forms.PictureBox mainFormPictureBox;
     }
 }
 

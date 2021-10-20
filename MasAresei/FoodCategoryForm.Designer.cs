@@ -36,6 +36,7 @@ namespace MasAresei
             this.saveBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,18 +60,20 @@ namespace MasAresei
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(366, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(416, 136);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(403, 289);
             this.dataGridView1.TabIndex = 2;
             // 
             // formTitlteLbl
             // 
+            this.formTitlteLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.formTitlteLbl.AutoSize = true;
             this.formTitlteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.formTitlteLbl.ForeColor = System.Drawing.Color.Firebrick;
-            this.formTitlteLbl.Location = new System.Drawing.Point(325, 32);
+            this.formTitlteLbl.Location = new System.Drawing.Point(353, 21);
             this.formTitlteLbl.Name = "formTitlteLbl";
             this.formTitlteLbl.Size = new System.Drawing.Size(150, 24);
             this.formTitlteLbl.TabIndex = 3;
@@ -109,12 +112,26 @@ namespace MasAresei
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.BackColor = System.Drawing.Color.Coral;
+            this.closeBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.closeBtn.Location = new System.Drawing.Point(794, 534);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(75, 43);
+            this.closeBtn.TabIndex = 7;
+            this.closeBtn.Text = "CLOSE";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
             // FoodCategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.saveBtn);
@@ -139,5 +156,6 @@ namespace MasAresei
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.Button closeBtn;
     }
 }

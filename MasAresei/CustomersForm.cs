@@ -257,10 +257,9 @@ namespace MasAresei
             newOrderForm.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void closeBtn_Click(object sender, EventArgs e)
         {
-            var a = newOrderList.Sum(x=>x.GetPrice());
-            MessageBox.Show(a.ToString());
+            this.Close();
         }
     }
 }
