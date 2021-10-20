@@ -55,6 +55,8 @@ namespace MasAresei
             // saveOrEditBtn
             // 
             this.saveOrEditBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.saveOrEditBtn.FlatAppearance.BorderSize = 0;
+            this.saveOrEditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveOrEditBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.saveOrEditBtn.Location = new System.Drawing.Point(15, 329);
             this.saveOrEditBtn.Name = "saveOrEditBtn";
@@ -192,6 +194,8 @@ namespace MasAresei
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.deleteBtn.Location = new System.Drawing.Point(108, 329);
             this.deleteBtn.Name = "deleteBtn";
@@ -204,6 +208,8 @@ namespace MasAresei
             // clearBtn
             // 
             this.clearBtn.BackColor = System.Drawing.Color.Coral;
+            this.clearBtn.FlatAppearance.BorderSize = 0;
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.clearBtn.Location = new System.Drawing.Point(201, 329);
             this.clearBtn.Name = "clearBtn";
@@ -227,6 +233,8 @@ namespace MasAresei
             // ordersBtn
             // 
             this.ordersBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.ordersBtn.FlatAppearance.BorderSize = 0;
+            this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ordersBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.ordersBtn.Location = new System.Drawing.Point(201, 394);
             this.ordersBtn.Name = "ordersBtn";
@@ -239,6 +247,8 @@ namespace MasAresei
             // 
             this.newOrderBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.newOrderBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.newOrderBtn.FlatAppearance.BorderSize = 0;
+            this.newOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.newOrderBtn.Location = new System.Drawing.Point(15, 394);
             this.newOrderBtn.Name = "newOrderBtn";
@@ -252,6 +262,8 @@ namespace MasAresei
             // 
             this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtn.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.closeBtn.Location = new System.Drawing.Point(785, 471);
             this.closeBtn.Name = "closeBtn";

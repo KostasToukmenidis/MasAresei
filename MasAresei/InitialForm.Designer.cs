@@ -65,7 +65,7 @@ namespace MasAresei
             this.customersWnd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             this.customersWnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customersWnd.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.customersWnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
+            this.customersWnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
             this.customersWnd.Location = new System.Drawing.Point(0, 0);
             this.customersWnd.Margin = new System.Windows.Forms.Padding(4);
             this.customersWnd.Name = "customersWnd";
@@ -83,7 +83,7 @@ namespace MasAresei
             this.foodCategoryWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
             this.foodCategoryWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.foodCategoryWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.foodCategoryWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
+            this.foodCategoryWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
             this.foodCategoryWindowBtn.Location = new System.Drawing.Point(0, 86);
             this.foodCategoryWindowBtn.Margin = new System.Windows.Forms.Padding(4);
             this.foodCategoryWindowBtn.Name = "foodCategoryWindowBtn";
