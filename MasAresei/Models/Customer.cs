@@ -32,7 +32,7 @@ namespace MasAresei.Models
         public string Address { get; set; }
 
         [Required]
-        public int AddressNumber { get; set; }
+        public int? AddressNumber { get; set; }
 
         [Required]
         [DisplayName("Area")]

@@ -50,8 +50,8 @@ namespace MasAresei
             this.newOrderBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.sidebarMainPanel = new System.Windows.Forms.Panel();
-            this.sidebarHeaderPanel = new System.Windows.Forms.Panel();
             this.sidebarBtnPanel = new System.Windows.Forms.Panel();
+            this.sidebarHeaderPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.customersGrid)).BeginInit();
             this.sidebarMainPanel.SuspendLayout();
             this.sidebarBtnPanel.SuspendLayout();
@@ -164,7 +164,6 @@ namespace MasAresei
             this.lastNameTbox.Name = "lastNameTbox";
             this.lastNameTbox.Size = new System.Drawing.Size(128, 20);
             this.lastNameTbox.TabIndex = 9;
-            this.lastNameTbox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNumberTbox_TextChanged);
             // 
             // phoneNumberTbox
             // 
@@ -172,6 +171,7 @@ namespace MasAresei
             this.phoneNumberTbox.Name = "phoneNumberTbox";
             this.phoneNumberTbox.Size = new System.Drawing.Size(128, 20);
             this.phoneNumberTbox.TabIndex = 10;
+            this.phoneNumberTbox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNumberTbox_Validating);
             // 
             // addressTbox
             // 
@@ -295,14 +295,6 @@ namespace MasAresei
             this.sidebarMainPanel.Size = new System.Drawing.Size(120, 561);
             this.sidebarMainPanel.TabIndex = 20;
             // 
-            // sidebarHeaderPanel
-            // 
-            this.sidebarHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidebarHeaderPanel.Location = new System.Drawing.Point(0, 0);
-            this.sidebarHeaderPanel.Name = "sidebarHeaderPanel";
-            this.sidebarHeaderPanel.Size = new System.Drawing.Size(120, 100);
-            this.sidebarHeaderPanel.TabIndex = 0;
-            // 
             // sidebarBtnPanel
             // 
             this.sidebarBtnPanel.Controls.Add(this.clearBtn);
@@ -315,6 +307,14 @@ namespace MasAresei
             this.sidebarBtnPanel.Name = "sidebarBtnPanel";
             this.sidebarBtnPanel.Size = new System.Drawing.Size(120, 301);
             this.sidebarBtnPanel.TabIndex = 21;
+            // 
+            // sidebarHeaderPanel
+            // 
+            this.sidebarHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidebarHeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.sidebarHeaderPanel.Name = "sidebarHeaderPanel";
+            this.sidebarHeaderPanel.Size = new System.Drawing.Size(120, 100);
+            this.sidebarHeaderPanel.TabIndex = 0;
             // 
             // CustomersForm
             // 

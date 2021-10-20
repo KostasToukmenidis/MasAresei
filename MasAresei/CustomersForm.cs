@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasAresei.Interfaces;
 using MasAresei.Models;
+using MasAresei.Servicies.Validations;
 using Color = System.Drawing.Color;
 
 namespace MasAresei
@@ -47,16 +48,42 @@ namespace MasAresei
                 customer.AddressNumber = Convert.ToInt32(addressNumberTbox.Text.Trim());
                 customer.AddressArea = addressAreaTbox.Text.Trim();
 
-                if (customerId > 0)
-                    _context.Entry(customer).State = EntityState.Modified;
+                ValidateAll();
+
+                if (ValidateCustomer() == true)
+                {
+                    saveOrEditBtn.Enabled = true;
+                    if (customerId > 0)
+                    {
+                        _context.Entry(customer).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        _context.Customers.Add(customer);
+                    }
+                    _context.SaveChanges();
+                    ClearData();
+                    SetDataInGridView();
+                    MessageBox.Show("Record Save Successfully");
+                }
                 else
                 {
-                    _context.Customers.Add(customer);
+                    this.Focus();
+                    //MessageBox.Show("Fill with correct info.");
                 }
-                _context.SaveChanges();
-                ClearData();
-                SetDataInGridView();
-                MessageBox.Show("Record Save Successfully");
+                //if (customerId > 0)
+                //{
+                //    _context.Entry(customer).State = EntityState.Modified;
+                //}
+                //else
+                //{
+                //    _context.Customers.Add(customer);
+                //}
+                //_context.SaveChanges();
+                //ClearData();
+                //SetDataInGridView();
+                //MessageBox.Show("Record Save Successfully");
+
             }
             catch (Exception)
             {
@@ -152,7 +179,7 @@ namespace MasAresei
             ValidateLastName();
         }
 
-        private void phoneNumberTbox_TextChanged(object sender, EventArgs e)
+        private void phoneNumberTbox_Validating(object sender, CancelEventArgs e)
         {
             ValidatePhoneNumber();
         }
@@ -176,76 +203,168 @@ namespace MasAresei
 
         #region Custom Methods for validation
 
+        public bool ValidateCustomer()
+        {
+            if (CustomerValidator.ValidateFirstName(customer.FirstName) &&
+                CustomerValidator.ValidateLastName(customer.LastName) &&
+                CustomerValidator.ValidatePhoneNumber(customer.PhoneNumber) &&
+                CustomerValidator.ValidateAddress(customer.Address) &&
+                CustomerValidator.ValidateAddressNumber(customer.AddressNumber) &&
+                CustomerValidator.ValidateAddressArea(customer.AddressArea))
+                return true;  //MessageBox.Show("All fields are valid.");
+            else
+                return false; //MessageBox.Show("Some fields are not valid.");
+        }
+
+        public void ValidateAll()
+        {
+            ValidateFirstName();
+            ValidateLastName();
+            ValidatePhoneNumber();
+            ValidateAddress();
+            ValidateAddressNumber();
+            ValidateAddressArea();
+        }
+
         public void ValidateFirstName()
         {
-            if (firstNameTbox.Text == "")
+            if (string.IsNullOrEmpty(firstNameTbox.Text))
+            {
                 error.SetError(firstNameTbox, "First Name is necessary to procced.");
+                //saveOrEditBtn.Enabled = false;
+                firstNameTbox.Focus();
+            }
             else if (firstNameTbox.Text.Length > 50)
+            {
                 error.SetError(firstNameTbox, "First Name too big, try something shorter.");
-            else if (!firstNameTbox.Text.All(c => Char.IsLetter(c))) 
-                error.SetError(firstNameTbox, "This field must only contain A-z letters.");
+                firstNameTbox.Focus();
+            }
+            //else if (!firstNameTbox.Text.All(c => Char.IsLetter(c)))
+            //{
+            //    error.SetError(firstNameTbox, "First Name too big, try something shorter.");
+            //    firstNameTbox.Focus();
+            //}
             else
+            {
+                //saveOrEditBtn.Enabled = true;
                 error.SetError(firstNameTbox, "");
+            }
         }
 
         public void ValidateLastName()
         {
-            if (lastNameTbox.Text == "")
+            if (string.IsNullOrEmpty(lastNameTbox.Text))
+            {
                 error.SetError(lastNameTbox, "Last Name is necessary to procced.");
+                lastNameTbox.Focus();
+            }
             else if (lastNameTbox.Text.Length > 50)
+            {
                 error.SetError(lastNameTbox, "Last Name too big, try something shorter.");
-            else if (!lastNameTbox.Text.All(c => Char.IsLetter(c)))
-                error.SetError(lastNameTbox, "This field must only contain A-z letters.");
+                lastNameTbox.Focus();
+            }
+            //else if (!lastNameTbox.Text.All(c => Char.IsLetter(c)))
+            //{
+            //    error.SetError(lastNameTbox, "This field must only contain A-z letters.");
+            //    lastNameTbox.Focus();
+            //}
             else
+            {
                 error.SetError(firstNameTbox, "");
+            }
         }
 
         public void ValidatePhoneNumber()
         {
-            if (phoneNumberTbox.Text == "")
+            if (string.IsNullOrEmpty(phoneNumberTbox.Text))
+            {
                 error.SetError(phoneNumberTbox, "Phone number is necessary to procced.");
-            else if (phoneNumberTbox.Text.Length != 10)
+                //saveOrEditBtn.Enabled = false;
+                phoneNumberTbox.Focus();
+            }
+            else if (phoneNumberTbox.Text.Length != 3)
+            {
                 error.SetError(phoneNumberTbox, "Not a valid phone nubmer.");
+                phoneNumberTbox.Focus();
+            }
             else if (!phoneNumberTbox.Text.All(c => Char.IsDigit(c)))
+            {
                 error.SetError(phoneNumberTbox, "This field must only contain numbers.");
+                phoneNumberTbox.Focus();
+            }
             else
+            {
                 error.SetError(phoneNumberTbox, "");
+            }
         }
 
         public void ValidateAddress()
         {
-            if (addressTbox.Text == "")
+            if (string.IsNullOrEmpty(addressTbox.Text))
+            {
                 error.SetError(addressTbox, "Address is necessary to procced.");
+                addressTbox.Focus();
+            }
             else if (addressTbox.Text.Length > 50)
+            {
                 error.SetError(addressTbox, "Address too big, try something shorter.");
-            else if (!addressTbox.Text.All(c => Char.IsLetter(c)))
-                error.SetError(addressTbox, "This field must only contain A-z letters.");
+                addressTbox.Focus();
+            }
+            //else if (!addressTbox.Text.All(c => Char.IsLetter(c)))
+            //{
+            //    error.SetError(addressTbox, "This field must only contain A-z letters.");
+            //    addressTbox.Focus();
+            //}
             else
+            {
                 error.SetError(addressTbox, "");
+            }
         }
 
         public void ValidateAddressNumber()
         {
-            if (addressNumberTbox.Text == "")
+            if (string.IsNullOrEmpty(addressNumberTbox.Text))
+            {
                 error.SetError(addressNumberTbox, "Address Number is necessary to procced.");
+                addressNumberTbox.Focus();
+            }
             else if (addressNumberTbox.Text.Length > 3)
+            {
                 error.SetError(addressNumberTbox, "Address too big, try something shorter.");
+                addressNumberTbox.Focus();
+            }
             else if (!addressNumberTbox.Text.All(c => Char.IsDigit(c)))
+            {
                 error.SetError(addressNumberTbox, "This field must only contain numbers.");
+                addressNumberTbox.Focus();
+            }
             else
+            {
                 error.SetError(addressNumberTbox, "");
+            }
         }
 
         public void ValidateAddressArea()
         {
-            if (addressAreaTbox.Text == "")
+            if (string.IsNullOrEmpty(addressAreaTbox.Text))
+            {
                 error.SetError(addressAreaTbox, "Area is necessary to procced.");
+                addressAreaTbox.Focus();
+            }
             else if (addressAreaTbox.Text.Length > 50)
+            {
                 error.SetError(addressAreaTbox, "Area too big, try something shorter.");
-            else if (!addressAreaTbox.Text.All(c => Char.IsLetter(c)))
-                error.SetError(addressAreaTbox, "This field must only contain A-z letters.");
+                addressAreaTbox.Focus();
+            }
+            //else if (!addressAreaTbox.Text.All(c => Char.IsLetter(c)))
+            //{
+            //    error.SetError(addressAreaTbox, "This field must only contain A-z letters.");
+            //    addressAreaTbox.Focus();
+            //}
             else
+            {
                 error.SetError(addressAreaTbox, "");
+            }
         }
 
         #endregion
