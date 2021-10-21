@@ -31,13 +31,14 @@ namespace MasAresei
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialForm));
             this.testsBtn = new System.Windows.Forms.Button();
-            this.customersWnd = new System.Windows.Forms.Button();
+            this.customersWindowBtn = new System.Windows.Forms.Button();
             this.foodCategoryWindowBtn = new System.Windows.Forms.Button();
             this.sideBarMainPanel = new System.Windows.Forms.Panel();
             this.sideBarBtnPanel = new System.Windows.Forms.Panel();
             this.sideBarHeaderPanel = new System.Windows.Forms.Panel();
             this.mainFormsPanel = new System.Windows.Forms.Panel();
             this.mainFormPictureBox = new System.Windows.Forms.PictureBox();
+            this.foodWindowBtn = new System.Windows.Forms.Button();
             this.sideBarMainPanel.SuspendLayout();
             this.sideBarBtnPanel.SuspendLayout();
             this.mainFormsPanel.SuspendLayout();
@@ -57,23 +58,23 @@ namespace MasAresei
             this.testsBtn.Text = "Tests";
             this.testsBtn.UseVisualStyleBackColor = false;
             // 
-            // customersWnd
+            // customersWindowBtn
             // 
-            this.customersWnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.customersWnd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customersWnd.FlatAppearance.BorderSize = 0;
-            this.customersWnd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
-            this.customersWnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customersWnd.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.customersWnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
-            this.customersWnd.Location = new System.Drawing.Point(0, 0);
-            this.customersWnd.Margin = new System.Windows.Forms.Padding(4);
-            this.customersWnd.Name = "customersWnd";
-            this.customersWnd.Size = new System.Drawing.Size(250, 86);
-            this.customersWnd.TabIndex = 2;
-            this.customersWnd.Text = "Customers Window";
-            this.customersWnd.UseVisualStyleBackColor = false;
-            this.customersWnd.Click += new System.EventHandler(this.customersWnd_Click);
+            this.customersWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.customersWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.customersWindowBtn.FlatAppearance.BorderSize = 0;
+            this.customersWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
+            this.customersWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customersWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.customersWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.customersWindowBtn.Location = new System.Drawing.Point(0, 0);
+            this.customersWindowBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.customersWindowBtn.Name = "customersWindowBtn";
+            this.customersWindowBtn.Size = new System.Drawing.Size(250, 86);
+            this.customersWindowBtn.TabIndex = 2;
+            this.customersWindowBtn.Text = "Customers Window";
+            this.customersWindowBtn.UseVisualStyleBackColor = false;
+            this.customersWindowBtn.Click += new System.EventHandler(this.customersWnd_Click);
             // 
             // foodCategoryWindowBtn
             // 
@@ -108,12 +109,13 @@ namespace MasAresei
             // 
             // sideBarBtnPanel
             // 
+            this.sideBarBtnPanel.Controls.Add(this.foodWindowBtn);
             this.sideBarBtnPanel.Controls.Add(this.foodCategoryWindowBtn);
-            this.sideBarBtnPanel.Controls.Add(this.customersWnd);
+            this.sideBarBtnPanel.Controls.Add(this.customersWindowBtn);
             this.sideBarBtnPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.sideBarBtnPanel.Location = new System.Drawing.Point(0, 93);
             this.sideBarBtnPanel.Name = "sideBarBtnPanel";
-            this.sideBarBtnPanel.Size = new System.Drawing.Size(250, 280);
+            this.sideBarBtnPanel.Size = new System.Drawing.Size(250, 350);
             this.sideBarBtnPanel.TabIndex = 4;
             // 
             // sideBarHeaderPanel
@@ -145,6 +147,24 @@ namespace MasAresei
             this.mainFormPictureBox.TabIndex = 1;
             this.mainFormPictureBox.TabStop = false;
             // 
+            // foodWindowBtn
+            // 
+            this.foodWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.foodWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.foodWindowBtn.FlatAppearance.BorderSize = 0;
+            this.foodWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
+            this.foodWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.foodWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.foodWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.foodWindowBtn.Location = new System.Drawing.Point(0, 177);
+            this.foodWindowBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.foodWindowBtn.Name = "foodWindowBtn";
+            this.foodWindowBtn.Size = new System.Drawing.Size(250, 91);
+            this.foodWindowBtn.TabIndex = 4;
+            this.foodWindowBtn.Text = "Add Food";
+            this.foodWindowBtn.UseVisualStyleBackColor = false;
+            this.foodWindowBtn.Click += new System.EventHandler(this.foodWindowBtn_Click);
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -171,13 +191,14 @@ namespace MasAresei
 
         #endregion
         private System.Windows.Forms.Button testsBtn;
-        private System.Windows.Forms.Button customersWnd;
+        private System.Windows.Forms.Button customersWindowBtn;
         private System.Windows.Forms.Button foodCategoryWindowBtn;
         private System.Windows.Forms.Panel sideBarMainPanel;
         private System.Windows.Forms.Panel sideBarBtnPanel;
         private System.Windows.Forms.Panel sideBarHeaderPanel;
         private System.Windows.Forms.Panel mainFormsPanel;
         private System.Windows.Forms.PictureBox mainFormPictureBox;
+        private System.Windows.Forms.Button foodWindowBtn;
     }
 }
 

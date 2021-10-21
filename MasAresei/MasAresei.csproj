@@ -88,6 +88,12 @@
     <Compile Include="FoodCategoryForm.Designer.cs">
       <DependentUpon>FoodCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodForm.Designer.cs">
+      <DependentUpon>FoodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,10 @@
     <Compile Include="Migrations\202110192221058_addingFoodsAndIngridientsTables.Designer.cs">
       <DependentUpon>202110192221058_addingFoodsAndIngridientsTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110211741273_settingDisplayNameForFoodCategoryIdInFood.cs" />
+    <Compile Include="Migrations\202110211741273_settingDisplayNameForFoodCategoryIdInFood.Designer.cs">
+      <DependentUpon>202110211741273_settingDisplayNameForFoodCategoryIdInFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Food Enums\AlcoholEnm.cs" />
@@ -151,6 +161,9 @@
     <EmbeddedResource Include="FoodCategoryForm.resx">
       <DependentUpon>FoodCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FoodForm.resx">
+      <DependentUpon>FoodForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitialForm.resx">
       <DependentUpon>InitialForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110192221058_addingFoodsAndIngridientsTables.resx">
       <DependentUpon>202110192221058_addingFoodsAndIngridientsTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110211741273_settingDisplayNameForFoodCategoryIdInFood.resx">
+      <DependentUpon>202110211741273_settingDisplayNameForFoodCategoryIdInFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>

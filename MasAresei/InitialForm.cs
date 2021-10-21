@@ -17,8 +17,6 @@ namespace MasAresei
             InitializeComponent();
         }
 
-        public CustomersForm customersForm = new CustomersForm();
-        private FoodCategoryForm foodCategoryForm = new FoodCategoryForm();
         private Form activeForm = null;
 
         private void InitialForm_Load(object sender, EventArgs e)
@@ -37,6 +35,11 @@ namespace MasAresei
         {
             //foodCategoryForm.ShowDialog();
             openChildForm(new FoodCategoryForm());
+        }
+
+        private void foodWindowBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FoodForm());
         }
 
         //Custom Method to open child Forms in mainFormsPanel

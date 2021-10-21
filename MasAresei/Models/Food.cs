@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,10 @@ namespace MasAresei.Models
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
+        [DisplayName("Category")]
         public int FoodCategoryId { get; set; }
+
+        public FoodCategory FoodCategory { get; set; }
 
         public List<Ingridient> Ingridients { get; set; }
     }
