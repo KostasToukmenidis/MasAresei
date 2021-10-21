@@ -91,11 +91,6 @@ namespace MasAresei.Servicies.Validations
                 MessageBox.Show("Address number should only contain digits.");
                 return false;
             }
-            else if (adNumber.ToString().Length > 3)
-            {
-                MessageBox.Show("Address too big, try something shorter.");
-                return false;
-            }
             else
                 return true;
         }
