@@ -17,9 +17,14 @@ namespace MasAresei
             InitializeComponent();
         }
 
-        private CustomersForm customersForm = new CustomersForm();
+        public CustomersForm customersForm = new CustomersForm();
         private FoodCategoryForm foodCategoryForm = new FoodCategoryForm();
         private Form activeForm = null;
+
+        private void InitialForm_Load(object sender, EventArgs e)
+        {
+            //IsMdiContainer = true;
+        }
 
         private void customersWnd_Click(object sender, EventArgs e)
         {
@@ -38,8 +43,9 @@ namespace MasAresei
 
         private void openChildForm(Form childForm)
         {
-            if(activeForm != null)  //Checking if there's and active form
-                activeForm.Close(); //If there is on i close it
+            if(activeForm != null)  //Checking if there's an active form
+                activeForm.Close(); //If there is one i close it
+            
             activeForm = childForm; //Storing the form that opens
             childForm.TopLevel = false; //Child form behaves like a controll, doesnt pop like a form
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -49,5 +55,6 @@ namespace MasAresei
             childForm.BringToFront();
             childForm.Show();
         }
+
     }
 }

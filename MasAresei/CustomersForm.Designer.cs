@@ -286,7 +286,7 @@ namespace MasAresei
             // 
             // sidebarMainPanel
             // 
-            this.sidebarMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.sidebarMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.sidebarMainPanel.Controls.Add(this.sidebarBtnPanel);
             this.sidebarMainPanel.Controls.Add(this.sidebarHeaderPanel);
             this.sidebarMainPanel.Dock = System.Windows.Forms.DockStyle.Left;

@@ -25,16 +25,15 @@ namespace MasAresei
         public static int customerId = 0;
         public Customer customer = new Customer();
         public Order order;
-        public static List<IFoodPricing> newOrderList = new List<IFoodPricing>();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
-        #region Communication with database and events
+        #region Communication with database and Click Events
 
         private void CustomersForm_Load(object sender, EventArgs e)
         {
             ClearData();
-            SetDataInGridView();
+            SetDataInGrid();
         }
 
         private void saveOrEditBtn_Click(object sender, EventArgs e)
@@ -48,11 +47,9 @@ namespace MasAresei
                 customer.AddressNumber = Convert.ToInt32(addressNumberTbox.Text.Trim());
                 customer.AddressArea = addressAreaTbox.Text.Trim();
 
-                ValidateAll();
-
                 if (ValidateCustomer() == true)
                 {
-                    saveOrEditBtn.Enabled = true;
+                    //saveOrEditBtn.Enabled = true;
                     if (customerId > 0)
                     {
                         _context.Entry(customer).State = EntityState.Modified;
@@ -63,27 +60,13 @@ namespace MasAresei
                     }
                     _context.SaveChanges();
                     ClearData();
-                    SetDataInGridView();
+                    SetDataInGrid();
                     MessageBox.Show("Record Save Successfully");
                 }
                 else
                 {
                     this.Focus();
-                    //MessageBox.Show("Fill with correct info.");
                 }
-                //if (customerId > 0)
-                //{
-                //    _context.Entry(customer).State = EntityState.Modified;
-                //}
-                //else
-                //{
-                //    _context.Customers.Add(customer);
-                //}
-                //_context.SaveChanges();
-                //ClearData();
-                //SetDataInGridView();
-                //MessageBox.Show("Record Save Successfully");
-
             }
             catch (Exception)
             {
@@ -107,7 +90,6 @@ namespace MasAresei
                     addressNumberTbox.Text = customer.AddressNumber.ToString();
                     addressAreaTbox.Text = customer.AddressArea;
                 }
-
                 saveOrEditBtn.Text = "Edit";
                 deleteBtn.Enabled = true;
                 deleteBtn.BackColor = Color.Firebrick;
@@ -120,7 +102,7 @@ namespace MasAresei
                 _context.Customers.Remove(customer);
                 _context.SaveChanges();
                 ClearData();
-                SetDataInGridView();
+                SetDataInGrid();
                 MessageBox.Show("Record Deleted Successfully");
             }
         }
@@ -130,40 +112,6 @@ namespace MasAresei
         {
             ClearData();
         }
-
-        #endregion
-
-        #region InitialForm show if hidden when CustomersForm pops
-
-        ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
-        //private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    InitialForm initialForm = new InitialForm();
-        //    initialForm.Show();
-        //}
-
-        #endregion
-
-        #region Custom Methods for database communication
-
-        //Reseting my customers form
-        public void ClearData()
-        {
-            firstNameTbox.Text = lastNameTbox.Text = phoneNumberTbox.Text = addressTbox.Text = addressNumberTbox.Text =
-                addressAreaTbox.Text = string.Empty;
-            deleteBtn.Enabled = false;
-            deleteBtn.BackColor = Color.IndianRed;
-            saveOrEditBtn.Text = "Save";
-            customerId = 0;
-        }
-
-        //Setting the data in the customers grid
-        public void SetDataInGridView()
-        {
-            //customersGrid.AutoGenerateColumns = false;
-            customersGrid.DataSource = _context.Customers.ToList<Customer>();
-        }
-
 
         #endregion
 
@@ -211,19 +159,9 @@ namespace MasAresei
                 CustomerValidator.ValidateAddress(customer.Address) &&
                 CustomerValidator.ValidateAddressNumber(customer.AddressNumber) &&
                 CustomerValidator.ValidateAddressArea(customer.AddressArea))
-                return true;  //MessageBox.Show("All fields are valid.");
+                return true; 
             else
-                return false; //MessageBox.Show("Some fields are not valid.");
-        }
-
-        public void ValidateAll()
-        {
-            ValidateFirstName();
-            ValidateLastName();
-            ValidatePhoneNumber();
-            ValidateAddress();
-            ValidateAddressNumber();
-            ValidateAddressArea();
+                return false;
         }
 
         public void ValidateFirstName()
@@ -364,9 +302,42 @@ namespace MasAresei
 
         #endregion
 
+        #region Custom Methods for reseting Form and setting data in the Grid
+
+        //Reseting my customers form
+        public void ClearData()
+        {
+            firstNameTbox.Text = lastNameTbox.Text = phoneNumberTbox.Text = addressTbox.Text = addressNumberTbox.Text =
+                addressAreaTbox.Text = string.Empty;
+            deleteBtn.Enabled = false;
+            deleteBtn.BackColor = Color.IndianRed;
+            saveOrEditBtn.Text = "Save";
+            customerId = 0;
+        }
+
+        //Setting the data in the customers grid
+        public void SetDataInGrid()
+        {
+            //customersGrid.AutoGenerateColumns = false;
+            customersGrid.DataSource = _context.Customers.ToList<Customer>();
+        }
+
+
+        #endregion
+
+        #region InitialForm show if hidden when CustomersForm pops
+
+        ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
+        //private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    InitialForm initialForm = new InitialForm();
+        //    initialForm.Show();
+        //}
+
+        #endregion
+
         private void newOrderBtn_Click(object sender, EventArgs e)
         {
-            newOrderList.RemoveAll(x => x.GetPrice() != 0);
             NewOrderForm newOrderForm = new NewOrderForm();
             newOrderForm.ShowDialog();
         }

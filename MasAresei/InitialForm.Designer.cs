@@ -96,7 +96,7 @@ namespace MasAresei
             // sideBarMainPanel
             // 
             this.sideBarMainPanel.AutoScroll = true;
-            this.sideBarMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.sideBarMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.sideBarMainPanel.Controls.Add(this.sideBarBtnPanel);
             this.sideBarMainPanel.Controls.Add(this.sideBarHeaderPanel);
             this.sideBarMainPanel.Controls.Add(this.testsBtn);
@@ -160,6 +160,7 @@ namespace MasAresei
             this.Name = "InitialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InitialForm";
+            this.Load += new System.EventHandler(this.InitialForm_Load);
             this.sideBarMainPanel.ResumeLayout(false);
             this.sideBarBtnPanel.ResumeLayout(false);
             this.mainFormsPanel.ResumeLayout(false);
