@@ -110,6 +110,7 @@ namespace MasAresei
             this.deleteBtn.TabIndex = 5;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // saveOrEditBtn
             // 
@@ -144,6 +145,7 @@ namespace MasAresei
             this.foodGrid.Name = "foodGrid";
             this.foodGrid.Size = new System.Drawing.Size(431, 265);
             this.foodGrid.TabIndex = 2;
+            this.foodGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.foodGrid_CellClick);
             // 
             // closeBtn
             // 

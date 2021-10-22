@@ -42,8 +42,10 @@ namespace MasAresei
             {
                 food.Name = foodNameTbox.Text.Trim();
                 food.Price = Convert.ToDecimal(foodPriceTbox.Text.Trim());
-                food.FoodCategoryId = CategoryNameToCategoryId(foodCategoryCmbBox.Text);
-                
+                food.FoodCategoryName = foodCategoryCmbBox.Text;
+                //food.FoodCategory.Id = food.FoodCategoryId;
+                //food.FoodCategory.Name = GetFoodCategoryName(food.FoodCategoryId);
+
                 if (foodId > 0)
                 {
                     _context.Entry(food).State = EntityState.Modified;
@@ -71,14 +73,40 @@ namespace MasAresei
             }
         }
 
+        private void foodGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (foodGrid.CurrentCell.RowIndex != -1)
+            {
+                if (foodGrid.CurrentRow != null)
+                {
+                    foodId = Convert.ToInt32(foodGrid.CurrentRow.Cells["Id"].Value);
+                    food = _context.Foods.FirstOrDefault(f => f.Id == foodId);
+                    
+                    foodNameTbox.Text = food.Name;
+                    foodPriceTbox.Text = food.Price.ToString();
+                    foodCategoryCmbBox.Text = food.FoodCategoryName;//GetFoodCategoryName(food.FoodCategoryId);
+                }
+                saveOrEditBtn.Text = "Edit";
+                deleteBtn.Enabled = true;
+                deleteBtn.BackColor = Color.Firebrick;
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this record ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                _context.Foods.Remove(food);
+                _context.SaveChanges();
+                ClearData();
+                SetDataInGrid();
+                MessageBox.Show("Record Deleted Successfully");
+            }
+        }
+        
         private void clearBtn_Click(object sender, EventArgs e)
         {
             ClearData();
-            //Testing if list holds data
-            //foreach (var item in foodList)
-            //{
-            //    MessageBox.Show(item.Name);
-            //}
         }
 
         #region Custom methods for reseting Form and setting data in the Grid
@@ -97,18 +125,17 @@ namespace MasAresei
         //Setting data in the grid
         public void SetDataInGrid()
         {
-            foodGrid.ColumnCount = 4;
-            foodGrid.Columns[0].Name = "Id";
-            foodGrid.Columns[1].Name = "Name";
-            foodGrid.Columns[2].Name = "Price";
-            foodGrid.Columns[3].Name = "FoodCategory";
-            foreach (var item in _context.Foods.ToList())
-            {
-                foodGrid.Rows.Add(item.Id, item.Name, item.Price, GetCategoryName(item.FoodCategoryId));
-            }
-            //foodGrid.DataSource = _context.Foods.ToList<Food>();
+            //foodGrid.ColumnCount = 4;
+            //foodGrid.Columns[0].Name = "Id";
+            //foodGrid.Columns[1].Name = "Name";
+            //foodGrid.Columns[2].Name = "Price";
+            //foodGrid.Columns[3].Name = "FoodCategory";
+            //foreach (var item in _context.Foods.ToList())
+            //{
+            //    foodGrid.Rows.Add(item.Id, item.Name, item.Price, GetFoodCategoryName(item.FoodCategoryId));
+            //}
             //foodGrid.DataSource = foodList;
-            //foodGrid.Columns.RemoveAt(2);
+            foodGrid.DataSource = _context.Foods.ToList<Food>();
         }
 
         //Setting data in the Category Combo Box
@@ -121,17 +148,12 @@ namespace MasAresei
 
         private int CategoryNameToCategoryId(string name)
         {
-            return  _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).SingleOrDefault();
+            return _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).FirstOrDefault();
         }
-
-        private string CategoryIdToCategoryName(int id)
-        {
-            return _context.FoodCategories.Where(i => i.Id == id).Select(i => i.Name).SingleOrDefault();
-        }
-
-        private string GetCategoryName(int foodId)
+        private string GetFoodCategoryName(int foodId)
         {
             return _context.FoodCategories.Where(i => i.Id == foodId).Select(n => n.Name).FirstOrDefault();
         }
+
     }
 }

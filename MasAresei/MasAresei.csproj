@@ -130,6 +130,14 @@
     <Compile Include="Migrations\202110211741273_settingDisplayNameForFoodCategoryIdInFood.Designer.cs">
       <DependentUpon>202110211741273_settingDisplayNameForFoodCategoryIdInFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110222229394_RemovingNavigationPropertyFromFood.cs" />
+    <Compile Include="Migrations\202110222229394_RemovingNavigationPropertyFromFood.Designer.cs">
+      <DependentUpon>202110222229394_RemovingNavigationPropertyFromFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110222249563_ChangingForeignKeyOfFoodClass.cs" />
+    <Compile Include="Migrations\202110222249563_ChangingForeignKeyOfFoodClass.Designer.cs">
+      <DependentUpon>202110222249563_ChangingForeignKeyOfFoodClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Food Enums\AlcoholEnm.cs" />
@@ -188,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110211741273_settingDisplayNameForFoodCategoryIdInFood.resx">
       <DependentUpon>202110211741273_settingDisplayNameForFoodCategoryIdInFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110222229394_RemovingNavigationPropertyFromFood.resx">
+      <DependentUpon>202110222229394_RemovingNavigationPropertyFromFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110222249563_ChangingForeignKeyOfFoodClass.resx">
+      <DependentUpon>202110222249563_ChangingForeignKeyOfFoodClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>

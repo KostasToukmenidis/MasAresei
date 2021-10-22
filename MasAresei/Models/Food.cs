@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,7 @@ namespace MasAresei.Models
         public decimal Price { get; set; }
 
         [DisplayName("Category")]
-        public int FoodCategoryId { get; set; }
-
-        public FoodCategory FoodCategory { get; set; }
+        public string FoodCategoryName { get; set; }
 
         public List<Ingridient> Ingridients { get; set; }
     }
