@@ -31,13 +31,13 @@ namespace MasAresei
         {
             this.foodTitleLbl = new System.Windows.Forms.Label();
             this.sidebarMainPanel = new System.Windows.Forms.Panel();
-            this.foodGrid = new System.Windows.Forms.DataGridView();
-            this.closeBtn = new System.Windows.Forms.Button();
+            this.sidebarBtnPanel = new System.Windows.Forms.Panel();
             this.clearBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.saveOrEditBtn = new System.Windows.Forms.Button();
             this.sidebarHeaderPanel = new System.Windows.Forms.Panel();
-            this.sidebarBtnPanel = new System.Windows.Forms.Panel();
+            this.foodGrid = new System.Windows.Forms.DataGridView();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.foodNameLbl = new System.Windows.Forms.Label();
             this.foodPriceLbl = new System.Windows.Forms.Label();
             this.foodCategoryLbl = new System.Windows.Forms.Label();
@@ -45,8 +45,8 @@ namespace MasAresei
             this.foodPriceTbox = new System.Windows.Forms.TextBox();
             this.foodCategoryCmbBox = new System.Windows.Forms.ComboBox();
             this.sidebarMainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foodGrid)).BeginInit();
             this.sidebarBtnPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foodGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // foodTitleLbl
@@ -71,31 +71,16 @@ namespace MasAresei
             this.sidebarMainPanel.Size = new System.Drawing.Size(160, 600);
             this.sidebarMainPanel.TabIndex = 1;
             // 
-            // foodGrid
+            // sidebarBtnPanel
             // 
-            this.foodGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.foodGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.foodGrid.Location = new System.Drawing.Point(451, 151);
-            this.foodGrid.Name = "foodGrid";
-            this.foodGrid.Size = new System.Drawing.Size(431, 265);
-            this.foodGrid.TabIndex = 2;
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.BackColor = System.Drawing.Color.DarkOrchid;
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
-            this.closeBtn.Location = new System.Drawing.Point(724, 448);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(160, 51);
-            this.closeBtn.TabIndex = 3;
-            this.closeBtn.Text = "Close";
-            this.closeBtn.UseVisualStyleBackColor = false;
+            this.sidebarBtnPanel.Controls.Add(this.clearBtn);
+            this.sidebarBtnPanel.Controls.Add(this.deleteBtn);
+            this.sidebarBtnPanel.Controls.Add(this.saveOrEditBtn);
+            this.sidebarBtnPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidebarBtnPanel.Location = new System.Drawing.Point(0, 123);
+            this.sidebarBtnPanel.Name = "sidebarBtnPanel";
+            this.sidebarBtnPanel.Size = new System.Drawing.Size(160, 331);
+            this.sidebarBtnPanel.TabIndex = 8;
             // 
             // clearBtn
             // 
@@ -149,16 +134,31 @@ namespace MasAresei
             this.sidebarHeaderPanel.Size = new System.Drawing.Size(160, 123);
             this.sidebarHeaderPanel.TabIndex = 7;
             // 
-            // sidebarBtnPanel
+            // foodGrid
             // 
-            this.sidebarBtnPanel.Controls.Add(this.clearBtn);
-            this.sidebarBtnPanel.Controls.Add(this.deleteBtn);
-            this.sidebarBtnPanel.Controls.Add(this.saveOrEditBtn);
-            this.sidebarBtnPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidebarBtnPanel.Location = new System.Drawing.Point(0, 123);
-            this.sidebarBtnPanel.Name = "sidebarBtnPanel";
-            this.sidebarBtnPanel.Size = new System.Drawing.Size(160, 331);
-            this.sidebarBtnPanel.TabIndex = 8;
+            this.foodGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.foodGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.foodGrid.Location = new System.Drawing.Point(451, 151);
+            this.foodGrid.Name = "foodGrid";
+            this.foodGrid.Size = new System.Drawing.Size(431, 265);
+            this.foodGrid.TabIndex = 2;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.BackColor = System.Drawing.Color.DarkOrchid;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.closeBtn.Location = new System.Drawing.Point(724, 448);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(160, 51);
+            this.closeBtn.TabIndex = 3;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.UseVisualStyleBackColor = false;
             // 
             // foodNameLbl
             // 
@@ -237,8 +237,8 @@ namespace MasAresei
             this.Text = "FoodForm";
             this.Load += new System.EventHandler(this.FoodForm_Load);
             this.sidebarMainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foodGrid)).EndInit();
             this.sidebarBtnPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foodGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasAresei.Models;
+using MasAresei.ViewModels;
 using Exception = System.Exception;
 
 namespace MasAresei
@@ -22,8 +23,10 @@ namespace MasAresei
 
         public int foodId;
         public Food food = new Food();
+        //public FoodViewModel foodViewModel = new FoodViewModel();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
+        //public static List<FoodViewModel> foodList = new List<FoodViewModel>();
 
 
         private void FoodForm_Load(object sender, EventArgs e)
@@ -49,7 +52,15 @@ namespace MasAresei
                 {
                     _context.Foods.Add(food);
                 }
+
                 _context.SaveChanges();
+
+                //foodViewModel.Id = food.Id;       //Testing if i can use custom vie model for foodGrid DataSource
+                //foodViewModel.Name = food.Name;
+                //foodViewModel.CategoryName = GetCategoryName(food.Id);
+                //foodViewModel.Price = food.Price;
+                //foodList.Add(foodViewModel);
+
                 ClearData();
                 SetDataInGrid();
                 MessageBox.Show("Record Save Successfully");
@@ -63,6 +74,11 @@ namespace MasAresei
         private void clearBtn_Click(object sender, EventArgs e)
         {
             ClearData();
+            //Testing if list holds data
+            //foreach (var item in foodList)
+            //{
+            //    MessageBox.Show(item.Name);
+            //}
         }
 
         #region Custom methods for reseting Form and setting data in the Grid
@@ -81,30 +97,41 @@ namespace MasAresei
         //Setting data in the grid
         public void SetDataInGrid()
         {
-            //foodCategoryGrid.AutoGenerateColumns = false;
-            //var a = _context.Foods.Where(d => d.FoodCategoryId == d.FoodCategory.Id).Select(d => d.FoodCategory.Name);
-            
-            foodGrid.DataSource = _context.Foods.ToList<Food>();
+            foodGrid.ColumnCount = 4;
+            foodGrid.Columns[0].Name = "Id";
+            foodGrid.Columns[1].Name = "Name";
+            foodGrid.Columns[2].Name = "Price";
+            foodGrid.Columns[3].Name = "FoodCategory";
+            foreach (var item in _context.Foods.ToList())
+            {
+                foodGrid.Rows.Add(item.Id, item.Name, item.Price, GetCategoryName(item.FoodCategoryId));
+            }
+            //foodGrid.DataSource = _context.Foods.ToList<Food>();
+            //foodGrid.DataSource = foodList;
+            //foodGrid.Columns.RemoveAt(2);
         }
 
         //Setting data in the Category Combo Box
         private void SetDataInComboBox()
         {
-            foodCategoryCmbBox.DataSource = _context.FoodCategories.Select(c => c.Name).ToList(); ;
+            foodCategoryCmbBox.DataSource = _context.FoodCategories.Select(c => c.Name).ToList();
         }
 
         #endregion
 
         private int CategoryNameToCategoryId(string name)
         {
-            var id = _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).SingleOrDefault();
-            return id;
+            return  _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).SingleOrDefault();
         }
 
         private string CategoryIdToCategoryName(int id)
         {
-            var name = _context.FoodCategories.Where(i => i.Id == id).Select(i => i.Name).SingleOrDefault();
-            return name;
+            return _context.FoodCategories.Where(i => i.Id == id).Select(i => i.Name).SingleOrDefault();
+        }
+
+        private string GetCategoryName(int foodId)
+        {
+            return _context.FoodCategories.Where(i => i.Id == foodId).Select(n => n.Name).FirstOrDefault();
         }
     }
 }
