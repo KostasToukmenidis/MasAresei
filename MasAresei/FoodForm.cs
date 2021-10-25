@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasAresei.Models;
@@ -55,7 +56,7 @@ namespace MasAresei
                 }
 
                 _context.SaveChanges();
-                
+                //Thread.Sleep(2000);
                 ClearData();
                 SetDataInGrid();
                 MessageBox.Show("Record Save Successfully");
@@ -91,20 +92,19 @@ namespace MasAresei
             {
                 _context.Foods.Remove(food);
                 _context.SaveChanges();
-                
+                //Thread.Sleep(2000);
                 ClearData();
                 SetDataInGrid();
                 MessageBox.Show("Record Deleted Successfully");
             }
         }
-
+        
         private void clearBtn_Click(object sender, EventArgs e)
         {
             ClearData();
         }
 
         #endregion
-
 
         #region Custom methods for reseting Form and setting data in the Grid
 
@@ -122,19 +122,21 @@ namespace MasAresei
         //Setting data in the grid
         public void SetDataInGrid()
         {
-            //var fcList = _context.FoodCategories.ToList<FoodCategory>();
-            //foreach (var item in _context.Foods)
-            //{
-            //    FoodViewModel foodViewModel = new FoodViewModel();
-            //    foodViewModel.Id = item.Id;
-            //    foodViewModel.Name = item.Name;
-            //    foodViewModel.Price = item.Price;
-            //    foodViewModel.CategoryName = fcList.Where(n => n.Id == item.FoodCategoryId).Select(m => m.Name).FirstOrDefault();
+            var fcList = _context.FoodCategories.ToList<FoodCategory>();
+            foreach (var item in _context.Foods)
+            {
+                FoodViewModel foodViewModel = new FoodViewModel();
+                foodViewModel.Id = item.Id;
+                foodViewModel.Name = item.Name;
+                foodViewModel.Price = item.Price;
+                foodViewModel.CategoryName = fcList.Where(n => n.Id == item.FoodCategoryId).Select(m => m.Name).FirstOrDefault();
 
-            //    foodList.Add(foodViewModel);
-            //    foodGrid.DataSource = foodList;
-            //}
-            foodGrid.DataSource = _context.Foods.ToList<Food>();
+                foodList.Add(foodViewModel);
+                foodGrid.DataSource = foodList;
+            }
+            foodGrid.Update();
+            foodGrid.Refresh();
+            //foodGrid.DataSource = _context.Foods.ToList<Food>();
         }
 
         //Setting data in the Category Combo Box
@@ -153,6 +155,5 @@ namespace MasAresei
         {
             return _context.FoodCategories.Where(i => i.Id == foodId).Select(n => n.Name).FirstOrDefault();
         }
-        
     }
 }
