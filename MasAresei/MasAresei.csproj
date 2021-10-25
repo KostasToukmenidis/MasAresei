@@ -138,6 +138,18 @@
     <Compile Include="Migrations\202110222249563_ChangingForeignKeyOfFoodClass.Designer.cs">
       <DependentUpon>202110222249563_ChangingForeignKeyOfFoodClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110251732105_ChangingForeignKeeBackToInteger.cs" />
+    <Compile Include="Migrations\202110251732105_ChangingForeignKeeBackToInteger.Designer.cs">
+      <DependentUpon>202110251732105_ChangingForeignKeeBackToInteger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110251739278_MakingFoodForeignKeyNullable.cs" />
+    <Compile Include="Migrations\202110251739278_MakingFoodForeignKeyNullable.Designer.cs">
+      <DependentUpon>202110251739278_MakingFoodForeignKeyNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110251741180_ChangingTheForeignKeyBackToNotNullable.cs" />
+    <Compile Include="Migrations\202110251741180_ChangingTheForeignKeyBackToNotNullable.Designer.cs">
+      <DependentUpon>202110251741180_ChangingTheForeignKeyBackToNotNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Food Enums\AlcoholEnm.cs" />
@@ -202,6 +214,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110222249563_ChangingForeignKeyOfFoodClass.resx">
       <DependentUpon>202110222249563_ChangingForeignKeyOfFoodClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110251732105_ChangingForeignKeeBackToInteger.resx">
+      <DependentUpon>202110251732105_ChangingForeignKeeBackToInteger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110251739278_MakingFoodForeignKeyNullable.resx">
+      <DependentUpon>202110251739278_MakingFoodForeignKeyNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110251741180_ChangingTheForeignKeyBackToNotNullable.resx">
+      <DependentUpon>202110251741180_ChangingTheForeignKeyBackToNotNullable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>

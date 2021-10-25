@@ -21,7 +21,7 @@ namespace MasAresei.Models
         public decimal Price { get; set; }
 
         [DisplayName("Category")]
-        public string FoodCategoryName { get; set; }
+        public int FoodCategoryId { get; set; }
 
         public List<Ingridient> Ingridients { get; set; }
     }

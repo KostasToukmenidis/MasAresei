@@ -18,10 +18,11 @@ namespace MasAresei
         }
 
         private Form activeForm = null;
+        //public FoodForm foodForm = new FoodForm();
 
         private void InitialForm_Load(object sender, EventArgs e)
         {
-            //IsMdiContainer = true;
+            //this.IsMdiContainer = true;
         }
 
         private void customersWnd_Click(object sender, EventArgs e)
@@ -39,6 +40,10 @@ namespace MasAresei
 
         private void foodWindowBtn_Click(object sender, EventArgs e)
         {
+            //FoodForm foodForm = new FoodForm();
+            //foodForm.MdiParent = this;
+            //foodForm.Show();
+            //foodForm.ShowDialog();
             openChildForm(new FoodForm());
         }
 

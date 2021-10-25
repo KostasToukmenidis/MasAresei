@@ -35,10 +35,10 @@ namespace MasAresei
             this.foodCategoryWindowBtn = new System.Windows.Forms.Button();
             this.sideBarMainPanel = new System.Windows.Forms.Panel();
             this.sideBarBtnPanel = new System.Windows.Forms.Panel();
+            this.foodWindowBtn = new System.Windows.Forms.Button();
             this.sideBarHeaderPanel = new System.Windows.Forms.Panel();
             this.mainFormsPanel = new System.Windows.Forms.Panel();
             this.mainFormPictureBox = new System.Windows.Forms.PictureBox();
-            this.foodWindowBtn = new System.Windows.Forms.Button();
             this.sideBarMainPanel.SuspendLayout();
             this.sideBarBtnPanel.SuspendLayout();
             this.mainFormsPanel.SuspendLayout();
@@ -118,6 +118,24 @@ namespace MasAresei
             this.sideBarBtnPanel.Size = new System.Drawing.Size(250, 350);
             this.sideBarBtnPanel.TabIndex = 4;
             // 
+            // foodWindowBtn
+            // 
+            this.foodWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.foodWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.foodWindowBtn.FlatAppearance.BorderSize = 0;
+            this.foodWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
+            this.foodWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.foodWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.foodWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.foodWindowBtn.Location = new System.Drawing.Point(0, 177);
+            this.foodWindowBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.foodWindowBtn.Name = "foodWindowBtn";
+            this.foodWindowBtn.Size = new System.Drawing.Size(250, 91);
+            this.foodWindowBtn.TabIndex = 4;
+            this.foodWindowBtn.Text = "Add Food";
+            this.foodWindowBtn.UseVisualStyleBackColor = false;
+            this.foodWindowBtn.Click += new System.EventHandler(this.foodWindowBtn_Click);
+            // 
             // sideBarHeaderPanel
             // 
             this.sideBarHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -146,24 +164,6 @@ namespace MasAresei
             this.mainFormPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mainFormPictureBox.TabIndex = 1;
             this.mainFormPictureBox.TabStop = false;
-            // 
-            // foodWindowBtn
-            // 
-            this.foodWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.foodWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.foodWindowBtn.FlatAppearance.BorderSize = 0;
-            this.foodWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
-            this.foodWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.foodWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.foodWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
-            this.foodWindowBtn.Location = new System.Drawing.Point(0, 177);
-            this.foodWindowBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.foodWindowBtn.Name = "foodWindowBtn";
-            this.foodWindowBtn.Size = new System.Drawing.Size(250, 91);
-            this.foodWindowBtn.TabIndex = 4;
-            this.foodWindowBtn.Text = "Add Food";
-            this.foodWindowBtn.UseVisualStyleBackColor = false;
-            this.foodWindowBtn.Click += new System.EventHandler(this.foodWindowBtn_Click);
             // 
             // InitialForm
             // 
