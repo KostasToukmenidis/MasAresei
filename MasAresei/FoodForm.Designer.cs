@@ -137,12 +137,17 @@ namespace MasAresei
             // 
             // foodGrid
             // 
+            this.foodGrid.AllowUserToAddRows = false;
+            this.foodGrid.AllowUserToDeleteRows = false;
             this.foodGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.foodGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.foodGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.foodGrid.Location = new System.Drawing.Point(451, 151);
             this.foodGrid.Name = "foodGrid";
+            this.foodGrid.ReadOnly = true;
+            this.foodGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.foodGrid.Size = new System.Drawing.Size(431, 265);
             this.foodGrid.TabIndex = 2;
             this.foodGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.foodGrid_CellClick);

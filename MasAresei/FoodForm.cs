@@ -26,7 +26,7 @@ namespace MasAresei
         //public FoodViewModel foodViewModel = new FoodViewModel();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
-        public static List<FoodViewModel> foodList = new List<FoodViewModel>();
+        public List<FoodViewModel> foodList = new List<FoodViewModel>();
 
         #region Communication with Database and Click Events
 
