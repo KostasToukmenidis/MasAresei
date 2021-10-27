@@ -25,7 +25,7 @@ namespace MasAresei
 
         public virtual DbSet<Food> Foods { get; set; }
 
-        public virtual DbSet<Ingridient> Ingridients { get; set; }
+        public virtual DbSet<Ingredient> Ingridients { get; set; }
 
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

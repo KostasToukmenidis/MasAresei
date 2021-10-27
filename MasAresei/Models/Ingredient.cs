@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MasAresei.Models
 {
-    public class Ingridient
+    public class Ingredient
     {
         public int Id { get; set; }
 

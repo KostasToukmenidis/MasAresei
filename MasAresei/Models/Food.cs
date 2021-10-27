@@ -25,6 +25,6 @@ namespace MasAresei.Models
 
         public FoodCategory FoodCategory { get; set; }
 
-        public List<Ingridient> Ingridients { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
     }
 }

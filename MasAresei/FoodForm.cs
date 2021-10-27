@@ -131,6 +131,7 @@ namespace MasAresei
                 CategoryName = f.FoodCategory.Name
 
             }).ToList();
+            
             //var fcList = _context.FoodCategories.ToList<FoodCategory>();
             //foreach (var item in _context.Foods)
             //{

@@ -150,6 +150,10 @@
     <Compile Include="Migrations\202110251741180_ChangingTheForeignKeyBackToNotNullable.Designer.cs">
       <DependentUpon>202110251741180_ChangingTheForeignKeyBackToNotNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110271007218_RenameIngridientToIngredient.cs" />
+    <Compile Include="Migrations\202110271007218_RenameIngridientToIngredient.Designer.cs">
+      <DependentUpon>202110271007218_RenameIngridientToIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Food Enums\AlcoholEnm.cs" />
@@ -160,7 +164,7 @@
     <Compile Include="Models\Food Enums\SodaEnm.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\FoodCategory.cs" />
-    <Compile Include="Models\Ingridient.cs" />
+    <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="NewOrderForm.cs">
       <SubType>Form</SubType>
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110251741180_ChangingTheForeignKeyBackToNotNullable.resx">
       <DependentUpon>202110251741180_ChangingTheForeignKeyBackToNotNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110271007218_RenameIngridientToIngredient.resx">
+      <DependentUpon>202110271007218_RenameIngridientToIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
