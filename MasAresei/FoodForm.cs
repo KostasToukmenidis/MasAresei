@@ -26,8 +26,9 @@ namespace MasAresei
         public Food food = new Food();
         //public FoodViewModel foodViewModel = new FoodViewModel();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
-        private readonly ErrorProvider error = new ErrorProvider();
-        public List<FoodViewModel> foodList = new List<FoodViewModel>();
+        private ErrorProvider error = new ErrorProvider();
+        //public List<FoodViewModel> foodList = new List<FoodViewModel>();
+
 
         #region Communication with Database and Click Events
 
@@ -122,21 +123,27 @@ namespace MasAresei
         //Setting data in the grid
         public void SetDataInGrid()
         {
-            var fcList = _context.FoodCategories.ToList<FoodCategory>();
-            foreach (var item in _context.Foods)
+            foodGrid.DataSource = _context.Foods.Include(f => f.FoodCategory).Select(f => new FoodViewModel
             {
-                FoodViewModel foodViewModel = new FoodViewModel();
-                foodViewModel.Id = item.Id;
-                foodViewModel.Name = item.Name;
-                foodViewModel.Price = item.Price;
-                foodViewModel.CategoryName = fcList.Where(n => n.Id == item.FoodCategoryId).Select(m => m.Name).FirstOrDefault();
+                Id = f.Id,
+                Name = f.Name,
+                Price = f.Price,
+                CategoryName = f.FoodCategory.Name
 
-                foodList.Add(foodViewModel);
-                foodGrid.DataSource = foodList;
-            }
-            foodGrid.Update();
-            foodGrid.Refresh();
-            //foodGrid.DataSource = _context.Foods.ToList<Food>();
+            }).ToList();
+            //var fcList = _context.FoodCategories.ToList<FoodCategory>();
+            //foreach (var item in _context.Foods)
+            //{
+            //    FoodViewModel foodViewModel = new FoodViewModel();
+            //    foodViewModel.Id = item.Id;
+            //    foodViewModel.Name = item.Name;
+            //    foodViewModel.Price = item.Price;
+            //    foodViewModel.CategoryName = fcList.Where(n => n.Id == item.FoodCategoryId).Select(m => m.Name).FirstOrDefault();
+            //    foodList.Add(foodViewModel);
+            //}
+            //foodGrid.DataSource = foodList;
+            //foodGrid.Update();
+            //foodGrid.Refresh();
         }
 
         //Setting data in the Category Combo Box

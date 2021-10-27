@@ -23,6 +23,8 @@ namespace MasAresei.Models
         [DisplayName("Category")]
         public int FoodCategoryId { get; set; }
 
+        public FoodCategory FoodCategory { get; set; }
+
         public List<Ingridient> Ingridients { get; set; }
     }
 }

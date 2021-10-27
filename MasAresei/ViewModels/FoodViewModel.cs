@@ -14,7 +14,7 @@ namespace MasAresei.ViewModels
 
         public string Name { get; set; }
 
-        //[DisplayName("Category")]
+        [DisplayName("Food Category")]
         public string CategoryName { get; set; }
 
         [DataType(DataType.Currency)]
