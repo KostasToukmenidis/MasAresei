@@ -26,7 +26,7 @@ namespace MasAresei
         public Customer customer = new Customer();
         public Order order;
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
-        private readonly ErrorProvider error = new ErrorProvider();
+        private readonly ErrorProvider _error = new ErrorProvider();
 
         #region Communication with database and Click Events
 
@@ -47,7 +47,7 @@ namespace MasAresei
                 customer.AddressNumber = Convert.ToInt32(addressNumberTbox.Text.Trim());
                 customer.AddressArea = addressAreaTbox.Text.Trim();
 
-                if (ValidateCustomer() == true)
+                if (ValidateCustomer())
                 {
                     //saveOrEditBtn.Enabled = true;
                     if (customerId > 0)
@@ -168,24 +168,17 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(firstNameTbox.Text))
             {
-                error.SetError(firstNameTbox, "First name is necessary to procced.");
-                //saveOrEditBtn.Enabled = false;
+                _error.SetError(firstNameTbox, "First name is necessary to procced.");
                 firstNameTbox.Focus();
             }
             else if (firstNameTbox.Text.Length > 50)
             {
-                error.SetError(firstNameTbox, "First name can't be that long, try something shorter.");
+                _error.SetError(firstNameTbox, "First name can't be that long, try something shorter.");
                 firstNameTbox.Focus();
             }
-            //else if (!firstNameTbox.Text.All(c => Char.IsLetter(c)))
-            //{
-            //    error.SetError(firstNameTbox, "First Name too big, try something shorter.");
-            //    firstNameTbox.Focus();
-            //}
             else
             {
-                //saveOrEditBtn.Enabled = true;
-                error.SetError(firstNameTbox, "");
+                _error.SetError(firstNameTbox, "");
             }
         }
 
@@ -193,22 +186,17 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(lastNameTbox.Text))
             {
-                error.SetError(lastNameTbox, "Last name is necessary to procced.");
+                _error.SetError(lastNameTbox, "Last name is necessary to procced.");
                 lastNameTbox.Focus();
             }
             else if (lastNameTbox.Text.Length > 50)
             {
-                error.SetError(lastNameTbox, "Last name can't be that long, try something shorter.");
+                _error.SetError(lastNameTbox, "Last name can't be that long, try something shorter.");
                 lastNameTbox.Focus();
             }
-            //else if (!lastNameTbox.Text.All(c => Char.IsLetter(c)))
-            //{
-            //    error.SetError(lastNameTbox, "This field must only contain A-z letters.");
-            //    lastNameTbox.Focus();
-            //}
             else
             {
-                error.SetError(firstNameTbox, "");
+                _error.SetError(firstNameTbox, "");
             }
         }
 
@@ -216,23 +204,22 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(phoneNumberTbox.Text))
             {
-                error.SetError(phoneNumberTbox, "Phone number is necessary to procced.");
-                //saveOrEditBtn.Enabled = false;
+                _error.SetError(phoneNumberTbox, "Phone number is necessary to procced.");
                 phoneNumberTbox.Focus();
             }
             else if (phoneNumberTbox.Text.Length != 3)
             {
-                error.SetError(phoneNumberTbox, "All phone numbers should have 3 digits.");
+                _error.SetError(phoneNumberTbox, "All phone numbers should have 3 digits.");
                 phoneNumberTbox.Focus();
             }
             else if (!phoneNumberTbox.Text.All(c => Char.IsDigit(c)))
             {
-                error.SetError(phoneNumberTbox, "Phone number must only contain numbers.");
+                _error.SetError(phoneNumberTbox, "Phone number must only contain numbers.");
                 phoneNumberTbox.Focus();
             }
             else
             {
-                error.SetError(phoneNumberTbox, "");
+                _error.SetError(phoneNumberTbox, "");
             }
         }
 
@@ -240,22 +227,17 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(addressTbox.Text))
             {
-                error.SetError(addressTbox, "Address is necessary to procced.");
+                _error.SetError(addressTbox, "Address is necessary to procced.");
                 addressTbox.Focus();
             }
             else if (addressTbox.Text.Length > 50)
             {
-                error.SetError(addressTbox, "Address can't be that long, try something shorter.");
+                _error.SetError(addressTbox, "Address can't be that long, try something shorter.");
                 addressTbox.Focus();
             }
-            //else if (!addressTbox.Text.All(c => Char.IsLetter(c)))
-            //{
-            //    error.SetError(addressTbox, "This field must only contain A-z letters.");
-            //    addressTbox.Focus();
-            //}
             else
             {
-                error.SetError(addressTbox, "");
+                _error.SetError(addressTbox, "");
             }
         }
 
@@ -263,17 +245,17 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(addressNumberTbox.Text))
             {
-                error.SetError(addressNumberTbox, "Address number is necessary to procced.");
+                _error.SetError(addressNumberTbox, "Address number is necessary to procced.");
                 addressNumberTbox.Focus();
             }
             else if (!addressNumberTbox.Text.All(c => Char.IsDigit(c)))
             {
-                error.SetError(addressNumberTbox, "Address number should only contain nubmers.");
+                _error.SetError(addressNumberTbox, "Address number should only contain nubmers.");
                 addressNumberTbox.Focus();
             }
             else
             {
-                error.SetError(addressNumberTbox, "");
+                _error.SetError(addressNumberTbox, "");
             }
         }
 
@@ -281,22 +263,17 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(addressAreaTbox.Text))
             {
-                error.SetError(addressAreaTbox, "Area is necessary to procced.");
+                _error.SetError(addressAreaTbox, "Area is necessary to procced.");
                 addressAreaTbox.Focus();
             }
             else if (addressAreaTbox.Text.Length > 50)
             {
-                error.SetError(addressAreaTbox, "Area can't be that long, try something shorter.");
+                _error.SetError(addressAreaTbox, "Area can't be that long, try something shorter.");
                 addressAreaTbox.Focus();
             }
-            //else if (!addressAreaTbox.Text.All(c => Char.IsLetter(c)))
-            //{
-            //    error.SetError(addressAreaTbox, "This field must only contain A-z letters.");
-            //    addressAreaTbox.Focus();
-            //}
             else
             {
-                error.SetError(addressAreaTbox, "");
+                _error.SetError(addressAreaTbox, "");
             }
         }
 

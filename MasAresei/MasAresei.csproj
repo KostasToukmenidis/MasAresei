@@ -176,6 +176,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicies\Validations\CustomerValidator.cs" />
     <Compile Include="Servicies\Validations\FoodCategoryValidator.cs" />
+    <Compile Include="Servicies\Validations\FoodValidator.cs" />
     <Compile Include="ViewModels\FoodViewModel.cs" />
     <EmbeddedResource Include="CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>

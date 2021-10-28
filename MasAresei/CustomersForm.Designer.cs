@@ -88,8 +88,10 @@ namespace MasAresei
             this.customersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.customersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customersGrid.Location = new System.Drawing.Point(334, 91);
+            this.customersGrid.MultiSelect = false;
             this.customersGrid.Name = "customersGrid";
             this.customersGrid.Size = new System.Drawing.Size(538, 352);
             this.customersGrid.TabIndex = 2;

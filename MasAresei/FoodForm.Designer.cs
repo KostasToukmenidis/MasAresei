@@ -145,6 +145,7 @@ namespace MasAresei
             this.foodGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.foodGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.foodGrid.Location = new System.Drawing.Point(451, 151);
+            this.foodGrid.MultiSelect = false;
             this.foodGrid.Name = "foodGrid";
             this.foodGrid.ReadOnly = true;
             this.foodGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -206,6 +207,7 @@ namespace MasAresei
             this.foodNameTbox.Name = "foodNameTbox";
             this.foodNameTbox.Size = new System.Drawing.Size(132, 23);
             this.foodNameTbox.TabIndex = 7;
+            this.foodNameTbox.Validating += new System.ComponentModel.CancelEventHandler(this.foodNameTbox_Validating);
             // 
             // foodPriceTbox
             // 
@@ -213,6 +215,7 @@ namespace MasAresei
             this.foodPriceTbox.Name = "foodPriceTbox";
             this.foodPriceTbox.Size = new System.Drawing.Size(132, 23);
             this.foodPriceTbox.TabIndex = 8;
+            this.foodPriceTbox.Validating += new System.ComponentModel.CancelEventHandler(this.foodPriceTbox_Validating);
             // 
             // foodCategoryCmbBox
             // 

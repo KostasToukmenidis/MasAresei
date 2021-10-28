@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasAresei.Models;
+using MasAresei.Servicies.Validations;
 using MasAresei.ViewModels;
 using Exception = System.Exception;
 
@@ -24,11 +25,8 @@ namespace MasAresei
 
         public int foodId;
         public Food food = new Food();
-        //public FoodViewModel foodViewModel = new FoodViewModel();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
-        private ErrorProvider error = new ErrorProvider();
-        //public List<FoodViewModel> foodList = new List<FoodViewModel>();
-
+        private readonly ErrorProvider _error = new ErrorProvider();
 
         #region Communication with Database and Click Events
 
@@ -46,25 +44,31 @@ namespace MasAresei
                 food.Name = foodNameTbox.Text.Trim();
                 food.Price = Convert.ToDecimal(foodPriceTbox.Text.Trim());
                 food.FoodCategoryId = CategoryNameToCategoryId(foodCategoryCmbBox.Text);
-
-                if (foodId > 0)
+                if (ValidateFood())
                 {
-                    _context.Entry(food).State = EntityState.Modified;
+                    if (foodId > 0)
+                    {
+                        _context.Entry(food).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        _context.Foods.Add(food);
+                    }
+
+                    _context.SaveChanges();
+                    //Thread.Sleep(2000);
+                    ClearData();
+                    SetDataInGrid();
+                    MessageBox.Show("Record Save Successfully");
                 }
                 else
                 {
-                    _context.Foods.Add(food);
+                    this.Focus();
                 }
-
-                _context.SaveChanges();
-                //Thread.Sleep(2000);
-                ClearData();
-                SetDataInGrid();
-                MessageBox.Show("Record Save Successfully");
             }
             catch (Exception)
             {
-                MessageBox.Show("Fill the textboxes with valid info.");
+                MessageBox.Show("Fill all the fields with valid info.");
             }
         }
 
@@ -79,7 +83,7 @@ namespace MasAresei
 
                     foodNameTbox.Text = food.Name;
                     foodPriceTbox.Text = food.Price.ToString();
-                    foodCategoryCmbBox.Text = GetFoodCategoryName(food.FoodCategoryId);
+                    foodCategoryCmbBox.Text = CategoryIdToCategoryName(food.FoodCategoryId);
                 }
                 saveOrEditBtn.Text = "Edit";
                 deleteBtn.Enabled = true;
@@ -131,20 +135,6 @@ namespace MasAresei
                 CategoryName = f.FoodCategory.Name
 
             }).ToList();
-            
-            //var fcList = _context.FoodCategories.ToList<FoodCategory>();
-            //foreach (var item in _context.Foods)
-            //{
-            //    FoodViewModel foodViewModel = new FoodViewModel();
-            //    foodViewModel.Id = item.Id;
-            //    foodViewModel.Name = item.Name;
-            //    foodViewModel.Price = item.Price;
-            //    foodViewModel.CategoryName = fcList.Where(n => n.Id == item.FoodCategoryId).Select(m => m.Name).FirstOrDefault();
-            //    foodList.Add(foodViewModel);
-            //}
-            //foodGrid.DataSource = foodList;
-            //foodGrid.Update();
-            //foodGrid.Refresh();
         }
 
         //Setting data in the Category Combo Box
@@ -155,13 +145,81 @@ namespace MasAresei
 
         #endregion
 
+        #region Methods to manipulate FoodCategoryComboBox
+
         private int CategoryNameToCategoryId(string name)
         {
             return _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).FirstOrDefault();
         }
-        private string GetFoodCategoryName(int foodId)
+        private string CategoryIdToCategoryName(int foodId)
         {
             return _context.FoodCategories.Where(i => i.Id == foodId).Select(n => n.Name).FirstOrDefault();
         }
+
+        #endregion
+        
+        #region Validation Events
+
+        private void foodNameTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateFoodName();
+        }
+
+        private void foodPriceTbox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidatePrice();
+        }
+        #endregion
+
+        #region Custom Methods for Validation
+
+        public bool ValidateFood()
+        {
+            if (food.Name.ValidateFoodName() && food.Price.ValidatePrice())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public void ValidateFoodName()
+        {
+            if (string.IsNullOrEmpty(foodNameTbox.Text))
+            {
+                _error.SetError(foodNameTbox, "Food name is necessary to procced.");
+                foodNameTbox.Focus();
+            }
+            else if (foodNameTbox.Text.Length > 50)
+            {
+                _error.SetError(foodNameTbox, "Food name can't be that long, try something shorter.");
+                foodNameTbox.Focus();
+            }
+            else
+            {
+                _error.SetError(foodNameTbox, "");
+            }
+        }
+
+        public void ValidatePrice()
+        {
+            if (string.IsNullOrEmpty(foodPriceTbox.Text))
+            {
+                _error.SetError(foodPriceTbox, "Food price is necessary to procced.");
+                foodPriceTbox.Focus();
+            }
+            //else if (foodPriceTbox.Text.All(c => Char.IsDigit(c)))
+            //{
+            //    _error.SetError(foodPriceTbox, "Food price must contain numbers.");
+            //    foodPriceTbox.Focus();
+            //}
+            else
+            {
+                _error.SetError(foodPriceTbox, "");
+            }
+        }
+
+        #endregion
+
     }
 }

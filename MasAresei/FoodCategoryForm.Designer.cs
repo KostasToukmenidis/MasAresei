@@ -70,8 +70,10 @@ namespace MasAresei
             this.foodCategoryGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.foodCategoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.foodCategoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.foodCategoryGrid.Location = new System.Drawing.Point(416, 136);
+            this.foodCategoryGrid.MultiSelect = false;
             this.foodCategoryGrid.Name = "foodCategoryGrid";
             this.foodCategoryGrid.Size = new System.Drawing.Size(403, 289);
             this.foodCategoryGrid.TabIndex = 2;
