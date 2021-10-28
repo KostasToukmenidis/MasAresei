@@ -27,14 +27,16 @@ namespace MasAresei.Servicies.Validations
 
         public static bool ValidatePrice(this decimal foodPrice)
         {
+            string[] fPChars = { "0","1","2","3","4","5","6","7","8","9",",","." };
+
             if (string.IsNullOrEmpty(foodPrice.ToString()))
             {
                 MessageBox.Show("Food price is required.");
                 return false;
             }
-            else if (foodPrice < 0)
+            else if ((!fPChars.Any(c => c == foodPrice.ToString())) || foodPrice < 0)
             {
-                MessageBox.Show("Price cannot be negative number.");
+                MessageBox.Show("Price must be a positive number.");
                 return false;
             }
             else

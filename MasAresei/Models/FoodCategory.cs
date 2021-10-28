@@ -15,6 +15,6 @@ namespace MasAresei.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        public List<Food> Foods { get; set; }
+        public ICollection<Food> Foods { get; set; }
     }
 }

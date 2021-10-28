@@ -11,6 +11,10 @@ namespace MasAresei.Models
 {
     public class Food
     {
+        public Food()
+        {
+            this.Ingredients = new HashSet<Ingredient>();
+        }
         public int Id { get; set; }
 
         [Required]
@@ -26,6 +30,6 @@ namespace MasAresei.Models
 
         public FoodCategory FoodCategory { get; set; }
 
-        public List<Ingredient> Ingredients { get; set; }
+        public ICollection<Ingredient> Ingredients { get; set; }
     }
 }

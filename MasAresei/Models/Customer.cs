@@ -39,6 +39,6 @@ namespace MasAresei.Models
         [StringLength(50)]
         public string AddressArea { get; set; }
 
-        public List<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

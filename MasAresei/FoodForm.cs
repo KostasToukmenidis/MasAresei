@@ -145,19 +145,6 @@ namespace MasAresei
 
         #endregion
 
-        #region Methods to manipulate FoodCategoryComboBox
-
-        private int CategoryNameToCategoryId(string name)
-        {
-            return _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).FirstOrDefault();
-        }
-        private string CategoryIdToCategoryName(int foodId)
-        {
-            return _context.FoodCategories.Where(i => i.Id == foodId).Select(n => n.Name).FirstOrDefault();
-        }
-
-        #endregion
-        
         #region Validation Events
 
         private void foodNameTbox_Validating(object sender, CancelEventArgs e)
@@ -175,7 +162,7 @@ namespace MasAresei
 
         public bool ValidateFood()
         {
-            if (food.Name.ValidateFoodName() && food.Price.ValidatePrice())
+            if (food.Name.ValidateFoodName() && food.Price.ValidatePrice())//Extension methods for validation first time use
             {
                 return true;
             }
@@ -203,20 +190,34 @@ namespace MasAresei
 
         public void ValidatePrice()
         {
+            string[] fPChars = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ",", "." };
             if (string.IsNullOrEmpty(foodPriceTbox.Text))
             {
                 _error.SetError(foodPriceTbox, "Food price is necessary to procced.");
                 foodPriceTbox.Focus();
             }
-            //else if (foodPriceTbox.Text.All(c => Char.IsDigit(c)))
-            //{
-            //    _error.SetError(foodPriceTbox, "Food price must contain numbers.");
-            //    foodPriceTbox.Focus();
-            //}
+            else if ((fPChars.All(c => c != foodPriceTbox.Text)) || Convert.ToDecimal(foodPriceTbox.Text) < 0)
+            {
+                _error.SetError(foodPriceTbox, "Price must be a positive number.");
+                foodPriceTbox.Focus();
+            }
             else
             {
                 _error.SetError(foodPriceTbox, "");
             }
+        }
+
+        #endregion
+
+        #region Methods to manipulate FoodCategoryComboBox
+
+        private int CategoryNameToCategoryId(string name)
+        {
+            return _context.FoodCategories.Where(n => n.Name == name).Select(n => n.Id).FirstOrDefault();
+        }
+        private string CategoryIdToCategoryName(int foodId)
+        {
+            return _context.FoodCategories.Where(i => i.Id == foodId).Select(n => n.Name).FirstOrDefault();
         }
 
         #endregion

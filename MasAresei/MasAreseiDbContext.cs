@@ -7,12 +7,6 @@ namespace MasAresei
 {
     public class MasAreseiDbContext : DbContext
     {
-        // Your context has been configured to use a 'MasAreseiDbContext' connection string from your application's 
-        // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'MasAresei.MasAreseiDbContext' database on your LocalDb instance. 
-        // 
-        // If you wish to target a different database and/or database provider, modify the 'MasAreseiDbContext' 
-        // connection string in the application configuration file.
         public MasAreseiDbContext()
             : base("name=MasAreseiDbConStr")
         {
@@ -28,15 +22,17 @@ namespace MasAresei
         public virtual DbSet<Ingredient> Ingridients { get; set; }
 
 
-        // Add a DbSet for each entity type that you want to include in your model. For more information 
-        // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
-
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Food>()
+        //        .HasMany<Ingredient>(f => f.Ingredients)
+        //        .WithMany(i => i.Foods)
+        //        .Map(fi =>
+        //        {
+        //            fi.MapLeftKey("FoodId");
+        //            fi.MapRightKey("IngredientId");
+        //            fi.ToTable("FoodIngredients");
+        //        });
+        //}
     }
-
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
 }

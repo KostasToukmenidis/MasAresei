@@ -17,6 +17,6 @@ namespace MasAresei.Models
 
         public int CustomerId { get; set; }
 
-        public List<IFoodPricing> OrderedFood { get; set; }
+        public ICollection<IFoodPricing> OrderedFood { get; set; }
     }
 }
