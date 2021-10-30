@@ -47,6 +47,11 @@ namespace MasAresei
             openChildForm(new FoodForm());
         }
 
+        private void ingredientsWindowBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new IngredientForm());
+        }
+
         //Custom Method to open child Forms in mainFormsPanel
 
         private void openChildForm(Form childForm)
@@ -64,5 +69,6 @@ namespace MasAresei
             childForm.Show();
         }
 
+        
     }
 }

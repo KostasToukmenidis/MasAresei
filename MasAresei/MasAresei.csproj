@@ -94,6 +94,12 @@
     <Compile Include="FoodForm.Designer.cs">
       <DependentUpon>FoodForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngredientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngredientForm.Designer.cs">
+      <DependentUpon>IngredientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,14 @@
     <Compile Include="Migrations\202110271007218_RenameIngridientToIngredient.Designer.cs">
       <DependentUpon>202110271007218_RenameIngridientToIngredient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110281738441_RemovingIngredientEntity.cs" />
+    <Compile Include="Migrations\202110281738441_RemovingIngredientEntity.Designer.cs">
+      <DependentUpon>202110281738441_RemovingIngredientEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110281742037_AddingIngredientEntityAndFoodIngredientsTable.cs" />
+    <Compile Include="Migrations\202110281742037_AddingIngredientEntityAndFoodIngredientsTable.Designer.cs">
+      <DependentUpon>202110281742037_AddingIngredientEntityAndFoodIngredientsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Food Enums\AlcoholEnm.cs" />
@@ -177,6 +191,7 @@
     <Compile Include="Servicies\Validations\CustomerValidator.cs" />
     <Compile Include="Servicies\Validations\FoodCategoryValidator.cs" />
     <Compile Include="Servicies\Validations\FoodValidator.cs" />
+    <Compile Include="Servicies\Validations\IngredientValidator.cs" />
     <Compile Include="ViewModels\FoodViewModel.cs" />
     <EmbeddedResource Include="CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
@@ -189,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FoodForm.resx">
       <DependentUpon>FoodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngredientForm.resx">
+      <DependentUpon>IngredientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialForm.resx">
       <DependentUpon>InitialForm.cs</DependentUpon>
@@ -231,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110271007218_RenameIngridientToIngredient.resx">
       <DependentUpon>202110271007218_RenameIngridientToIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110281738441_RemovingIngredientEntity.resx">
+      <DependentUpon>202110281738441_RemovingIngredientEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110281742037_AddingIngredientEntityAndFoodIngredientsTable.resx">
+      <DependentUpon>202110281742037_AddingIngredientEntityAndFoodIngredientsTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>

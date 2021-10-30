@@ -13,21 +13,21 @@ using MasAresei.Servicies.Validations;
 
 namespace MasAresei
 {
-    public partial class FoodCategoryForm : Form
+    public partial class IngredientForm : Form
     {
-        public FoodCategoryForm()
+        public IngredientForm()
         {
             InitializeComponent();
         }
 
-        public int foodCategoryId;
-        public FoodCategory foodCategory = new FoodCategory();
+        public int ingredientId;
+        public Ingredient ingredient = new Ingredient();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider error = new ErrorProvider();
 
         #region Communication with database and Click Events
 
-        private void FoodCategoryForm_Load(object sender, EventArgs e)
+        private void IngredientForm_Load(object sender, EventArgs e)
         {
             ClearData();
             SetDataInGrid();
@@ -37,17 +37,17 @@ namespace MasAresei
         {
             try
             {
-                foodCategory.Name = foodCategoryTbox.Text.Trim();
+                ingredient.Name = ingredientTbox.Text.Trim();
 
-                if (FoodCategoryValidator.ValidateFoodCategoryName(foodCategory.Name) == true)
+                if (ingredient.Name.ValidateIngredientName())
                 {
-                    if (foodCategoryId > 0)
+                    if (ingredientId > 0)
                     {
-                        _context.Entry(foodCategory).State = EntityState.Modified;
+                        _context.Entry(ingredient).State = EntityState.Modified;
                     }
                     else
                     {
-                        _context.FoodCategories.Add(foodCategory);
+                        _context.Ingredients.Add(ingredient);
                     }
 
                     _context.SaveChanges();
@@ -60,19 +60,19 @@ namespace MasAresei
             }
             catch (Exception)
             {
-                MessageBox.Show("Give a valid Food category.");
+                MessageBox.Show("Give a valid Ingredient.");
             }
         }
 
-        private void foodCategoryGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ingredientGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (foodCategoryGrid.CurrentCell.RowIndex != -1)
+            if (ingredientGrid.CurrentCell.RowIndex != -1)
             {
-                if (foodCategoryGrid.CurrentRow != null)
+                if (ingredientGrid.CurrentRow != null)
                 {
-                    foodCategoryId = Convert.ToInt32(foodCategoryGrid.CurrentRow.Cells["Id"].Value);
-                    foodCategory = _context.FoodCategories.FirstOrDefault(f => f.Id == foodCategoryId);
-                    foodCategoryTbox.Text = foodCategory.Name;
+                    ingredientId = Convert.ToInt32(ingredientGrid.CurrentRow.Cells["Id"].Value);
+                    ingredient = _context.Ingredients.FirstOrDefault(f => f.Id == ingredientId);
+                    ingredientTbox.Text = ingredient.Name;
                 }
 
                 saveOrEditBtn.Text = "Edit";
@@ -85,7 +85,7 @@ namespace MasAresei
         {
             if (MessageBox.Show("Are you sure you want to delete this record ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _context.FoodCategories.Remove(foodCategory);
+                _context.Ingredients.Remove(ingredient);
                 _context.SaveChanges();
                 ClearData();
                 SetDataInGrid();
@@ -110,18 +110,18 @@ namespace MasAresei
         //Reseting my form
         public void ClearData()
         {
-            foodCategoryTbox.Text = string.Empty;
+            ingredientTbox.Text = string.Empty;
             deleteBtn.Enabled = false;
             deleteBtn.BackColor = Color.IndianRed;
             saveOrEditBtn.Text = "Save";
-            foodCategoryId = 0;
+            ingredientId = 0;
         }
 
         //Setting data in the grid
         public void SetDataInGrid()
         {
             //foodCategoryGrid.AutoGenerateColumns = false;
-            foodCategoryGrid.DataSource = _context.FoodCategories.ToList<FoodCategory>();
+            ingredientGrid.DataSource = _context.Ingredients.ToList<Ingredient>();
         }
 
 
@@ -132,33 +132,34 @@ namespace MasAresei
 
         private void foodCategoryTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateFoodCategoryName();
+            ValidateIngredientName();
         }
 
         #endregion
 
         #region Custom Methods for Validation
 
-        public void ValidateFoodCategoryName()
+        public void ValidateIngredientName()
         {
-            if (string.IsNullOrEmpty(foodCategoryTbox.Text))
+            if (string.IsNullOrEmpty(ingredientTbox.Text))
             {
-                error.SetError(foodCategoryTbox, "Food category is necessary to procced.");
+                error.SetError(ingredientTbox, "Food category is necessary to procced.");
                 //saveOrEditBtn.Enabled = false;
-                foodCategoryTbox.Focus();
+                ingredientTbox.Focus();
             }
-            else if (foodCategoryTbox.Text.Length > 50)
+            else if (ingredientTbox.Text.Length > 50)
             {
-                error.SetError(foodCategoryTbox, "Food category can't be that long, try something shorter.");
-                foodCategoryTbox.Focus();
+                error.SetError(ingredientTbox, "Food category can't be that long, try something shorter.");
+                ingredientTbox.Focus();
             }
             else
             {
-                error.SetError(foodCategoryTbox, "");
+                error.SetError(ingredientTbox, "");
             }
         }
 
         #endregion
 
+        
     }
 }

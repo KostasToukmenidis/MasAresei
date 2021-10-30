@@ -19,20 +19,20 @@ namespace MasAresei
 
         public virtual DbSet<Food> Foods { get; set; }
 
-        public virtual DbSet<Ingredient> Ingridients { get; set; }
+        public virtual DbSet<Ingredient> Ingredients { get; set; }
 
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Food>()
-        //        .HasMany<Ingredient>(f => f.Ingredients)
-        //        .WithMany(i => i.Foods)
-        //        .Map(fi =>
-        //        {
-        //            fi.MapLeftKey("FoodId");
-        //            fi.MapRightKey("IngredientId");
-        //            fi.ToTable("FoodIngredients");
-        //        });
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Food>()
+                .HasMany<Ingredient>(f => f.Ingredients)
+                .WithMany(i => i.Foods)
+                .Map(fi =>
+                {
+                    fi.ToTable("FoodIngredients");
+                    fi.MapLeftKey("FoodId");
+                    fi.MapRightKey("IngredientId");
+                });
+        }
     }
 }
