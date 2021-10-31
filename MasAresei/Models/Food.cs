@@ -11,10 +11,10 @@ namespace MasAresei.Models
 {
     public class Food
     {
-        public Food()
-        {
-            this.Ingredients = new HashSet<Ingredient>();
-        }
+        //public Food()
+        //{
+        //    Ingredients  = new HashSet<Ingredient>();
+        //}
         public int Id { get; set; }
 
         [Required]
@@ -28,8 +28,8 @@ namespace MasAresei.Models
         [DisplayName("Category")]
         public int FoodCategoryId { get; set; }
 
-        public FoodCategory FoodCategory { get; set; }
+        public virtual FoodCategory FoodCategory { get; set; }
 
-        public ICollection<Ingredient> Ingredients { get; set; }
+        public virtual ICollection<Ingredient> Ingredients { get; set; }
     }
 }

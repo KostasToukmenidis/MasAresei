@@ -38,6 +38,7 @@ namespace MasAresei
             try
             {
                 ingredient.Name = ingredientTbox.Text.Trim();
+                ingredient.Foods = _context.Foods.ToList();//Populating FoodIngredients table auto created by EF
 
                 if (ingredient.Name.ValidateIngredientName())
                 {

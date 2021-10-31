@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MasAresei.Migrations;
+using MasAresei.Models;
 
 namespace MasAresei.ViewModels
 {
@@ -19,5 +21,7 @@ namespace MasAresei.ViewModels
 
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
+
+        public virtual ICollection<Ingredient> Ingredients { get; set; } = new HashSet<Ingredient>();
     }
 }

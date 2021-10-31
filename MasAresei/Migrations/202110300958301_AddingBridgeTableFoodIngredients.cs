@@ -3,19 +3,10 @@ namespace MasAresei.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddingIngredientEntityAndFoodIngredientsTable : DbMigration
+    public partial class AddingBridgeTableFoodIngredients : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Ingredients",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 50),
-                    })
-                .PrimaryKey(t => t.Id);
-            
             CreateTable(
                 "dbo.FoodIngredients",
                 c => new
@@ -38,7 +29,6 @@ namespace MasAresei.Migrations
             DropIndex("dbo.FoodIngredients", new[] { "IngredientId" });
             DropIndex("dbo.FoodIngredients", new[] { "FoodId" });
             DropTable("dbo.FoodIngredients");
-            DropTable("dbo.Ingredients");
         }
     }
 }

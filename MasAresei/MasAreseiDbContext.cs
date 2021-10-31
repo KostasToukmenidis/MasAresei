@@ -21,6 +21,8 @@ namespace MasAresei
 
         public virtual DbSet<Ingredient> Ingredients { get; set; }
 
+        //public virtual DbSet<FoodIngredients> FoodIngredients { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

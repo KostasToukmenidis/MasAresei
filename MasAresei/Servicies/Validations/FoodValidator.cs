@@ -34,7 +34,7 @@ namespace MasAresei.Servicies.Validations
                 MessageBox.Show("Food price is required.");
                 return false;
             }
-            else if ((!fPChars.Any(c => c == foodPrice.ToString())) || foodPrice < 0)
+            else if (!(fPChars.Any(c => c != foodPrice.ToString())) || foodPrice < 0)
             {
                 MessageBox.Show("Price must be a positive number.");
                 return false;

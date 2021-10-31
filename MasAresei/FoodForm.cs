@@ -25,6 +25,7 @@ namespace MasAresei
 
         public int foodId;
         public Food food = new Food();
+        public Ingredient ingredient = new Ingredient();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider _error = new ErrorProvider();
 
@@ -44,6 +45,7 @@ namespace MasAresei
                 food.Name = foodNameTbox.Text.Trim();
                 food.Price = Convert.ToDecimal(foodPriceTbox.Text.Trim());
                 food.FoodCategoryId = CategoryNameToCategoryId(foodCategoryCmbBox.Text);
+                food.Ingredients = _context.Ingredients.ToList(); //Populating FoodIngredients table auto created by EF
                 if (ValidateFood())
                 {
                     if (foodId > 0)
@@ -127,12 +129,18 @@ namespace MasAresei
         //Setting data in the grid
         public void SetDataInGrid()
         {
+            //ingredient.Foods = _context.Foods.ToList(); 
+            //food.Ingredients = _context.Ingredients.ToList();
+            //_context.SaveChanges();
+
+            //MessageBox.Show(food.Ingredients.Select(x => x.Name).FirstOrDefault());
             foodGrid.DataSource = _context.Foods.Include(f => f.FoodCategory).Select(f => new FoodViewModel
             {
                 Id = f.Id,
                 Name = f.Name,
                 Price = f.Price,
-                CategoryName = f.FoodCategory.Name
+                CategoryName = f.FoodCategory.Name,
+                Ingredients = f.Ingredients
 
             }).ToList();
         }

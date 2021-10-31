@@ -9,16 +9,16 @@ namespace MasAresei.Models
 {
     public class Ingredient
     {
-        public Ingredient()
-        {
-            this.Foods = new HashSet<Food>();
-        }
+        //public Ingredient()
+        //{
+        //    Foods = new HashSet<Food>();
+        //}
         public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        public ICollection<Food> Foods { get; set; }
+        public virtual ICollection<Food> Foods { get; set; }
     }
 }

@@ -164,9 +164,21 @@
     <Compile Include="Migrations\202110281738441_RemovingIngredientEntity.Designer.cs">
       <DependentUpon>202110281738441_RemovingIngredientEntity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110281742037_AddingIngredientEntityAndFoodIngredientsTable.cs" />
-    <Compile Include="Migrations\202110281742037_AddingIngredientEntityAndFoodIngredientsTable.Designer.cs">
-      <DependentUpon>202110281742037_AddingIngredientEntityAndFoodIngredientsTable.cs</DependentUpon>
+    <Compile Include="Migrations\202110300956494_TryinToDeleteFoodIngredientsTable.cs" />
+    <Compile Include="Migrations\202110300956494_TryinToDeleteFoodIngredientsTable.Designer.cs">
+      <DependentUpon>202110300956494_TryinToDeleteFoodIngredientsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110300958301_AddingBridgeTableFoodIngredients.cs" />
+    <Compile Include="Migrations\202110300958301_AddingBridgeTableFoodIngredients.Designer.cs">
+      <DependentUpon>202110300958301_AddingBridgeTableFoodIngredients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110311207456_RemovingBridgeTableFoodIngredientsToTryAutoPopulateByEF.cs" />
+    <Compile Include="Migrations\202110311207456_RemovingBridgeTableFoodIngredientsToTryAutoPopulateByEF.Designer.cs">
+      <DependentUpon>202110311207456_RemovingBridgeTableFoodIngredientsToTryAutoPopulateByEF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110311208536_CustomizingBridgeTableCreatedByEF.cs" />
+    <Compile Include="Migrations\202110311208536_CustomizingBridgeTableCreatedByEF.Designer.cs">
+      <DependentUpon>202110311208536_CustomizingBridgeTableCreatedByEF.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -253,8 +265,17 @@
     <EmbeddedResource Include="Migrations\202110281738441_RemovingIngredientEntity.resx">
       <DependentUpon>202110281738441_RemovingIngredientEntity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110281742037_AddingIngredientEntityAndFoodIngredientsTable.resx">
-      <DependentUpon>202110281742037_AddingIngredientEntityAndFoodIngredientsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110300956494_TryinToDeleteFoodIngredientsTable.resx">
+      <DependentUpon>202110300956494_TryinToDeleteFoodIngredientsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110300958301_AddingBridgeTableFoodIngredients.resx">
+      <DependentUpon>202110300958301_AddingBridgeTableFoodIngredients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110311207456_RemovingBridgeTableFoodIngredientsToTryAutoPopulateByEF.resx">
+      <DependentUpon>202110311207456_RemovingBridgeTableFoodIngredientsToTryAutoPopulateByEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110311208536_CustomizingBridgeTableCreatedByEF.resx">
+      <DependentUpon>202110311208536_CustomizingBridgeTableCreatedByEF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>

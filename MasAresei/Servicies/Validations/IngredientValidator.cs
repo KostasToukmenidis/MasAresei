@@ -23,6 +23,20 @@ namespace MasAresei.Servicies.Validations
             }
             else
                 return true;
+        //public class FoodIngredients
+        //{
+        //    //[Key]
+        //    //[Column(Order = 1)]
+        //    public int FoodId { get; set; }
+
+        //    //[Key]
+        //    //[Column(Order = 2)]
+        //    public int IngredientId { get; set; }
+
+        //    public virtual Food Food { get; set; }
+
+        //    public virtual Ingredient Ingredient { get; set; }
+        //}
         }
     }
 }

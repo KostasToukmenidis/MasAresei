@@ -7,13 +7,13 @@ namespace MasAresei.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddingIngredientEntityAndFoodIngredientsTable : IMigrationMetadata
+    public sealed partial class AddingBridgeTableFoodIngredients : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingIngredientEntityAndFoodIngredientsTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingBridgeTableFoodIngredients));
         
         string IMigrationMetadata.Id
         {
-            get { return "202110281742037_AddingIngredientEntityAndFoodIngredientsTable"; }
+            get { return "202110300958301_AddingBridgeTableFoodIngredients"; }
         }
         
         string IMigrationMetadata.Source
