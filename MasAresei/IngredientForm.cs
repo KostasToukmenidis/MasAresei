@@ -23,7 +23,7 @@ namespace MasAresei
         public int ingredientId;
         public Ingredient ingredient = new Ingredient();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
-        private readonly ErrorProvider error = new ErrorProvider();
+        private readonly ErrorProvider _error = new ErrorProvider();
 
         #region Communication with database and Click Events
 
@@ -106,7 +106,7 @@ namespace MasAresei
 
         #endregion
 
-        #region Custom methods for reseting Form and setting data in the Grid
+        #region Custom methods to reset Form and set the data in the Grid
 
         //Reseting my form
         public void ClearData()
@@ -144,23 +144,22 @@ namespace MasAresei
         {
             if (string.IsNullOrEmpty(ingredientTbox.Text))
             {
-                error.SetError(ingredientTbox, "Food category is necessary to procced.");
+                _error.SetError(ingredientTbox, "Food category is necessary to procced.");
                 //saveOrEditBtn.Enabled = false;
                 ingredientTbox.Focus();
             }
             else if (ingredientTbox.Text.Length > 50)
             {
-                error.SetError(ingredientTbox, "Food category can't be that long, try something shorter.");
+                _error.SetError(ingredientTbox, "Food category can't be that long, try something shorter.");
                 ingredientTbox.Focus();
             }
             else
             {
-                error.SetError(ingredientTbox, "");
+                _error.SetError(ingredientTbox, "");
             }
         }
 
         #endregion
 
-        
     }
 }

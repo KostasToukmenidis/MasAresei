@@ -22,7 +22,7 @@ namespace MasAresei
             InitializeComponent();
         }
 
-        public static int customerId = 0;
+        public int customerId = 0;
         public Customer customer = new Customer();
         public Order order;
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
@@ -112,6 +112,40 @@ namespace MasAresei
         {
             ClearData();
         }
+
+        private void newOrderBtn_Click(object sender, EventArgs e)
+        {
+            NewOrderForm newOrderForm = new NewOrderForm();
+            newOrderForm.ShowDialog();
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region Custom methods to reset Form and set the data in the Grid
+
+        //Reseting my customers form
+        public void ClearData()
+        {
+            firstNameTbox.Text = lastNameTbox.Text = phoneNumberTbox.Text = addressTbox.Text = addressNumberTbox.Text =
+                addressAreaTbox.Text = string.Empty;
+            deleteBtn.Enabled = false;
+            deleteBtn.BackColor = Color.IndianRed;
+            saveOrEditBtn.Text = "Save";
+            customerId = 0;
+        }
+
+        //Setting the data in the customers grid
+        public void SetDataInGrid()
+        {
+            //customersGrid.AutoGenerateColumns = false;
+            customersGrid.DataSource = _context.Customers.ToList<Customer>();
+        }
+
 
         #endregion
 
@@ -279,29 +313,6 @@ namespace MasAresei
 
         #endregion
 
-        #region Custom Methods for reseting Form and setting data in the Grid
-
-        //Reseting my customers form
-        public void ClearData()
-        {
-            firstNameTbox.Text = lastNameTbox.Text = phoneNumberTbox.Text = addressTbox.Text = addressNumberTbox.Text =
-                addressAreaTbox.Text = string.Empty;
-            deleteBtn.Enabled = false;
-            deleteBtn.BackColor = Color.IndianRed;
-            saveOrEditBtn.Text = "Save";
-            customerId = 0;
-        }
-
-        //Setting the data in the customers grid
-        public void SetDataInGrid()
-        {
-            //customersGrid.AutoGenerateColumns = false;
-            customersGrid.DataSource = _context.Customers.ToList<Customer>();
-        }
-
-
-        #endregion
-
         #region InitialForm show if hidden when CustomersForm pops
 
         ////Using this method if I want to hide InitialForm when user uses the CustomersForm---uncoment from Designer.cs
@@ -312,16 +323,5 @@ namespace MasAresei
         //}
 
         #endregion
-
-        private void newOrderBtn_Click(object sender, EventArgs e)
-        {
-            NewOrderForm newOrderForm = new NewOrderForm();
-            newOrderForm.ShowDialog();
-        }
-
-        private void closeBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

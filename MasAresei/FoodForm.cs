@@ -25,7 +25,6 @@ namespace MasAresei
 
         public int foodId;
         public Food food = new Food();
-        public Ingredient ingredient = new Ingredient();
         private readonly MasAreseiDbContext _context = new MasAreseiDbContext();
         private readonly ErrorProvider _error = new ErrorProvider();
 
@@ -113,7 +112,7 @@ namespace MasAresei
 
         #endregion
 
-        #region Custom methods for reseting Form and setting data in the Grid
+        #region Custom methods to reset Form and set the data in the Grid
 
         //Reseting my form
         public void ClearData()
