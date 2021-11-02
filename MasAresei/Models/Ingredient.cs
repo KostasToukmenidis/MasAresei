@@ -9,10 +9,6 @@ namespace MasAresei.Models
 {
     public class Ingredient
     {
-        //public Ingredient()
-        //{
-        //    Foods = new HashSet<Food>();
-        //}
         public int Id { get; set; }
 
         [Required]

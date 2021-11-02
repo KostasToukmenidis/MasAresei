@@ -85,6 +85,7 @@ namespace MasAresei
             // 
             // customersGrid
             // 
+            this.customersGrid.AllowUserToDeleteRows = false;
             this.customersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -93,6 +94,8 @@ namespace MasAresei
             this.customersGrid.Location = new System.Drawing.Point(334, 91);
             this.customersGrid.MultiSelect = false;
             this.customersGrid.Name = "customersGrid";
+            this.customersGrid.ReadOnly = true;
+            this.customersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.customersGrid.Size = new System.Drawing.Size(538, 352);
             this.customersGrid.TabIndex = 2;
             this.customersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersGrid_CellClick);
