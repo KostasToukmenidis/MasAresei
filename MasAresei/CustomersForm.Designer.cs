@@ -85,6 +85,7 @@ namespace MasAresei
             // 
             // customersGrid
             // 
+            this.customersGrid.AllowUserToAddRows = false;
             this.customersGrid.AllowUserToDeleteRows = false;
             this.customersGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

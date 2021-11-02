@@ -198,6 +198,7 @@
     <Compile Include="NewOrderForm.Designer.cs">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderFoodFormsCreationCode\OrderFoodFormCreating.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicies\Validations\CustomerValidator.cs" />

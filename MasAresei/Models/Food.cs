@@ -27,5 +27,7 @@ namespace MasAresei.Models
         public virtual FoodCategory FoodCategory { get; set; }
 
         public virtual ICollection<Ingredient> Ingredients { get; set; }
+
+        //public virtual ICollection<Order> Orders { get; set; }
     }
 }
