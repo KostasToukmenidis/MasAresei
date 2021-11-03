@@ -37,7 +37,7 @@ namespace MasAresei
             this.clearBtn = new System.Windows.Forms.Button();
             this.saveOrEditBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ingredientTbox = new System.Windows.Forms.TextBox();
+            this.ingredientNameTbox = new System.Windows.Forms.TextBox();
             this.ingredientGrid = new System.Windows.Forms.DataGridView();
             this.closeBtn = new System.Windows.Forms.Button();
             this.priceLbl = new System.Windows.Forms.Label();
@@ -148,12 +148,12 @@ namespace MasAresei
             this.panel3.Size = new System.Drawing.Size(120, 100);
             this.panel3.TabIndex = 4;
             // 
-            // ingredientTbox
+            // ingredientNameTbox
             // 
-            this.ingredientTbox.Location = new System.Drawing.Point(163, 186);
-            this.ingredientTbox.Name = "ingredientTbox";
-            this.ingredientTbox.Size = new System.Drawing.Size(141, 20);
-            this.ingredientTbox.TabIndex = 3;
+            this.ingredientNameTbox.Location = new System.Drawing.Point(163, 186);
+            this.ingredientNameTbox.Name = "ingredientNameTbox";
+            this.ingredientNameTbox.Size = new System.Drawing.Size(141, 20);
+            this.ingredientNameTbox.TabIndex = 3;
             // 
             // ingredientGrid
             // 
@@ -217,7 +217,7 @@ namespace MasAresei
             this.Controls.Add(this.priceLbl);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.ingredientGrid);
-            this.Controls.Add(this.ingredientTbox);
+            this.Controls.Add(this.ingredientNameTbox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.ingredientsLbl);
@@ -242,7 +242,7 @@ namespace MasAresei
         private System.Windows.Forms.Button saveOrEditBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.TextBox ingredientTbox;
+        private System.Windows.Forms.TextBox ingredientNameTbox;
         private System.Windows.Forms.DataGridView ingredientGrid;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Label priceLbl;

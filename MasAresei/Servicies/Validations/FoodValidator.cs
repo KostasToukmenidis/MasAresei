@@ -25,21 +25,20 @@ namespace MasAresei.Servicies.Validations
                 return true;
         }
 
-        public static bool ValidatePrice(this decimal foodPrice)
+        public static bool ValidateFoodPrice(this decimal foodPrice)
         {
             string[] fPChars = { "0","1","2","3","4","5","6","7","8","9",",","." };
-
+            decimal d;
             if (string.IsNullOrEmpty(foodPrice.ToString()))
             {
                 MessageBox.Show("Food price is required.");
                 return false;
             }
-            //else if (/*!(fPChars.Any(c => c != foodPrice.ToString()))*/!foodPrice.ToString().All(c => Char.IsDigit(c)) || foodPrice < 0)
-            //{
-                
-            //    MessageBox.Show("Price must be a positive number.");
-            //    return false;
-            //}
+            else if (!Decimal.TryParse(foodPrice.ToString(), out d) || d < 0)
+            {
+                MessageBox.Show("Price is a positive number.");
+                return false;
+            }
             else
                 return true;
         }

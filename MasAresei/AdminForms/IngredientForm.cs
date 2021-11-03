@@ -37,7 +37,7 @@ namespace MasAresei
         {
             try
             {
-                ingredient.Name = ingredientTbox.Text.Trim();
+                ingredient.Name = ingredientNameTbox.Text.Trim();
                 //ingredient.Foods = _context.Foods.ToList();//Populating FoodIngredients table auto created by EF
 
                 if (ingredient.Name.ValidateIngredientName())
@@ -75,7 +75,7 @@ namespace MasAresei
                 {
                     ingredientId = Convert.ToInt32(ingredientGrid.CurrentRow.Cells["Id"].Value);
                     ingredient = _context.Ingredients.FirstOrDefault(f => f.Id == ingredientId);
-                    ingredientTbox.Text = ingredient.Name;
+                    ingredientNameTbox.Text = ingredient.Name;
                 }
 
                 saveOrEditBtn.Text = "Edit";
@@ -113,7 +113,7 @@ namespace MasAresei
         //Reseting my form
         public void ClearData()
         {
-            ingredientTbox.Text = string.Empty;
+            ingredientNameTbox.Text = string.Empty;
             deleteBtn.Enabled = false;
             deleteBtn.BackColor = Color.IndianRed;
             saveOrEditBtn.Text = "Save";
@@ -135,29 +135,29 @@ namespace MasAresei
 
         private void foodCategoryTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateIngredientName();
+            ValidateIngredientNameTbox();
         }
 
         #endregion
 
         #region Custom Methods for Validation
 
-        public void ValidateIngredientName()
+        public void ValidateIngredientNameTbox()
         {
-            if (string.IsNullOrEmpty(ingredientTbox.Text))
+            if (string.IsNullOrEmpty(ingredientNameTbox.Text))
             {
-                _error.SetError(ingredientTbox, "Food category is necessary to procced.");
+                _error.SetError(ingredientNameTbox, "Food category is necessary to procced.");
                 //saveOrEditBtn.Enabled = false;
-                ingredientTbox.Focus();
+                ingredientNameTbox.Focus();
             }
-            else if (ingredientTbox.Text.Length > 50)
+            else if (ingredientNameTbox.Text.Length > 50)
             {
-                _error.SetError(ingredientTbox, "Food category can't be that long, try something shorter.");
-                ingredientTbox.Focus();
+                _error.SetError(ingredientNameTbox, "Food category can't be that long, try something shorter.");
+                ingredientNameTbox.Focus();
             }
             else
             {
-                _error.SetError(ingredientTbox, "");
+                _error.SetError(ingredientNameTbox, "");
             }
         }
 

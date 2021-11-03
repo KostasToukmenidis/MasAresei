@@ -153,32 +153,32 @@ namespace MasAresei
 
         private void firstNameTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateFirstName();
+            ValidateFirstNameTbox();
         }
 
         private void lastNameTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateLastName();
+            ValidateLastNameTbox();
         }
 
         private void phoneNumberTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidatePhoneNumber();
+            ValidatePhoneNumberTbox();
         }
 
         private void addressTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateAddress();
+            ValidateAddressTbox();
         }
 
         private void addressNumberTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateAddressNumber();
+            ValidateAddressNumberTbox();
         }
 
         private void addressAreaTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateAddressArea();
+            ValidateAddressAreaTbox();
         }
 
         #endregion
@@ -198,7 +198,7 @@ namespace MasAresei
                 return false;
         }
 
-        public void ValidateFirstName()
+        public void ValidateFirstNameTbox()
         {
             if (string.IsNullOrEmpty(firstNameTbox.Text))
             {
@@ -216,7 +216,7 @@ namespace MasAresei
             }
         }
 
-        public void ValidateLastName()
+        public void ValidateLastNameTbox()
         {
             if (string.IsNullOrEmpty(lastNameTbox.Text))
             {
@@ -234,7 +234,7 @@ namespace MasAresei
             }
         }
 
-        public void ValidatePhoneNumber()
+        public void ValidatePhoneNumberTbox()
         {
             if (string.IsNullOrEmpty(phoneNumberTbox.Text))
             {
@@ -257,7 +257,7 @@ namespace MasAresei
             }
         }
 
-        public void ValidateAddress()
+        public void ValidateAddressTbox()
         {
             if (string.IsNullOrEmpty(addressTbox.Text))
             {
@@ -275,7 +275,7 @@ namespace MasAresei
             }
         }
 
-        public void ValidateAddressNumber()
+        public void ValidateAddressNumberTbox()
         {
             if (string.IsNullOrEmpty(addressNumberTbox.Text))
             {
@@ -293,7 +293,7 @@ namespace MasAresei
             }
         }
 
-        public void ValidateAddressArea()
+        public void ValidateAddressAreaTbox()
         {
             if (string.IsNullOrEmpty(addressAreaTbox.Text))
             {

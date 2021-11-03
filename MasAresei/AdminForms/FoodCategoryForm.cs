@@ -132,14 +132,14 @@ namespace MasAresei
 
         private void foodCategoryTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateFoodCategoryName();
+            ValidateFoodCategoryNameTbox();
         }
 
         #endregion
 
         #region Custom Methods for Validation
 
-        public void ValidateFoodCategoryName()
+        public void ValidateFoodCategoryNameTbox()
         {
             if (string.IsNullOrEmpty(foodCategoryTbox.Text))
             {

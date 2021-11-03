@@ -155,12 +155,12 @@ namespace MasAresei
 
         private void foodNameTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateFoodName();
+            ValidateFoodNameTbox();
         }
 
         private void foodPriceTbox_Validating(object sender, CancelEventArgs e)
         {
-            ValidatePrice();
+            ValidatePriceTbox();
         }
         #endregion
 
@@ -168,7 +168,7 @@ namespace MasAresei
 
         public bool ValidateFood()
         {
-            if (food.Name.ValidateFoodName() && food.Price.ValidatePrice())//Extension methods for validation first time use
+            if (food.Name.ValidateFoodName() && food.Price.ValidateFoodPrice())//Extension methods for validation first time use
             {
                 return true;
             }
@@ -176,7 +176,7 @@ namespace MasAresei
                 return false;
         }
 
-        public void ValidateFoodName()
+        public void ValidateFoodNameTbox()
         {
             if (string.IsNullOrEmpty(foodNameTbox.Text))
             {
@@ -194,19 +194,20 @@ namespace MasAresei
             }
         }
 
-        public void ValidatePrice()
+        public void ValidatePriceTbox()
         {
-            string[] fPChars = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ",", "." };
+            char[] fPChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '.' };
+            decimal d;
             if (string.IsNullOrEmpty(foodPriceTbox.Text))
             {
                 _error.SetError(foodPriceTbox, "Food price is necessary to procced.");
                 foodPriceTbox.Focus();
             }
-            //else if (/*(fPChars.All(c => c != foodPriceTbox.Text))*/!foodPriceTbox.Text.All(c=>Char.IsDigit(c)) || Convert.ToDecimal(foodPriceTbox.Text) < 0)
-            //{
-            //    _error.SetError(foodPriceTbox, "Price must be a positive number.");
-            //    foodPriceTbox.Focus();
-            //}
+            else if (!Decimal.TryParse(foodPriceTbox.Text, out d) || d < 0)
+            {
+                _error.SetError(foodPriceTbox, "Price is a number.");
+                foodPriceTbox.Focus();
+            }
             else
             {
                 _error.SetError(foodPriceTbox, "");
