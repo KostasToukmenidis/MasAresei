@@ -18,7 +18,6 @@ namespace MasAresei.Models
         public string Name { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
         [DisplayName("Category")]

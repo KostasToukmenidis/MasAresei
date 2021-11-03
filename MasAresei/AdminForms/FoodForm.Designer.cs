@@ -167,6 +167,7 @@ namespace MasAresei
             this.closeBtn.TabIndex = 3;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // foodNameLbl
             // 

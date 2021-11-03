@@ -41,18 +41,20 @@ namespace MasAresei
         {
             try
             {
+                var ingredients = _context.Ingredients;
                 food.Name = foodNameTbox.Text.Trim();
                 food.Price = Convert.ToDecimal(foodPriceTbox.Text.Trim());
                 food.FoodCategoryId = CategoryNameToCategoryId(foodCategoryCmbBox.Text);
-                food.Ingredients = _context.Ingredients.ToList(); //Populating FoodIngredients table auto created by EF
                 if (ValidateFood())
                 {
                     if (foodId > 0)
                     {
+                        _context.Entry(food).Collection(x => x.Ingredients).Load();
                         _context.Entry(food).State = EntityState.Modified;
                     }
                     else
                     {
+                        food.Ingredients = _context.Ingredients.ToList();
                         _context.Foods.Add(food);
                     }
 
@@ -109,6 +111,10 @@ namespace MasAresei
         {
             ClearData();
         }
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         #endregion
 
@@ -128,19 +134,12 @@ namespace MasAresei
         //Setting data in the grid
         public void SetDataInGrid()
         {
-            //ingredient.Foods = _context.Foods.ToList(); 
-            //food.Ingredients = _context.Ingredients.ToList();
-            //_context.SaveChanges();
-
-            //MessageBox.Show(food.Ingredients.Select(x => x.Name).FirstOrDefault());
             foodGrid.DataSource = _context.Foods.Include(f => f.FoodCategory).Select(f => new FoodViewModel
             {
                 Id = f.Id,
                 Name = f.Name,
                 Price = f.Price,
-                CategoryName = f.FoodCategory.Name,
-                Ingredients = f.Ingredients
-
+                CategoryName = f.FoodCategory.Name
             }).ToList();
         }
 
@@ -203,11 +202,11 @@ namespace MasAresei
                 _error.SetError(foodPriceTbox, "Food price is necessary to procced.");
                 foodPriceTbox.Focus();
             }
-            else if ((fPChars.All(c => c != foodPriceTbox.Text)) || Convert.ToDecimal(foodPriceTbox.Text) < 0)
-            {
-                _error.SetError(foodPriceTbox, "Price must be a positive number.");
-                foodPriceTbox.Focus();
-            }
+            //else if (/*(fPChars.All(c => c != foodPriceTbox.Text))*/!foodPriceTbox.Text.All(c=>Char.IsDigit(c)) || Convert.ToDecimal(foodPriceTbox.Text) < 0)
+            //{
+            //    _error.SetError(foodPriceTbox, "Price must be a positive number.");
+            //    foodPriceTbox.Focus();
+            //}
             else
             {
                 _error.SetError(foodPriceTbox, "");

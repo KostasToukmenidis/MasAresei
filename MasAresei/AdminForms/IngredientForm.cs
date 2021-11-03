@@ -38,16 +38,18 @@ namespace MasAresei
             try
             {
                 ingredient.Name = ingredientTbox.Text.Trim();
-                ingredient.Foods = _context.Foods.ToList();//Populating FoodIngredients table auto created by EF
+                //ingredient.Foods = _context.Foods.ToList();//Populating FoodIngredients table auto created by EF
 
                 if (ingredient.Name.ValidateIngredientName())
                 {
                     if (ingredientId > 0)
                     {
+                        _context.Entry(ingredient).Collection(x => x.Foods).Load();//updating many to many table
                         _context.Entry(ingredient).State = EntityState.Modified;
                     }
                     else
                     {
+                        ingredient.Foods = _context.Foods.ToList();//loading many to many table
                         _context.Ingredients.Add(ingredient);
                     }
 
