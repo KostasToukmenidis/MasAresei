@@ -70,34 +70,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomersForm.cs">
+    <Compile Include="AdminForms\CustomersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersForm.Designer.cs">
+    <Compile Include="AdminForms\CustomersForm.Designer.cs">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomersOrdersForm.cs">
+    <Compile Include="AdminForms\CustomersOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersOrdersForm.Designer.cs">
+    <Compile Include="AdminForms\CustomersOrdersForm.Designer.cs">
       <DependentUpon>CustomersOrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodCategoryForm.cs">
+    <Compile Include="AdminForms\FoodCategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FoodCategoryForm.Designer.cs">
+    <Compile Include="AdminForms\FoodCategoryForm.Designer.cs">
       <DependentUpon>FoodCategoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodForm.cs">
+    <Compile Include="AdminForms\FoodForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FoodForm.Designer.cs">
+    <Compile Include="AdminForms\FoodForm.Designer.cs">
       <DependentUpon>FoodForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IngredientForm.cs">
+    <Compile Include="AdminForms\IngredientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IngredientForm.Designer.cs">
+    <Compile Include="AdminForms\IngredientForm.Designer.cs">
       <DependentUpon>IngredientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InitialForm.cs">
@@ -192,10 +192,10 @@
     <Compile Include="Models\FoodCategory.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="NewOrderForm.cs">
+    <Compile Include="AdminForms\NewOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewOrderForm.Designer.cs">
+    <Compile Include="AdminForms\NewOrderForm.Designer.cs">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderFoodFormsCreationCode\OrderFoodFormCreating.cs" />
@@ -206,19 +206,19 @@
     <Compile Include="Servicies\Validations\FoodValidator.cs" />
     <Compile Include="Servicies\Validations\IngredientValidator.cs" />
     <Compile Include="ViewModels\FoodViewModel.cs" />
-    <EmbeddedResource Include="CustomersForm.resx">
+    <EmbeddedResource Include="AdminForms\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomersOrdersForm.resx">
+    <EmbeddedResource Include="AdminForms\CustomersOrdersForm.resx">
       <DependentUpon>CustomersOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FoodCategoryForm.resx">
+    <EmbeddedResource Include="AdminForms\FoodCategoryForm.resx">
       <DependentUpon>FoodCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FoodForm.resx">
+    <EmbeddedResource Include="AdminForms\FoodForm.resx">
       <DependentUpon>FoodForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IngredientForm.resx">
+    <EmbeddedResource Include="AdminForms\IngredientForm.resx">
       <DependentUpon>IngredientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialForm.resx">
@@ -278,7 +278,7 @@
     <EmbeddedResource Include="Migrations\202110311208536_CustomizingBridgeTableCreatedByEF.resx">
       <DependentUpon>202110311208536_CustomizingBridgeTableCreatedByEF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewOrderForm.resx">
+    <EmbeddedResource Include="AdminForms\NewOrderForm.resx">
       <DependentUpon>NewOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
