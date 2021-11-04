@@ -35,11 +35,11 @@ namespace MasAresei
             this.foodCategoryWindowBtn = new System.Windows.Forms.Button();
             this.sideBarMainPanel = new System.Windows.Forms.Panel();
             this.sideBarBtnPanel = new System.Windows.Forms.Panel();
+            this.ingredientsWindowBtn = new System.Windows.Forms.Button();
             this.foodWindowBtn = new System.Windows.Forms.Button();
             this.sideBarHeaderPanel = new System.Windows.Forms.Panel();
             this.mainFormsPanel = new System.Windows.Forms.Panel();
             this.mainFormPictureBox = new System.Windows.Forms.PictureBox();
-            this.ingredientsWindowBtn = new System.Windows.Forms.Button();
             this.sideBarMainPanel.SuspendLayout();
             this.sideBarBtnPanel.SuspendLayout();
             this.mainFormsPanel.SuspendLayout();
@@ -120,6 +120,24 @@ namespace MasAresei
             this.sideBarBtnPanel.Size = new System.Drawing.Size(250, 377);
             this.sideBarBtnPanel.TabIndex = 4;
             // 
+            // ingredientsWindowBtn
+            // 
+            this.ingredientsWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ingredientsWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ingredientsWindowBtn.FlatAppearance.BorderSize = 0;
+            this.ingredientsWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
+            this.ingredientsWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ingredientsWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ingredientsWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
+            this.ingredientsWindowBtn.Location = new System.Drawing.Point(0, 268);
+            this.ingredientsWindowBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.ingredientsWindowBtn.Name = "ingredientsWindowBtn";
+            this.ingredientsWindowBtn.Size = new System.Drawing.Size(250, 86);
+            this.ingredientsWindowBtn.TabIndex = 5;
+            this.ingredientsWindowBtn.Text = "Add an Ingredient";
+            this.ingredientsWindowBtn.UseVisualStyleBackColor = false;
+            this.ingredientsWindowBtn.Click += new System.EventHandler(this.ingredientsWindowBtn_Click);
+            // 
             // foodWindowBtn
             // 
             this.foodWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -166,24 +184,6 @@ namespace MasAresei
             this.mainFormPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mainFormPictureBox.TabIndex = 1;
             this.mainFormPictureBox.TabStop = false;
-            // 
-            // ingredientsWindowBtn
-            // 
-            this.ingredientsWindowBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ingredientsWindowBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ingredientsWindowBtn.FlatAppearance.BorderSize = 0;
-            this.ingredientsWindowBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(55)))));
-            this.ingredientsWindowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ingredientsWindowBtn.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ingredientsWindowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(162)))), ((int)(((byte)(90)))));
-            this.ingredientsWindowBtn.Location = new System.Drawing.Point(0, 268);
-            this.ingredientsWindowBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.ingredientsWindowBtn.Name = "ingredientsWindowBtn";
-            this.ingredientsWindowBtn.Size = new System.Drawing.Size(250, 86);
-            this.ingredientsWindowBtn.TabIndex = 5;
-            this.ingredientsWindowBtn.Text = "Add an Ingredient";
-            this.ingredientsWindowBtn.UseVisualStyleBackColor = false;
-            this.ingredientsWindowBtn.Click += new System.EventHandler(this.ingredientsWindowBtn_Click);
             // 
             // InitialForm
             // 

@@ -166,6 +166,7 @@ namespace MasAresei
             this.Controls.Add(this.alcoholBtn);
             this.Controls.Add(this.saladBtn);
             this.Name = "NewOrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewOrderForm";
             this.Load += new System.EventHandler(this.NewOrderForm_Load);
             this.ResumeLayout(false);
